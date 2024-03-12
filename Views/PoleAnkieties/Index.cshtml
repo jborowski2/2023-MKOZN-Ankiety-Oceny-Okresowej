@@ -1,0 +1,45 @@
+﻿@model IEnumerable<OOP.Models.PoleAnkiety>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista Ankiet</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StronaAnkiety.StronaAnkietyID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LiczbaPunktow)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tresc)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StronaAnkiety.StronaAnkietyID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LiczbaPunktow)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tresc)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PoleAnkietyID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PoleAnkietyID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PoleAnkietyID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,67 @@
+﻿@model OOP.Models.Pracownik
+
+@{
+    ViewBag.Title = "Usuń";
+    Layout = "~/Views/Shared/_SpecialLayout.cshtml";
+    ViewBag.UseSpecialNavbar = true;
+
+}
+
+
+<h3>Czy jesteś pewien, że chcesz usunąć ten element?</h3>
+<div>
+    <h4>Pracownik</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Imie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Imie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nazwisko)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nazwisko)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Stopien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stopien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tytul)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tytul)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumerTelefonu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumerTelefonu)
+        </dd>
+
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Usuń" class="btn btn-default" /> |
+            @Html.ActionLink("Powrót do listy", "Index")
+        </div>
+    }
+</div>

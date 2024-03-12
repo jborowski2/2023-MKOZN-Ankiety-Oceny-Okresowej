@@ -1,0 +1,124 @@
+
+@{
+    Layout = null;
+    bool isPracownik = User.IsInRole("Pracownik");
+}
+
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<style>
+    .white, .font, .font_type {
+        color: #fff;
+        font-size: calc(10px + (13 - 10) * ((100vw - 1200px) / (2560 - 1200)));
+    }
+
+    .font_type {
+        font-family: Arial;
+        padding-top: 1px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .dark-theme {
+        background-color: #696969;
+        color: #fff;
+    }
+
+    .dark-theme-navbar {
+        background-color: #012404;
+        color: #fff;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm" style="background-color: #012404;">
+        <div class="container">
+            <b>
+                @Html.ActionLink("Politechnika Bia³ostocka - System oceny pracowników", "Index", "Home", new { area = "" }, new { @class = "navbar-brand font" })
+            </b>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Prze??cz nawigacj?" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <button type="button" class="btn btn-light" id="theme-toggle" onclick="toggleTheme()">Prze³¹cz motyw</button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        @Html.ActionLink("Strona g³ówna", "Index", "Home", new { area = "" }, new { @class = "nav-link white" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Informacje", "About", "Home", new { area = "" }, new { @class = "nav-link white" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Kontakt", "Contact", "Home", new { area = "" }, new { @class = "nav-link white" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Ankiety", "Index", "Ankietas", new { area = "" }, new { @class = "nav-link white" })
+                    </li>
+                    @if (!isPracownik)
+                    {
+                        <li class="nav-item">
+                            @Html.ActionLink("Schematy Ankiet", "Index", "Schemats", new { area = "" }, new { @class = "nav-link white" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Pracownicy", "Index", "Pracowniks", new { area = "" }, new { @class = "nav-link white" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Osi¹gniêcia", "Index", "Osiagniecies", new { area = "" }, new { @class = "nav-link white" })
+                        </li>
+                    }
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script>document.addEventListener("DOMContentLoaded", function () {
+            const themeToggle = document.getElementById("theme-toggle");
+            const body = document.body;
+            const navbar = document.querySelector('.navbar');
+
+            // Odczytaj z localStorage ostatni wybrany motyw
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme) {
+                body.classList.toggle("dark-theme", savedTheme === "dark");
+                navbar.classList.toggle("dark-theme-navbar", savedTheme === "dark");
+            }
+
+            themeToggle.addEventListener("click", function () {
+                // Toggle klasê 'dark-theme' na body
+                body.classList.toggle("dark-theme");
+
+                // Toggle klasê 'dark-theme' na navbar
+                navbar.classList.toggle("dark-theme-navbar", body.classList.contains("dark-theme"));
+
+                // Zapisz aktualny motyw do localStorage
+                const currentTheme = body.classList.contains("dark-theme") ? "dark" : "light";
+                localStorage.setItem("theme", currentTheme);
+            });
+        });</script>
+</body>

@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_SpecialLayout.cshtml";
+    ViewBag.UseSpecialNavbar = true;
+}
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        h3 {
+            font-size: 18px;
+            color: #555;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #666;
+        }
+
+    </style>
+</head>
+<body>
+    <main aria-labelledby="title">
+        <h1>Aplikacja</h1>
+        <h3>Opis</h3>
+        <p>
+            "System oceny pracowników" to zaawansowana aplikacja wspierająca uczelnie w procesie oceny pracowników naukowo-dydaktycznych. Dzięki automatycznemu generowaniu arkuszy oceny, dwuetapowej weryfikacji i możliwości definiowania systemów oceny, ułatwia ona kompleksową ocenę wyników pracy nauczycieli akademickich. Pracownicy naukowo-dydaktyczni mogą śledzić swoje osiągnięcia, a przełożeni mają kontrolę nad procesem oceny oraz możliwość korekty danych swoich podwładnych. To narzędzie pomaga uczelniom utrzymać wysoki standard pracy swojego personelu i podnosić jakość edukacji i badań.
+        </p>
+    </main>
+</body>
+</html>

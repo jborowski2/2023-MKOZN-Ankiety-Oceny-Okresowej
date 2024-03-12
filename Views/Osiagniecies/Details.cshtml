@@ -1,0 +1,60 @@
+﻿@model OOP.Models.Osiagniecie
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_SpecialLayout.cshtml";
+    ViewBag.UseSpecialNavbar = true;
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Osiagniecie</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Dzial.Nazwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dzial.Nazwa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pracownik.Imie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pracownik.Imie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Szczegoly)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Szczegoly)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nazwa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OsiagniecieID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
