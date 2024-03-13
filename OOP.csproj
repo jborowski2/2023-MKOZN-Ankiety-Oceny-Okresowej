@@ -190,6 +190,10 @@
     <Compile Include="Migrations\202403121837053_init.designer.cs">
       <DependentUpon>202403121837053_init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202403122254145_ankietaState_komisjaTypes.cs" />
+    <Compile Include="Migrations\202403122254145_ankietaState_komisjaTypes.designer.cs">
+      <DependentUpon>202403122254145_ankietaState_komisjaTypes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Adres.cs" />
@@ -921,6 +925,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202403121837053_init.resx">
       <DependentUpon>202403121837053_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403122254145_ankietaState_komisjaTypes.resx">
+      <DependentUpon>202403122254145_ankietaState_komisjaTypes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -716,3 +716,4 @@ D:\VisualStudioProjects\29.01\obj\Debug\OOP.dll
 D:\VisualStudioProjects\29.01\obj\Debug\OOP.pdb
 D:\VisualStudioProjects\29.01\obj\Debug\OOP.Migrations.init.resources
 D:\VisualStudioProjects\29.01\obj\Debug\OOP.csproj.GenerateResource.cache
+D:\VisualStudioProjects\29.01\obj\Debug\OOP.Migrations.ankietaState_komisjaTypes.resources
