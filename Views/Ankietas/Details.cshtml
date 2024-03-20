@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_SpecialLayout.cshtml";
     ViewBag.UseSpecialNavbar = true;
 }
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <h2>Details</h2>
 
 <div>
@@ -94,6 +94,7 @@
                                                         <a href="@Url.Action("Download", "File", new { id = Model.StronyAnkiet[i].PolaAnkiety[j].Attachment.AttachmentID })">
                                                             @Html.DisplayFor(m => m.StronyAnkiet[i].PolaAnkiety[j].Attachment.Name)
                                                         </a>
+                                                        <button type="button" class="deleteAttachmentBtn btn btn-danger btn-sm ml-2" data-attachment-id="@Model.StronyAnkiet[i].PolaAnkiety[j].Attachment.AttachmentID" data-index-i="@i" data-index-j="@j" >Delete</button>
                                                     }
                                                     else
                                                     {
@@ -130,12 +131,23 @@
                                                 @Html.TextBoxFor(m => m.StronyAnkiet[i].PolaAnkiety[k].LiczbaPunktow, new { @class = "form-control" })
                                             </td>
                                             <td class="d-table-cell">
-                                                @Html.TextBoxFor(m => m.StronyAnkiet[i].PolaAnkiety[k].Attachment.File, new { type = "file", name = $"attachments[{i}][{k}]" })
+                                                @if (Model.StronyAnkiet[i].PolaAnkiety[k].Attachment != null)
+                                                {
+                                                    <a href="@Url.Action("Download", "File", new { id = Model.StronyAnkiet[i].PolaAnkiety[k].Attachment.AttachmentID })">
+                                                        @Html.DisplayFor(m => m.StronyAnkiet[i].PolaAnkiety[k].Attachment.Name)
+                                                    </a>
+                                                    <button type="button" class="deleteAttachmentBtn btn btn-danger btn-sm ml-2" data-attachment-id="@Model.StronyAnkiet[i].PolaAnkiety[k].Attachment.AttachmentID"
+                                                            data-index-i="@i" data-index-j="@k">Delete</button>
+                                                }
+                                                else
+                                                {
+                                                    @Html.TextBoxFor(m => m.StronyAnkiet[i].PolaAnkiety[k].Attachment.File, new { type = "file", name = $"attachments[{i}][{k}]" })
+                                                }
                                             </td>
                                         </tr>
                                     }
                                 }
-</tbody>
+                                    </tbody>
                             </table>
                         </td>
                     </tr>
@@ -147,13 +159,49 @@
     }
 
 
-</div>
+<div>
 @if (ViewBag.Message != null)
 {
     <div class="alert alert-success">Liczba pubktów przyznanych za działalność Naukowo-Badawczą @ViewBag.Message[0]</div>
     <div class="alert alert-success">Liczba pubktów przyznanych za działalność Organizacyjno-Dydaktyczną @ViewBag.Message[1]</div>
 }
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('.deleteAttachmentBtn').forEach(button => {
+            button.addEventListener('click', function (e) {
+                e.preventDefault();
+                const attachmentId = this.getAttribute('data-attachment-id');
+                const indexI = this.dataset.indexI;
+                const indexK = this.dataset.indexK; 
+                if (confirm('Czy na pewno chcesz usunąć ten załącznik?')) {
+                    // Wysłanie żądania AJAX do usunięcia załącznika na serwerze
+                    fetch('/Ankietas/DeleteAttachment', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            // Dodaj tutaj inne nagłówki, jeśli są potrzebne
+                        },
+                        body: JSON.stringify({ attachmentId: attachmentId })
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                // Usunięcie elementu z DOM, jeśli usunięcie na serwerze się powiodło
+                                this.parentElement.innerHTML = `<input type="file" name="attachments[${indexI}][${indexK}]" />`;
+                            } else {
+                                // Obsługa błędów, jeśli usunięcie się nie powiodło
+                                console.error('Błąd podczas usuwania załącznika:', data.message);
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Błąd komunikacji z serwerem:', error);
+                        });
+                }
+            });
+        });
+    });
+</script>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.AnkietaID }) |
     @Html.ActionLink("Back to List", "Index")
