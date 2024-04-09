@@ -18,7 +18,7 @@ namespace OOP.Controllers
     [Authorize]
     public class AnkietasController : Controller
     {
-      
+
         private ApplicationDbContext db = new ApplicationDbContext();
 
         public async Task<ActionResult> Index(string searchString)
@@ -55,6 +55,11 @@ namespace OOP.Controllers
                     }
 
                 }
+                if (roles.First() == "Dzial")
+                {
+                    var dzial = await db.Dzials.Where(d => d.ApplicationUserID == userId).FirstAsync();
+                    RedirectToAction("DzialAction", dzial);
+                }
                 else
                 {
                     return View();
@@ -64,12 +69,12 @@ namespace OOP.Controllers
 
         }
 
-        public async Task<ActionResult> DzialAction(int DzialID)
+        public async Task<ActionResult> DzialAction(Dzial dzial)
         {
 
             var stronyAnkiet = await db.StronyAnkiet
                     .Include(s => s.Ankieta)
-                    .Where(s => s.DzialID == DzialID)
+                    .Where(s => s.DzialID == dzial.DzialID)
                     .ToListAsync();
             var viewModels = new List<AnkietaPracownikViewModel>();
             foreach (var strona in stronyAnkiet)
@@ -91,7 +96,7 @@ namespace OOP.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             var userId = User.Identity.GetUserId();
-            var userDzialId = await db.Dzials
+            `var userDzialId = await db.Dzials
                              .Where(u => u.ApplicationUserID == userId)
                              .Select(u => u.DzialID)
                              .FirstOrDefaultAsync();
@@ -141,7 +146,7 @@ namespace OOP.Controllers
             }).ToList();
 
             if (!isPracownik)
-                ViewBag.PracownikID = new SelectList(pracownicy, "PracownikID", "ImieNazwisko"); 
+                ViewBag.PracownikID = new SelectList(pracownicy, "PracownikID", "ImieNazwisko");
             else
             {
                 var loggedEmployee = pracownicy.SingleOrDefault(p => p.ApplicationUserID == loggiedid);
@@ -152,7 +157,7 @@ namespace OOP.Controllers
             }
             return View();
 
-          
+
         }
         // POST: Ankietas/Create
         // Aby zapewnić ochronę przed atakami polegającymi na przesyłaniu dodatkowych danych, włącz określone właściwości, z którymi chcesz utworzyć powiązania.
@@ -163,10 +168,12 @@ namespace OOP.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 db.Ankiety.Add(ankieta);
                 //addin pages to each dzial
                 var dzialy = await db.Dzials.Select(d => d).ToListAsync();
                 var schemats = await db.Schematy.Select(s => s).ToListAsync();
+                ankieta.AnkietaState = AnkietaState.DO_WYPELNIENIA;
                 try
                 {
                     foreach (Dzial d in dzialy)
@@ -184,12 +191,10 @@ namespace OOP.Controllers
                             pa.StronaAnkiety = s;
                             pa.Organizacyjne = schem.IsOrganizational;
                             db.PolaAnkiet.Add(pa);
-
-
                         }
 
                     }
-                    
+
                     await db.SaveChangesAsync();
                 }
                 catch (Exception ex)
@@ -281,7 +286,7 @@ namespace OOP.Controllers
         {
             if (!ModelState.IsValid)
             {
-               // return RedirectToAction("Details/");
+                // return RedirectToAction("Details/");
             }
 
             string serverFolderPath = Server.MapPath("~/App_Data/Uploads");
@@ -302,7 +307,7 @@ namespace OOP.Controllers
                         {
                             foreach (var pole in strona.PolaAnkiety)
                             {
-                                if(pole.Attachment != null && pole.Attachment.File != null)
+                                if (pole.Attachment != null && pole.Attachment.File != null)
                                 {
                                     Attachment attachment = new Attachment();
 
@@ -323,14 +328,14 @@ namespace OOP.Controllers
                                 {
                                     pole.Attachment = null;
                                 }
-                                
-                                
+
+
                                 var entity = context.Entry(pole);
                                 entity.State = EntityState.Unchanged;
                                 entity.Property(p => p.LiczbaPunktow).IsModified = true;
                             }
                         }
-                    }  
+                    }
                     await db.SaveChangesAsync();
                     transaction.Commit();
                 }
@@ -343,6 +348,35 @@ namespace OOP.Controllers
             return RedirectToAction("Details", new { id = ankieta.AnkietaID });
         }
 
+        [HttpPost]
+        public async Task<ActionResult> DeleteAttachment(int attachmentId)
+        {
+            try
+            {
+                var attachment = await db.Attachments.FindAsync(attachmentId);
+                if (attachment == null)
+                {
+                    return HttpNotFound();
+                }
+                db.Attachments.Remove(attachment);
+                await db.SaveChangesAsync();
+
+                var serverFolderPath = Server.MapPath("~/App_Data/Uploads");
+                var filePath = Path.Combine(serverFolderPath, attachment.FilePath);
+                if (System.IO.File.Exists(filePath))
+                {
+                    System.IO.File.Delete(filePath);
+                }
+
+                return Json(new { success = true, message = "Załącznik został usunięty." });
+
+            }
+            catch (Exception ex)
+            {
+                // Obsługa wyjątków
+                return Json(new { success = false, message = ex.Message });
+            }
+        }
 
         private int[] CalculateTotalPoints(Ankieta ankieta)
         {

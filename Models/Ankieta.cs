@@ -26,8 +26,6 @@ namespace OOP.Models
         public int PracownikID { get; set; }
         public virtual List<StronaAnkiety> StronyAnkiet { get; set; }
         public virtual Pracownik Pracownik { get; set; }
-
-        public int a { get; set; }
         public int CalculateTotalPointsO()
         {
             int sum = 0;

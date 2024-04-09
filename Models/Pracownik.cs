@@ -13,7 +13,8 @@ namespace OOP.Models
         public virtual List<Ankieta> Ankieta{ get; set; }
         public virtual ICollection<PracaDyplomowa> PracaDyplomowas { get; set; }
         public virtual ICollection<Osiagniecie> Osiagniecie { get; set; }
-
+        public int? KomisjaID { get; set; }
+        public virtual Komisja Komisja { get; set; }
         public int PrzelozonyID { get; set; }
         public virtual Pracownik Przelozony { get; set; }
 

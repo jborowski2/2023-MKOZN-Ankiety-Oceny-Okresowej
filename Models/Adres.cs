@@ -10,7 +10,6 @@ namespace OOP.Models
         public string Numer { get; set; }
         public string KodPocztowy { get; set; }
         public string Miasto { get; set; }
-        
         public string ApplicationUserID { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
     }

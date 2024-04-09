@@ -1,0 +1,40 @@
+﻿@model IEnumerable<OOP.Models.Komisja>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_SpecialLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.KomisjaName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KomisjaType)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.KomisjaName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KomisjaType)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.KomisjaID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.KomisjaID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.KomisjaID })
+        </td>
+    </tr>
+}
+
+</table>

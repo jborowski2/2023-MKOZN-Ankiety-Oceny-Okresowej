@@ -13,5 +13,7 @@
         public virtual StronaAnkiety StronaAnkiety { get; set; }
         public virtual Attachment Attachment { get; set; }
         public virtual Comment Comment { get; set; }
+        public virtual Comment DzialComment { get; set; }
+        public virtual Comment PrzelozonyComment { get; set; }
     }
 }
