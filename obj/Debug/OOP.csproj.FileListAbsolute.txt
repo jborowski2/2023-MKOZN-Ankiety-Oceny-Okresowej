@@ -719,3 +719,4 @@ D:\VisualStudioProjects\29.01\obj\Debug\OOP.csproj.GenerateResource.cache
 D:\VisualStudioProjects\29.01\obj\Debug\OOP.Migrations.ankietaState_komisjaTypes.resources
 D:\VisualStudioProjects\29.01\obj\Debug\OOP.Migrations.ankietaState_komisjaTypes2.resources
 D:\VisualStudioProjects\29.01\obj\Debug\OOP.Migrations.pracownik_komisja_relation.resources
+D:\VisualStudioProjects\29.01\obj\Debug\OOP.Migrations.koments3.resources

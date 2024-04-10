@@ -73,6 +73,7 @@
                                         <th>Liczba Punktów</th>
                                         <th>Liczba Punktów przyznanych za okres</th>
                                         <th>Załącznik</th>
+                                        <th>Komentarz Pracownika</th>
                                     </tr>
                                     @for (int j = 0; j < Model.StronyAnkiet[i].PolaAnkiety.Count; j++)
                                     {
@@ -88,19 +89,21 @@
                                                     @Html.HiddenFor(m => m.StronyAnkiet[i].PolaAnkiety[j].PoleAnkietyID)
                                                     @Html.TextBoxFor(m => m.StronyAnkiet[i].PolaAnkiety[j].LiczbaPunktow, new { @class = "form-control" })
                                                 </td>
+
                                                 <td class="d-table-cell">
                                                     @if (Model.StronyAnkiet[i].PolaAnkiety[j].Attachment != null)
                                                     {
                                                         <a href="@Url.Action("Download", "File", new { id = Model.StronyAnkiet[i].PolaAnkiety[j].Attachment.AttachmentID })">
                                                             @Html.DisplayFor(m => m.StronyAnkiet[i].PolaAnkiety[j].Attachment.Name)
                                                         </a>
-                                                        <button type="button" class="deleteAttachmentBtn btn btn-danger btn-sm ml-2" data-attachment-id="@Model.StronyAnkiet[i].PolaAnkiety[j].Attachment.AttachmentID" data-index-i="@i" data-index-j="@j" >Delete</button>
+                                                        <button type="button" class="deleteAttachmentBtn btn btn-danger btn-sm ml-2" data-attachment-id="@Model.StronyAnkiet[i].PolaAnkiety[j].Attachment.AttachmentID" data-index-i="@i" data-index-j="@j">Delete</button>
                                                     }
                                                     else
                                                     {
                                                         @Html.TextBoxFor(m => m.StronyAnkiet[i].PolaAnkiety[j].Attachment.File, new { type = "file", name = $"attachments[{i}][{j}]" })
                                                     }
                                                 </td>
+                                                <td class="d-table-cell">@Html.TextAreaFor(c => c.StronyAnkiet[i].PolaAnkiety[j].Comment.CommentText)</td>
                                             </tr>
                                         }
                                     }
@@ -111,11 +114,12 @@
                                    
                                 </tr>
                                 <tr class="d-xxl-table-row">
-                                    
+
                                     <th>Tresc</th>
                                     <th>Liczba Punktów</th>
                                     <th>Liczba Punktów przyznanych za okres</th>
                                     <th>Załącznik</th>
+                                    <th>Komentarz Pracownika</th>
                                 </tr>
                                 @for (int k = 0; k < Model.StronyAnkiet[i].PolaAnkiety.Count; k++)
                                 {
@@ -137,13 +141,18 @@
                                                         @Html.DisplayFor(m => m.StronyAnkiet[i].PolaAnkiety[k].Attachment.Name)
                                                     </a>
                                                     <button type="button" class="deleteAttachmentBtn btn btn-danger btn-sm ml-2" data-attachment-id="@Model.StronyAnkiet[i].PolaAnkiety[k].Attachment.AttachmentID"
-                                                            data-index-i="@i" data-index-j="@k">Delete</button>
+                                                            data-index-i="@i" data-index-j="@k">
+                                                        Delete
+                                                    </button>
                                                 }
                                                 else
                                                 {
                                                     @Html.TextBoxFor(m => m.StronyAnkiet[i].PolaAnkiety[k].Attachment.File, new { type = "file", name = $"attachments[{i}][{k}]" })
                                                 }
                                             </td>
+                                            <td class="d-table-cell">
+                                            @Html.HiddenFor
+                                                @Html.TextAreaFor(c => c.StronyAnkiet[i].PolaAnkiety[k].Comment.CommentText)</td>
                                         </tr>
                                     }
                                 }

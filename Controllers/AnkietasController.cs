@@ -15,61 +15,57 @@ using System.IO;
 
 namespace OOP.Controllers
 {
-    [Authorize]
     public class AnkietasController : Controller
     {
-
         private ApplicationDbContext db = new ApplicationDbContext();
-
         public async Task<ActionResult> Index(string searchString)
+    {
+        var user = User.Identity;
+        var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+        var userId = user.GetUserId();
+        var roles = userManager.GetRoles(userId);
+
+        if (roles.Any())
         {
-            var user = User.Identity;
-            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
-            var userId = user.GetUserId();
-            var roles = userManager.GetRoles(userId);
-            if (roles.Any())
+            if (roles.First() == "Admin")
             {
-                if (roles.First() == "Admin")
+                var ankiety = db.Ankiety.Include(a => a.Pracownik);
+                if (!string.IsNullOrEmpty(searchString))
                 {
-                    var ankiety = db.Ankiety.Include(a => a.Pracownik);
-                    if (!string.IsNullOrEmpty(searchString))
-                    {
-
-                        ankiety = ankiety.Where(a => (a.Pracownik.Imie + " " + a.Pracownik.Nazwisko).Contains(searchString));
-
-                    }
+                    ankiety = ankiety.Where(a => (a.Pracownik.Imie + " " + a.Pracownik.Nazwisko).Contains(searchString));
+                }
+                return View(ankiety);
+            }
+            else if (roles.First() == "Pracownik")
+            {
+                try
+                {
+                    var pracownik = await db.Pracownicy.Where(p => p.ApplicationUserID == userId).FirstAsync();
+                    var ankiety = await db.Ankiety.Where(a => a.PracownikID == pracownik.PracownikID).ToListAsync();
                     return View(ankiety);
                 }
-                else if (roles.First() == "Pracownik")
+                catch (Exception ex)
                 {
-                    try
-                    {
-                        var pracownik = await db.Pracownicy.Where(p => p.ApplicationUserID == userId).FirstAsync();
-                        var ankiety = await db.Ankiety.Where(a => a.PracownikID == pracownik.PracownikID).ToListAsync();
-
-                        return View(ankiety);
-                    }
-                    catch (Exception ex)
-                    {
-                        return RedirectToAction("Error");
-                    }
-
-                }
-                if (roles.First() == "Dzial")
-                {
-                    var dzial = await db.Dzials.Where(d => d.ApplicationUserID == userId).FirstAsync();
-                    RedirectToAction("DzialAction", dzial);
-                }
-                else
-                {
-                    return View();
+                    return RedirectToAction("Error");
                 }
             }
-            else { return View(); }
-
+            else if (roles.First() == "Dzial")
+            {
+                var dzial = await db.Dzials.Where(d => d.ApplicationUserID == userId).FirstAsync();
+                return RedirectToAction("DzialAction", dzial);
+            }
+            else
+            {
+                return View();
+            }
         }
+        else
+        {
+            return View();
+        }
+    }
 
-        public async Task<ActionResult> DzialAction(Dzial dzial)
+    public async Task<ActionResult> DzialAction(Dzial dzial)
         {
 
             var stronyAnkiet = await db.StronyAnkiet
@@ -96,7 +92,7 @@ namespace OOP.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             var userId = User.Identity.GetUserId();
-            `var userDzialId = await db.Dzials
+            var userDzialId = await db.Dzials
                              .Where(u => u.ApplicationUserID == userId)
                              .Select(u => u.DzialID)
                              .FirstOrDefaultAsync();
@@ -328,6 +324,7 @@ namespace OOP.Controllers
                                 {
                                     pole.Attachment = null;
                                 }
+
 
 
                                 var entity = context.Entry(pole);

@@ -175,6 +175,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AnkietasController.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KomisjasController.cs" />
@@ -202,6 +203,10 @@
     <Compile Include="Migrations\202403131121432_pracownik_komisja_relation.cs" />
     <Compile Include="Migrations\202403131121432_pracownik_komisja_relation.designer.cs">
       <DependentUpon>202403131121432_pracownik_komisja_relation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404101331022_koments3.cs" />
+    <Compile Include="Migrations\202404101331022_koments3.designer.cs">
+      <DependentUpon>202404101331022_koments3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -905,6 +910,11 @@
     <Content Include="Views\Komisjas\Details.cshtml" />
     <Content Include="Views\Komisjas\Edit.cshtml" />
     <Content Include="Views\Komisjas\Index.cshtml" />
+    <Content Include="Views\Comments\Create.cshtml" />
+    <Content Include="Views\Comments\Delete.cshtml" />
+    <Content Include="Views\Comments\Details.cshtml" />
+    <Content Include="Views\Comments\Edit.cshtml" />
+    <Content Include="Views\Comments\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Uploads\" />
@@ -949,6 +959,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202403131121432_pracownik_komisja_relation.resx">
       <DependentUpon>202403131121432_pracownik_komisja_relation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404101331022_koments3.resx">
+      <DependentUpon>202404101331022_koments3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
