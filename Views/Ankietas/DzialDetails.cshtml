@@ -1,0 +1,144 @@
+﻿@model OOP.Models.StronaAnkiety
+@{
+    ViewBag.Title = "DzialDetails";
+}
+
+<h2>Szczegóły ankiety</h2>
+<div>
+    <h4>Ankieta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ankieta.Pracownik.Imie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ankieta.Pracownik.Imie)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ankieta.Pracownik.Nazwisko)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ankieta.Pracownik.Nazwisko)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ankieta.Data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ankieta.Data)
+        </dd>
+
+
+    </dl>
+    @using (Html.BeginForm("SaveFields", "Ankietas", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.AnkietaID)
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Dział</th>
+                    <th>Tresc</th>
+                    <th>Liczba Punktów</th>
+                    <th>Liczba Punktów przyznanych za okres</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Model.Dzial.Nazwa</td>
+                    <td colspan="3">
+                        <table class="table">
+                            <tbody class="tab-content">
+                                <tr class="d-xxl-table-row">
+                                    <td class="d-xxl-table-cell">
+                                        <h4>
+                                            Działalność Naukowo-Badawcza
+                                        </h4>
+                                    </td>
+                                </tr>
+                                @for (int j = 0; j < Model.PolaAnkiety.Count; j++)
+                                {
+                                    if (!Model.PolaAnkiety[j].Organizacyjne)
+                                    {
+                                        <tr class="d-table-row">
+                                            <td class="d-table-cell">@Model.PolaAnkiety[j].Tresc</td>
+                                            <td class="d-table-cell">@Model.PolaAnkiety[j].MaksymalnaIloscPunktow</td>
+                                            <td class="d-table-cell">
+
+                                                @Html.HiddenFor(m => m.PolaAnkiety[j].Organizacyjne)
+                                                @Html.HiddenFor(m => m.PolaAnkiety[j].StronaAnkietyID)
+                                                @Html.HiddenFor(m => m.PolaAnkiety[j].PoleAnkietyID)
+                                                @Html.TextBoxFor(m => m.PolaAnkiety[j].LiczbaPunktow, new { @class = "form-control" })
+                                                
+                                            </td>
+                                            <td class="d-table-cell">
+                                                @Html.HiddenFor(m => m.PolaAnkiety[j].Comment.CommentText);
+                                               @Html.TextBoxFor(m => m.PolaAnkiety[j].Comment.CommentText);
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                                <tr>
+                                    <td>
+                                        <h6>Suma punktów za działalność Naukowo-Badawczą  </h6>
+                                    </td>
+                                    <td>
+                                        @{
+                                            var points = Model.CalculateNukalPoints().ToString();
+                                        }
+                                        <h6>@points</h6>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h4>Działalność Organizacyjno-Dydaktyczna</h4>
+                                    </td>
+                                </tr>
+                                @for (int k = 0; k < Model.PolaAnkiety.Count; k++)
+                                {
+                                    if (Model.PolaAnkiety[k].Organizacyjne)
+                                    {
+                                        <tr>
+                                            <td class="d-table-cell">@Html.DisplayFor(m => m.PolaAnkiety[k].Tresc)</td>
+                                            <td class="d-table-cell">@Html.DisplayFor(m => m.PolaAnkiety[k].MaksymalnaIloscPunktow)</td>
+                                            <td class="d-table-cell">
+                                                @Html.HiddenFor(m => m.PolaAnkiety[k].Organizacyjne)
+                                                @Html.HiddenFor(m => m.PolaAnkiety[k].StronaAnkietyID)
+                                                @Html.HiddenFor(m => m.PolaAnkiety[k].PoleAnkietyID)
+                                                @Html.TextBoxFor(m => m.PolaAnkiety[k].LiczbaPunktow, new { @class = "form-control" })
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                                <tr>
+                                    <td>
+                                        <h6>Suma punktów za działalność Organizacyjno-Dydaktyczna</h6>
+                                    </td>
+                                    <td>
+                                        @{
+                                            var points2 = Model.CalculateDidacticPoints().ToString();
+                                        }
+                                        <h6>@points2</h6>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+
+                </tr>
+
+            </tbody>
+        </table>
+
+        <input type="submit" value="Submit" class="btn btn-primary" />
+    }
+
+
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AnkietaID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

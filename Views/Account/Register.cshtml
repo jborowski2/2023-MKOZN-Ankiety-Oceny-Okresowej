@@ -1,0 +1,106 @@
+﻿@model OOP.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Zarejestruj";
+}
+
+<main aria-labelledby="title">
+    <h1 id="title">@ViewBag.Title.</h1>
+
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <h4>Utwórz nowe konto.</h4>
+        <hr />
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="row" style="margin-bottom:5px">
+            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 col-form-label" })
+            <div class="col-md-10" style="margin-bottom:5px">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row" style="margin-bottom:5px">
+            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 col-form-label" })
+            <div class="col-md-10" style="margin-bottom:5px">
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row" style="margin-bottom:5px">
+            @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 col-form-label" })
+            <div class="col-md-10" style="margin-bottom:5px">
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row" style="margin-bottom:5px">
+            @Html.LabelFor(m => m.FirstName, new { @class = "col-md-2 col-form-label" })
+            <div class="col-md-10" style="margin-bottom:5px">
+                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row" style="margin-bottom:5px">
+            @Html.LabelFor(m => m.LastName, new { @class = "col-md-2 col-form-label" })
+            <div class="col-md-10" style="margin-bottom:5px">
+                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row" style="margin-bottom:5px">
+            @Html.LabelFor(m => m.Title, new { @class = "col-md-2 col-form-label" })
+            <div class="col-md-10" style="margin-bottom:5px">
+                @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Stanowisko, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.Stanowisko, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Stanowisko, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Grupa, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.Grupa, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Grupa, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row" style="margin-bottom:5px">
+            @Html.LabelFor(m => m.PhoneNumber, new { @class = "col-md-2 col-form-label" })
+            <div class="col-md-10" style="margin-bottom:5px">
+                @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row" style="margin-bottom:5px">
+            @Html.LabelFor(m => m.Town, new { @class = "col-md-2 col-form-label" })
+            <div class="col-md-10" style="margin-bottom:5px">
+                @Html.TextBoxFor(m => m.Town, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row" style="margin-bottom:5px">
+            @Html.LabelFor(m => m.Street, new { @class = "col-md-2 col-form-label" })
+            <div class="col-md-10" style="margin-bottom:5px">
+                @Html.TextBoxFor(m => m.Street, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row" style="margin-bottom:5px">
+            @Html.LabelFor(m => m.ZipCode, new { @class = "col-md-2 col-form-label" })
+            <div class="col-md-10" style="margin-bottom:5px">
+                @Html.TextBoxFor(m => m.ZipCode, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row" style="margin-bottom:5px">
+            @Html.LabelFor(m => m.HauseNumber, new { @class = "col-md-2 col-form-label" })
+            <div class="col-md-10" style="margin-bottom:5px">
+                @Html.TextBoxFor(m => m.HauseNumber, new { @class = "form-control" })
+            </div>
+        </div>
+        <p>* Pola nieobowiązkowe</p>
+        <div class="row" style="margin-bottom:5px">
+            <div class="offset-md-2 col-md-10" style="margin-bottom:5px">
+                <input type="submit" value="Zarejestruj" class="btn btn-outline-dark" />
+            </div>
+        </div>
+    }
+</main>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

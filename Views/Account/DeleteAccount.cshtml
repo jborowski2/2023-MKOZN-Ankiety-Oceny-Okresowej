@@ -1,0 +1,44 @@
+﻿@model IEnumerable<OOP.Models.ApplicationUser>
+@{
+    ViewBag.Title = "DeleteAccount";
+}
+
+<h2>Usuwanie kont</h2>
+
+<form method="get" action="@Url.Action("Index")">
+    <div class="form-group">
+        <label for="searchInput">Wyszukaj pracownika:</label>
+        <input type="text" name="searchString" class="form-control" id="searchInput" />
+    </div>
+    <button type="submit" class="btn btn-primary">Szukaj</button>
+</form>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+    </tr>
+
+    @foreach (var user in Model)
+    {
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => user.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => user.UserName)
+            </td>
+            <td>
+                @Html.ActionLink("Usuń", "ConfirmDelete", new { userID = user.Id })
+            </td>
+        </tr>
+
+    }
+
+</table>
+

@@ -1,0 +1,42 @@
+﻿@model OOP.Models.PoleAnkiety
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PoleAnkiety</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StronaAnkiety.StronaAnkietyID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StronaAnkiety.StronaAnkietyID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LiczbaPunktow)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LiczbaPunktow)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tresc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tresc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PoleAnkietyID }) |
+    @Html.ActionLink("Powrót", "Index")
+</p>
