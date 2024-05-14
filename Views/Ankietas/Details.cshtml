@@ -106,53 +106,53 @@
                                             </tr>
                                         }
                                     }
-                                <tr class="row-cols-1">
+                                    <tr class="row-cols-1">
                                         <th>
                                             Działalność Dydaktyczno-Organizacyjna
                                         </th>
-                                   
-                                </tr>
-                                <tr class="d-xxl-table-row">
-                                    
-                                    <th>Tresc</th>
-                                    <th>Liczba Punktów</th>
-                                    <th>Liczba Punktów przyznanych za okres</th>
-                                    <th>Załącznik</th>
-                                </tr>
-                                @for (int k = 0; k < Model.StronyAnkiet[i].PolaAnkiety.Count; k++)
-                                {
-                                    if (Model.StronyAnkiet[i].PolaAnkiety[k].Organizacyjne)
+
+                                    </tr>
+                                    <tr class="d-xxl-table-row">
+
+                                        <th>Tresc</th>
+                                        <th>Liczba Punktów</th>
+                                        <th>Liczba Punktów przyznanych za okres</th>
+                                        <th>Załącznik</th>
+                                    </tr>
+                                    @for (int k = 0; k < Model.StronyAnkiet[i].PolaAnkiety.Count; k++)
                                     {
-                                        <tr>
-                                            <td class="d-table-cell">@Html.DisplayFor(m => m.StronyAnkiet[i].PolaAnkiety[k].Tresc)</td>
-                                            <td class="d-table-cell">@Html.DisplayFor(m => m.StronyAnkiet[i].PolaAnkiety[k].MaksymalnaIloscPunktow)</td>
-                                            <td class="d-table-cell">
-                                                @Html.HiddenFor(m => m.StronyAnkiet[i].PolaAnkiety[k].Organizacyjne)
-                                                @Html.HiddenFor(m => m.StronyAnkiet[i].PolaAnkiety[k].StronaAnkietyID)
-                                                @Html.HiddenFor(m => m.StronyAnkiet[i].PolaAnkiety[k].PoleAnkietyID)
-                                                @Html.TextBoxFor(m => m.StronyAnkiet[i].PolaAnkiety[k].LiczbaPunktow, new { @class = "form-control" })
-                                            </td>
-                                            <td class="d-table-cell">
-                                                @if (Model.StronyAnkiet[i].PolaAnkiety[k].Attachment != null)
-                                                {
-                                                    <a href="@Url.Action("Download", "File", new { id = Model.StronyAnkiet[i].PolaAnkiety[k].Attachment.AttachmentID })">
-                                                        @Html.DisplayFor(m => m.StronyAnkiet[i].PolaAnkiety[k].Attachment.Name)
-                                                    </a>
-                                                    <button type="button" class="deleteAttachmentBtn btn btn-danger btn-sm ml-2" data-attachment-id="@Model.StronyAnkiet[i].PolaAnkiety[k].Attachment.AttachmentID"
-                                                            data-index-i="@i" data-index-j="@k">
-                                                        Usuń
-                                                    </button>
-                                                }
-                                                else
-                                                {
-                                                    @Html.TextBoxFor(m => m.StronyAnkiet[i].PolaAnkiety[k].Attachment.File, new { type = "file", name = $"attachments[{i}][{k}]", accept = "application/pdf" })
-                                                }
-                                            </td>
-                                            <td class="d-table-cell">@Html.TextAreaFor(c => c.StronyAnkiet[i].PolaAnkiety[k].Comment.CommentText)</td>
-                                        </tr>
+                                        if (Model.StronyAnkiet[i].PolaAnkiety[k].Organizacyjne)
+                                        {
+                                            <tr>
+                                                <td class="d-table-cell">@Html.DisplayFor(m => m.StronyAnkiet[i].PolaAnkiety[k].Tresc)</td>
+                                                <td class="d-table-cell">@Html.DisplayFor(m => m.StronyAnkiet[i].PolaAnkiety[k].MaksymalnaIloscPunktow)</td>
+                                                <td class="d-table-cell">
+                                                    @Html.HiddenFor(m => m.StronyAnkiet[i].PolaAnkiety[k].Organizacyjne)
+                                                    @Html.HiddenFor(m => m.StronyAnkiet[i].PolaAnkiety[k].StronaAnkietyID)
+                                                    @Html.HiddenFor(m => m.StronyAnkiet[i].PolaAnkiety[k].PoleAnkietyID)
+                                                    @Html.TextBoxFor(m => m.StronyAnkiet[i].PolaAnkiety[k].LiczbaPunktow, new { @class = "form-control" })
+                                                </td>
+                                                <td class="d-table-cell">
+                                                    @if (Model.StronyAnkiet[i].PolaAnkiety[k].Attachment != null)
+                                                    {
+                                                        <a href="@Url.Action("Download", "File", new { id = Model.StronyAnkiet[i].PolaAnkiety[k].Attachment.AttachmentID })">
+                                                            @Html.DisplayFor(m => m.StronyAnkiet[i].PolaAnkiety[k].Attachment.Name)
+                                                        </a>
+                                                        <button type="button" class="deleteAttachmentBtn btn btn-danger btn-sm ml-2" data-attachment-id="@Model.StronyAnkiet[i].PolaAnkiety[k].Attachment.AttachmentID"
+                                                                data-index-i="@i" data-index-k="@k">
+                                                            Delete
+                                                        </button>
+                                                    }
+                                                    else
+                                                    {
+                                                        @Html.TextBoxFor(m => m.StronyAnkiet[i].PolaAnkiety[k].Attachment.File, new { type = "file", name = $"attachments[{i}][{k}]", accept = "application/pdf" })
+                                                    }
+                                                </td>
+                                                <td class="d-table-cell">@Html.TextAreaFor(c => c.StronyAnkiet[i].PolaAnkiety[k].Comment.CommentText)</td>
+                                            </tr>
+                                        }
                                     }
-                                }
-                                    </tbody>
+                                </tbody>
                             </table>
                         </td>
                     </tr>
@@ -164,13 +164,16 @@
     }
 
 
-<div>
-@if (ViewBag.Message != null)
-{
-    <div class="alert alert-success">Liczba pubktów przyznanych za działalność Naukowo-Badawczą @ViewBag.Message[0]</div>
-    <div class="alert alert-success">Liczba pubktów przyznanych za działalność Organizacyjno-Dydaktyczną @ViewBag.Message[1]</div>
-}
+    <div>
+        @if (ViewBag.Message != null)
+        {
+            <div class="alert alert-success">Liczba pubktów przyznanych za działalność Naukowo-Badawczą @ViewBag.Message[0]</div>
+            <div class="alert alert-success">Liczba pubktów przyznanych za działalność Organizacyjno-Dydaktyczną @ViewBag.Message[1]</div>
+        }
+    </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', (event) => {
         document.querySelectorAll('.deleteAttachmentBtn').forEach(button => {
@@ -178,7 +181,7 @@
                 e.preventDefault();
                 const attachmentId = this.getAttribute('data-attachment-id');
                 const indexI = this.dataset.indexI;
-                const indexK = this.dataset.indexK; 
+                const indexK = this.dataset.indexK;
                 if (confirm('Czy na pewno chcesz usunąć ten załącznik?')) {
                     // Wysłanie żądania AJAX do usunięcia załącznika na serwerze
                     fetch('/Ankietas/DeleteAttachment', {
@@ -194,13 +197,40 @@
                             if (data.success) {
                                 // Usunięcie elementu z DOM, jeśli usunięcie na serwerze się powiodło
                                 this.parentElement.innerHTML = `<input type="file" name="attachments[${indexI}][${indexK}]" />`;
+                                Toastify({
+                                    text: "Usunięto załącznik!",
+                                    duration: 1000,
+                                    backgroundColor: "#4CAF50",
+                                    className: "info",
+                                    style: {
+                                        textAlign: "center"
+                                    }
+                                }).showToast();
                             } else {
                                 // Obsługa błędów, jeśli usunięcie się nie powiodło
                                 console.error('Błąd podczas usuwania załącznika:', data.message);
+                                Toastify({
+                                    text: "Błąd podczas usuwania załącznika!",
+                                    duration: 1000,
+                                    backgroundColor: "#FF6347",
+                                    className: "info",
+                                    style: {
+                                        textAlign: "center"
+                                    }
+                                }).showToast();
                             }
                         })
                         .catch(error => {
                             console.error('Błąd komunikacji z serwerem:', error);
+                            Toastify({
+                                text: "Błąd komunikacji z serwerem!",
+                                duration: 1000,
+                                backgroundColor: "#FF6347",
+                                className: "info",
+                                style: {
+                                    textAlign: "center"
+                                }
+                            }).showToast();
                         });
                 }
             });
@@ -211,3 +241,5 @@
     @Html.ActionLink("Edit", "Edit", new { id = Model.AnkietaID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+

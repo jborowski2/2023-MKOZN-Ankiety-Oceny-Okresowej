@@ -11,7 +11,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Osiagniecie</h4>
         <hr />
@@ -60,7 +60,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-default" id="saveOsiagniecieBtn" />
             </div>
         </div>
     </div>
@@ -69,3 +69,21 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script>
+        document.getElementById("saveOsiagniecieBtn").addEventListener("click", function () {
+            Toastify({
+                text: "Osiągnięcie zostało zapisane!",
+                duration: 1000,
+                backgroundColor: "#4caf50",
+                className: "info",
+                style: {
+                    textAlign: "center"
+                }
+            }).showToast();
+        });
+    </script>
+}

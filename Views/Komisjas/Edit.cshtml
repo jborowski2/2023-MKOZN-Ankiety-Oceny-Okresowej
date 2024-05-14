@@ -10,7 +10,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Komisja</h4>
         <hr />
@@ -35,7 +35,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-default" id="saveBtn" />
             </div>
         </div>
     </div>
@@ -44,3 +44,20 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script>
+        document.getElementById("saveBtn").addEventListener("click", function () {
+            Toastify({
+                text: "Komisja została zapisana!",
+                duration: 1000,
+                backgroundColor: "#4CAF50",
+                className: "info",
+                style: {
+                    textAlign: "center"
+                }
+            }).showToast();
+        });
+    </script>
+}

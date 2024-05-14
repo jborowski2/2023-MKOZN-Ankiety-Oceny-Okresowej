@@ -15,27 +15,41 @@
         <dt>
             @Html.DisplayNameFor(model => model.KomisjaName)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.KomisjaName)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.KomisjaType)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.KomisjaType)
         </dd>
-
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <input type="submit" value="Delete" class="btn btn-default" id="deleteBtn" /> |
             @Html.ActionLink("Back to List", "Index")
         </div>
     }
 </div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script>
+        document.getElementById("deleteBtn").addEventListener("click", function () {
+            Toastify({
+                text: "Komisja została usunięta!",
+                duration: 1000,
+                backgroundColor: "#FF5733",
+                className: "info",
+                style: {
+                    textAlign: "center"
+                }
+            }).showToast();
+        });
+    </script>
+}

@@ -10,7 +10,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>PoleAnkiety</h4>
         <hr />
@@ -43,7 +43,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-default" id="editPoleAnkietyBtn" />
             </div>
         </div>
     </div>
@@ -55,4 +55,18 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script>
+        document.getElementById("editPoleAnkietyBtn").addEventListener("click", function () {
+            Toastify({
+                text: "Pole ankiety zostało zaktualizowane!",
+                duration: 1000,
+                backgroundColor: "#4caf50",
+                className: "info",
+                style: {
+                    textAlign: "center"
+                }
+            }).showToast();
+        });
+    </script>
 }
