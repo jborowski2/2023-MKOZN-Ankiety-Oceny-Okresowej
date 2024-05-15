@@ -9,6 +9,7 @@
         public bool Organizacyjne { get; set; }
         public string MaksymalnaIloscPunktow { get; set; }
         public int? AttachmentID { get; set; }
+        public int? CommentID { get; set; }
 
         public virtual StronaAnkiety StronaAnkiety { get; set; }
         public virtual Attachment Attachment { get; set; }

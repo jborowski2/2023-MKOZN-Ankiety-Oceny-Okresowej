@@ -18,7 +18,7 @@ namespace OOP.Controllers
         // GET: Comments
         public async Task<ActionResult> Index()
         {
-            var comments = db.Comments.Include(c => c.ApplicationUser).Include(c => c.PoleAnkiety);
+            var comments = db.Comments.Include(c => c.PoleAnkiety);
             return View(await comments.ToListAsync());
         }
 

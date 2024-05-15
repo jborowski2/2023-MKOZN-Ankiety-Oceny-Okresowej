@@ -188,25 +188,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202403121837053_init.cs" />
-    <Compile Include="Migrations\202403121837053_init.designer.cs">
-      <DependentUpon>202403121837053_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202403122254145_ankietaState_komisjaTypes.cs" />
-    <Compile Include="Migrations\202403122254145_ankietaState_komisjaTypes.designer.cs">
-      <DependentUpon>202403122254145_ankietaState_komisjaTypes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202403131100320_ankietaState_komisjaTypes2.cs" />
-    <Compile Include="Migrations\202403131100320_ankietaState_komisjaTypes2.designer.cs">
-      <DependentUpon>202403131100320_ankietaState_komisjaTypes2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202403131121432_pracownik_komisja_relation.cs" />
-    <Compile Include="Migrations\202403131121432_pracownik_komisja_relation.designer.cs">
-      <DependentUpon>202403131121432_pracownik_komisja_relation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202404101331022_koments3.cs" />
-    <Compile Include="Migrations\202404101331022_koments3.designer.cs">
-      <DependentUpon>202404101331022_koments3.cs</DependentUpon>
+    <Compile Include="Migrations\202404161557129_init.cs" />
+    <Compile Include="Migrations\202404161557129_init.designer.cs">
+      <DependentUpon>202404161557129_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -948,20 +932,8 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202403121837053_init.resx">
-      <DependentUpon>202403121837053_init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202403122254145_ankietaState_komisjaTypes.resx">
-      <DependentUpon>202403122254145_ankietaState_komisjaTypes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202403131100320_ankietaState_komisjaTypes2.resx">
-      <DependentUpon>202403131100320_ankietaState_komisjaTypes2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202403131121432_pracownik_komisja_relation.resx">
-      <DependentUpon>202403131121432_pracownik_komisja_relation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202404101331022_koments3.resx">
-      <DependentUpon>202404101331022_koments3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202404161557129_init.resx">
+      <DependentUpon>202404161557129_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

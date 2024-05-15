@@ -324,7 +324,19 @@ namespace OOP.Controllers
                                 {
                                     pole.Attachment = null;
                                 }
+                                if (!string.IsNullOrEmpty(pole.Comment.CommentText))
+                                {
 
+                                    Comment comment = new Comment();
+                                    comment.CommentText = pole.Comment.CommentText;
+                                    comment.PoleAnkiety = pole;
+                                    comment.PoleAnkietyID = pole.PoleAnkietyID;
+                                    context.Comments.Add(comment);
+                                    pole.CommentID = comment.CommentID;
+                                    pole.Comment = comment;
+                  
+
+                                }
 
 
                                 var entity = context.Entry(pole);
@@ -338,6 +350,7 @@ namespace OOP.Controllers
                 }
                 catch (Exception ex)
                 {
+                   
                     transaction.Rollback();
                 }
             }
