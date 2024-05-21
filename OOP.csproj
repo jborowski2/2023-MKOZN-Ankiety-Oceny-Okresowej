@@ -175,7 +175,6 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AnkietasController.cs" />
-    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KomisjasController.cs" />
@@ -192,12 +191,15 @@
     <Compile Include="Migrations\202404161557129_init.designer.cs">
       <DependentUpon>202404161557129_init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202405151222387_comment.cs" />
+    <Compile Include="Migrations\202405151222387_comment.designer.cs">
+      <DependentUpon>202405151222387_comment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Adres.cs" />
     <Compile Include="Models\Ankieta.cs" />
     <Compile Include="Models\Attachment.cs" />
-    <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Dzial.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Komisja.cs" />
@@ -934,6 +936,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202404161557129_init.resx">
       <DependentUpon>202404161557129_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405151222387_comment.resx">
+      <DependentUpon>202405151222387_comment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

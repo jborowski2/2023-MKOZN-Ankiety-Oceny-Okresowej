@@ -103,7 +103,12 @@
                                                     @Html.TextBoxFor(m => m.StronyAnkiet[i].PolaAnkiety[j].Attachment.File, new { type = "file", name = $"attachments[{i}][{j}]" })
                                                 }
                                             </td>
-                                            <td class="d-table-cell">@Html.TextAreaFor(c => c.StronyAnkiet[i].PolaAnkiety[j].Comment.CommentText)</td>
+                                            <td class="d-table-cell">
+                                                @Html.HiddenFor(m => m.StronyAnkiet[i].PolaAnkiety[j].Organizacyjne)
+                                                @Html.HiddenFor(m => m.StronyAnkiet[i].PolaAnkiety[j].StronaAnkietyID)
+                                                @Html.HiddenFor(m => m.StronyAnkiet[i].PolaAnkiety[j].PoleAnkietyID)
+                                                @Html.TextAreaFor(c => c.StronyAnkiet[i].PolaAnkiety[j].PracownikComment)
+                                            </td>
                                         </tr>
                                     }
                                 }
@@ -151,6 +156,10 @@
                                                 }
                                             </td>
                                             <td class="d-table-cell">
+                                                @Html.HiddenFor(m => m.StronyAnkiet[i].PolaAnkiety[k].Organizacyjne)
+                                                @Html.HiddenFor(m => m.StronyAnkiet[i].PolaAnkiety[k].StronaAnkietyID)
+                                                @Html.HiddenFor(m => m.StronyAnkiet[i].PolaAnkiety[k].PoleAnkietyID)
+                                                @Html.TextAreaFor(c => c.StronyAnkiet[i].PolaAnkiety[k].PracownikComment)
                                             </td>
                                         </tr>
                                     }

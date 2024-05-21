@@ -1,0 +1,387 @@
+  % Handle batch mode
+  % to overcome problems with too many open files
+  \let\mypdfximage\pdfximage\def\pdfximage{\immediate\mypdfximage}
+  \RequirePackage{iftex}
+  \ifLuaTeX
+    \directlua{pdf.setminorversion(7)}
+  \fi
+  \ifXeTeX
+    \special{pdf:minorversion 7}
+  \fi
+  \ifPDFTeX
+    \pdfminorversion=7
+  \fi
+  % Set document class depending on configuration
+  \documentclass[twoside]{book}
+  %% moved from doxygen.sty due to workaround for LaTex 2019 version and unmaintained tabu package
+  \usepackage{ifthen}
+  \ifx\requestedLaTeXdate\undefined
+    \usepackage{array}
+  \else
+    \usepackage{array}[=2016-10-06]
+  \fi
+  %%
+  % Packages required by doxygen
+  \makeatletter
+  \providecommand\IfFormatAtLeastTF{\@ifl@t@r\fmtversion}
+  % suppress package identification of infwarerr as it contains the word "warning"
+  \let\@@protected@wlog\protected@wlog
+  \def\protected@wlog#1{\wlog{package info suppressed}}
+  \RequirePackage{infwarerr}
+  \let\protected@wlog\@@protected@wlog
+  \makeatother
+  \IfFormatAtLeastTF{2016/01/01}{}{\usepackage{fixltx2e}} % for \textsubscript
+  \ifPDFTeX
+    \IfFormatAtLeastTF{2015/01/01}{\pdfsuppresswarningpagegroup=1}{}
+  \fi
+  \usepackage{doxygen}
+  \usepackage{graphicx}
+  \iftutex
+    \usepackage{fontspec}
+    \defaultfontfeatures{Ligatures={TeX}}
+    \usepackage{unicode-math}
+  \else
+    \usepackage[utf8]{inputenc}
+  \fi
+  \usepackage{makeidx}
+  \PassOptionsToPackage{warn}{textcomp}
+  \usepackage{textcomp}
+  \usepackage[nointegrals]{wasysym}
+  \usepackage{ifxetex}
+  % NLS support packages
+  \usepackage[polish]{babel}
+\let\lll\undefined
+  % Define default fonts
+  % Font selection
+  \iftutex
+  \else
+    \usepackage[T1]{fontenc}
+  \fi
+  % set main and monospaced font
+  \usepackage[scaled=.90]{helvet}
+\usepackage{courier}
+\renewcommand{\familydefault}{\sfdefault}
+  \doxyallsectionsfont{%
+    \fontseries{bc}\selectfont%
+    \color{darkgray}%
+  }
+  \renewcommand{\DoxyLabelFont}{%
+    \fontseries{bc}\selectfont%
+    \color{darkgray}%
+  }
+  \newcommand{\+}{\discretionary{\mbox{\scriptsize$\hookleftarrow$}}{}{}}
+   % Arguments of doxygenemoji:
+   % 1) ':<text>:' form of the emoji, already LaTeX-escaped
+   % 2) file with the name of the emoji without the .png extension
+   % in case image exist use this otherwise use the ':<text>:' form
+   \newcommand{\doxygenemoji}[2]{%
+     \IfFileExists{./#2.png}{\raisebox{-0.1em}{\includegraphics[height=0.9em]{./#2.png}}}{#1}%
+   }
+  % Page & text layout
+  \usepackage{geometry}
+  \geometry{%
+    a4paper,%
+    top=2.5cm,%
+    bottom=2.5cm,%
+    left=2.5cm,%
+    right=2.5cm%
+  }
+  \usepackage{changepage}
+  % Allow a bit of overflow to go unnoticed by other means
+  \tolerance=750
+  \hfuzz=15pt
+  \hbadness=750
+  \setlength{\emergencystretch}{15pt}
+  \setlength{\parindent}{0cm}
+  \newcommand{\doxynormalparskip}{\setlength{\parskip}{3ex plus 2ex minus 2ex}}
+  \newcommand{\doxytocparskip}{\setlength{\parskip}{1ex plus 0ex minus 0ex}}
+  \doxynormalparskip
+  % Redefine paragraph/subparagraph environments, using sectsty fonts
+  \makeatletter
+  \renewcommand{\paragraph}{%
+    \@startsection{paragraph}{4}{0ex}{-1.0ex}{1.0ex}{%
+      \normalfont\normalsize\bfseries\SS@parafont%
+    }%
+  }
+  \renewcommand{\subparagraph}{%
+    \@startsection{subparagraph}{5}{0ex}{-1.0ex}{1.0ex}{%
+      \normalfont\normalsize\bfseries\SS@subparafont%
+    }%
+  }
+  \makeatother
+  \makeatletter
+  \newcommand\hrulefilll{\leavevmode\leaders\hrule\hskip 0pt plus 1filll\kern\z@}
+  \makeatother
+  % Headers & footers
+  \usepackage{fancyhdr}
+  \pagestyle{fancyplain}
+  \renewcommand{\footrulewidth}{0.4pt}
+  \fancypagestyle{fancyplain}{
+    \fancyhf{}
+    \fancyhead[LE, RO]{\bfseries\thepage}
+    \fancyhead[LO]{\bfseries\rightmark}
+    \fancyhead[RE]{\bfseries\leftmark}
+    \fancyfoot[LO, RE]{\bfseries\scriptsize Wygenerowano za pomocą Doxygen }
+  }
+  \fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[LO, RE]{\bfseries\scriptsize Wygenerowano za pomocą Doxygen }
+    \renewcommand{\headrulewidth}{0pt}
+  }
+  \pagestyle{fancyplain}
+  \renewcommand{\chaptermark}[1]{%
+    \markboth{#1}{}%
+  }
+  \renewcommand{\sectionmark}[1]{%
+    \markright{\thesection\ #1}%
+  }
+  % ToC, LoF, LoT, bibliography, and index
+  % Indices & bibliography
+  \usepackage{natbib}
+  \usepackage[titles]{tocloft}
+  \setcounter{tocdepth}{3}
+  \setcounter{secnumdepth}{5}
+  % creating indexes
+  \makeindex
+  \ifPDFTeX
+\usepackage{newunicodechar}
+  \makeatletter
+    \def\doxynewunicodechar#1#2{%
+    \@tempswafalse
+    \edef\nuc@tempa{\detokenize{#1}}%
+    \if\relax\nuc@tempa\relax
+      \nuc@emptyargerr
+    \else
+      \edef\@tempb{\expandafter\@car\nuc@tempa\@nil}%
+      \nuc@check
+      \if@tempswa
+        \@namedef{u8:\nuc@tempa}{#2}%
+      \fi
+    \fi
+  }
+  \makeatother
+  \doxynewunicodechar{⁻}{${}^{-}$}% Superscript minus
+  \doxynewunicodechar{²}{${}^{2}$}% Superscript two
+  \doxynewunicodechar{³}{${}^{3}$}% Superscript three
+\fi
+  % Hyperlinks
+    % Hyperlinks (required, but should be loaded last)
+    \ifPDFTeX
+      \usepackage[pdftex,pagebackref=true]{hyperref}
+    \else
+      \ifXeTeX
+        \usepackage[xetex,pagebackref=true]{hyperref}
+      \else
+        \ifLuaTeX
+          \usepackage[luatex,pagebackref=true]{hyperref}
+        \else
+          \usepackage[ps2pdf,pagebackref=true]{hyperref}
+        \fi
+      \fi
+    \fi
+    \hypersetup{%
+      colorlinks=true,%
+      linkcolor=blue,%
+      citecolor=blue,%
+      unicode,%
+      pdftitle={Ocena Okresowa Pracownikow},%
+      pdfsubject={}%
+    }
+  % Custom commands used by the header
+  % Custom commands
+  \newcommand{\clearemptydoublepage}{%
+    \newpage{\pagestyle{empty}\cleardoublepage}%
+  }
+  % caption style definition
+  \usepackage{caption}
+  \captionsetup{labelsep=space,justification=centering,font={bf},singlelinecheck=off,skip=4pt,position=top}
+  % in page table of contents
+  \IfFormatAtLeastTF{2023/05/01}{\usepackage[deeplevels]{etoc}}{\usepackage[deeplevels]{etoc_doxygen}}
+  \etocsettocstyle{\doxytocparskip}{\doxynormalparskip}
+  \etocsetlevel{subsubsubsection}{4}
+  \etocsetlevel{subsubsubsubsection}{5}
+  \etocsetlevel{subsubsubsubsubsection}{6}
+  \etocsetlevel{subsubsubsubsubsubsection}{7}
+  \etocsetlevel{paragraph}{8}
+  \etocsetlevel{subparagraph}{9}
+  % prevent numbers overlap the titles in toc
+  \renewcommand{\numberline}[1]{#1~}
+% End of preamble, now comes the document contents
+%===== C O N T E N T S =====
+\begin{document}
+  \raggedbottom
+  % Titlepage & ToC
+    % To avoid duplicate page anchors due to reuse of same numbers for
+    % the index (be it as roman numbers)
+    \hypersetup{pageanchor=false,
+                bookmarksnumbered=true,
+                pdfencoding=unicode
+               }
+  \pagenumbering{alph}
+  \begin{titlepage}
+  \vspace*{7cm}
+  \begin{center}%
+  {\Large Ocena Okresowa Pracownikow}\\
+  \vspace*{1cm}
+  {\large Wygenerowano za pomocą Doxygen 1.11.0}\\
+  \end{center}
+  \end{titlepage}
+  \clearemptydoublepage
+  \pagenumbering{roman}
+  \tableofcontents
+  \clearemptydoublepage
+  \pagenumbering{arabic}
+  % re-enable anchors again
+  \hypersetup{pageanchor=true}
+%--- Begin generated contents ---
+\input{md_packages_2_newtonsoft_8_json_812_80_82_2_l_i_c_e_n_s_e}
+\chapter{Indeks przestrzeni nazw}
+\input{namespaces}
+\chapter{Indeks hierarchiczny}
+\input{hierarchy}
+\chapter{Indeks klas}
+\input{annotated}
+\chapter{Indeks plików}
+\input{files}
+\chapter{Dokumentacja przestrzeni nazw}
+\input{namespace_a_s_p}
+\input{namespace_o_o_p}
+\input{namespace_o_o_p_1_1_controllers}
+\input{namespace_o_o_p_1_1_migrations}
+\input{namespace_o_o_p_1_1_models}
+\chapter{Dokumentacja klas}
+\input{class_a_s_p_1_1___page___create__cshtml}
+\input{class_a_s_p_1_1___page___delete__cshtml}
+\input{class_a_s_p_1_1___page___details__cshtml}
+\input{class_a_s_p_1_1___page___edit__cshtml}
+\input{class_a_s_p_1_1___page___index__cshtml}
+\input{class_o_o_p_1_1_controllers_1_1_account_controller}
+\input{class_o_o_p_1_1_models_1_1_add_phone_number_view_model}
+\input{class_o_o_p_1_1_models_1_1_adres}
+\input{class_o_o_p_1_1_models_1_1_ankieta}
+\input{class_o_o_p_1_1_models_1_1_ankieta_pracownik_view_model}
+\input{class_o_o_p_1_1_controllers_1_1_ankietas_controller}
+\input{class_o_o_p_1_1_models_1_1_application_db_context}
+\input{class_o_o_p_1_1_application_sign_in_manager}
+\input{class_o_o_p_1_1_models_1_1_application_user}
+\input{class_o_o_p_1_1_application_user_manager}
+\input{class_o_o_p_1_1_models_1_1_attachment}
+\input{class_o_o_p_1_1_bundle_config}
+\input{class_o_o_p_1_1_models_1_1_change_password_view_model}
+\input{class_o_o_p_1_1_migrations_1_1comment}
+\input{class_o_o_p_1_1_models_1_1_configure_two_factor_view_model}
+\input{class_o_o_p_1_1_models_1_1_dzial}
+\input{class_o_o_p_1_1_email_service}
+\input{class_o_o_p_1_1_models_1_1_external_login_confirmation_view_model}
+\input{class_o_o_p_1_1_models_1_1_external_login_list_view_model}
+\input{class_o_o_p_1_1_models_1_1_factor_view_model}
+\input{class_o_o_p_1_1_controllers_1_1_file_controller}
+\input{class_o_o_p_1_1_filter_config}
+\input{class_o_o_p_1_1_models_1_1_forgot_password_view_model}
+\input{class_o_o_p_1_1_models_1_1_forgot_view_model}
+\input{class_o_o_p_1_1_controllers_1_1_home_controller}
+\input{class_o_o_p_1_1_models_1_1_identity_manager}
+\input{class_o_o_p_1_1_models_1_1_index_view_model}
+\input{class_o_o_p_1_1_migrations_1_1init}
+\input{class_o_o_p_1_1_models_1_1_komisja}
+\input{class_o_o_p_1_1_controllers_1_1_komisjas_controller}
+\input{class_o_o_p_1_1_models_1_1_komisja_view_model}
+\input{class_o_o_p_1_1_models_1_1_login_view_model}
+\input{class_o_o_p_1_1_controllers_1_1_manage_controller}
+\input{class_o_o_p_1_1_models_1_1_manage_logins_view_model}
+\input{class_o_o_p_1_1_migrations_1_1migracja7}
+\input{class_o_o_p_1_1_mvc_application}
+\input{class_o_o_p_1_1_models_1_1_ocena}
+\input{class_o_o_p_1_1_models_1_1_osiagniecie}
+\input{class_o_o_p_1_1_controllers_1_1_osiagniecies_controller}
+\input{class_o_o_p_1_1_controllers_1_1_pole_ankieties_controller}
+\input{class_o_o_p_1_1_models_1_1_pole_ankiety}
+\input{class_o_o_p_1_1_models_1_1_praca_dyplomowa}
+\input{class_o_o_p_1_1_models_1_1_pracownik}
+\input{class_o_o_p_1_1_controllers_1_1_pracowniks_controller}
+\input{class_o_o_p_1_1_models_1_1_register_view_model}
+\input{class_o_o_p_1_1_models_1_1_reset_password_view_model}
+\input{class_o_o_p_1_1_controllers_1_1_role_controller}
+\input{class_o_o_p_1_1_route_config}
+\input{class_o_o_p_1_1_models_1_1_schemat}
+\input{class_o_o_p_1_1_controllers_1_1_schemats_controller}
+\input{class_o_o_p_1_1_models_1_1_send_code_view_model}
+\input{class_o_o_p_1_1_models_1_1_set_password_view_model}
+\input{class_o_o_p_1_1_sms_service}
+\input{class_o_o_p_1_1_startup}
+\input{class_o_o_p_1_1_models_1_1_strona_ankiety}
+\input{class_o_o_p_1_1_models_1_1_verify_code_view_model}
+\input{class_o_o_p_1_1_models_1_1_verify_phone_number_view_model}
+\chapter{Dokumentacja plików}
+\input{_bundle_config_8cs}
+\input{_filter_config_8cs}
+\input{_identity_config_8cs}
+\input{_route_config_8cs}
+\input{_startup_8_auth_8cs}
+\input{_account_controller_8cs}
+\input{_ankietas_controller_8cs}
+\input{_file_controller_8cs}
+\input{_home_controller_8cs}
+\input{_komisjas_controller_8cs}
+\input{_manage_controller_8cs}
+\input{_osiagniecies_controller_8cs}
+\input{_pole_ankieties_controller_8cs}
+\input{_pracowniks_controller_8cs}
+\input{_role_controller_8cs}
+\input{_schemats_controller_8cs}
+\input{_global_8asax_8cs}
+\input{202312151745241__migracja7_8cs}
+\input{202312151745241__migracja7_8_designer_8cs}
+\input{202404161557129__init_8cs}
+\input{202404161557129__init_8_designer_8cs}
+\input{202405151222387__comment_8cs}
+\input{202405151222387__comment_8_designer_8cs}
+\input{_configuration_8cs}
+\input{_account_view_models_8cs}
+\input{_adres_8cs}
+\input{_ankieta_8cs}
+\input{_attachment_8cs}
+\input{_dzial_8cs}
+\input{_identity_models_8cs}
+\input{_komisja_8cs}
+\input{_manage_view_models_8cs}
+\input{_ocena_8cs}
+\input{_osiagniecie_8cs}
+\input{_pole_ankiety_8cs}
+\input{_praca_dyplomowa_8cs}
+\input{_pracownik_8cs}
+\input{_schemat_8cs}
+\input{_strona_ankiety_8cs}
+\input{_debug_2_8_n_e_t_framework_00_version_0av4_88_8_assembly_attributes_8cs}
+\input{_release_2_8_n_e_t_framework_00_version_0av4_88_8_assembly_attributes_8cs}
+\input{_l_i_c_e_n_s_e_8md}
+\input{_assembly_info_8cs}
+\input{_startup_8cs}
+\input{_ankietas_2_delete_8cshtml_8____projection_8g_8cs}
+\input{_pole_ankieties_2_delete_8cshtml_8____projection_8g_8cs}
+\input{_pracowniks_2_delete_8cshtml_8____projection_8g_8cs}
+\input{_ankietas_2_details_8cshtml_8____projection_8g_8cs}
+\input{_pole_ankieties_2_details_8cshtml_8____projection_8g_8cs}
+\input{_pracowniks_2_details_8cshtml_8____projection_8g_8cs}
+\input{_home_2_index_8cshtml_8____projection_8g_8cs}
+\input{_osiagniecies_2_index_8cshtml_8____projection_8g_8cs}
+\input{_pracowniks_2_index_8cshtml_8____projection_8g_8cs}
+\input{_osiagniecies_2_edit_8cshtml_8____projection_8g_8cs}
+\input{_pole_ankieties_2_edit_8cshtml_8____projection_8g_8cs}
+\input{_pracowniks_2_edit_8cshtml_8____projection_8g_8cs}
+\input{_schemats_2_edit_8cshtml_8____projection_8g_8cs}
+\input{_pole_ankieties_2_create_8cshtml_8____projection_8g_8cs}
+\input{_pracowniks_2_create_8cshtml_8____projection_8g_8cs}
+\input{___login_partial_8cshtml_8____projection_8g_8cs}
+\input{___special_layout_8cshtml_8____projection_8g_8cs}
+\input{___special_layout2_8cshtml_8____projection_8g_8cs}
+%--- End generated contents ---
+% Index
+  \backmatter
+  \newpage
+  \phantomsection
+  \clearemptydoublepage
+  \addcontentsline{toc}{chapter}{\indexname}
+  \printindex
+% Required for some languages (in combination with latexdocumentpre from the header)
+\end{document}

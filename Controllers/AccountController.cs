@@ -15,6 +15,9 @@ using OOP.Models;
 
 namespace OOP.Controllers
 {
+    /// <summary>
+    /// Kontroler zarządzający kontami użytkowników.
+    /// </summary>
     [Authorize]
     public class AccountController : Controller
     {
@@ -22,15 +25,26 @@ namespace OOP.Controllers
         private ApplicationUserManager _userManager;
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        /// <summary>
+        /// Inicjalizuje nową instancję klasy <see cref="AccountController"/>.
+        /// </summary>
         public AccountController()
         {
         }
+
+        /// <summary>
+        /// Inicjalizuje nową instancję klasy <see cref="AccountController"/> z podanym menedżerem użytkowników i menedżerem logowania.
+        /// </summary>
+        /// <param name="userManager">Menedżer użytkowników.</param>
+        /// <param name="signInManager">Menedżer logowania.</param>
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
         }
-
+        /// <summary>
+        /// Pobiera menedżera logowania.
+        /// </summary>
         public ApplicationSignInManager SignInManager
         {
             get
@@ -42,7 +56,9 @@ namespace OOP.Controllers
                 _signInManager = value;
             }
         }
-
+        /// <summary>
+        /// Pobiera menedżera użytkowników.
+        /// </summary>
         public ApplicationUserManager UserManager
         {
             get
@@ -54,6 +70,11 @@ namespace OOP.Controllers
                 _userManager = value;
             }
         }
+        /// <summary>
+        /// Wyświetla widok usuwania kont użytkowników.
+        /// </summary>
+        /// <param name="searchString">Ciąg wyszukiwania.</param>
+        /// <returns>Widok usuwania kont użytkowników.</returns>
         [HttpGet]
         public ActionResult DeleteAccount(string searchString)
         {
@@ -61,6 +82,12 @@ namespace OOP.Controllers
       
             return View(users);
         }
+
+        /// <summary>
+        /// Wyświetla widok potwierdzenia usunięcia użytkownika.
+        /// </summary>
+        /// <param name="userID">Identyfikator użytkownika.</param>
+        /// <returns>Widok potwierdzenia usunięcia użytkownika.</returns>
         [HttpGet]
         public ActionResult ConfirmDelete(string userID)
         {
@@ -75,6 +102,12 @@ namespace OOP.Controllers
             }
             return View(user);
         }
+
+        /// <summary>
+        /// Potwierdza i usuwa użytkownika.
+        /// </summary>
+        /// <param name="id">Identyfikator użytkownika.</param>
+        /// <returns>Przekierowanie do widoku usuwania kont.</returns>
         [HttpPost, ActionName("ConfirmDelete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(string id)
@@ -85,7 +118,12 @@ namespace OOP.Controllers
             await db.SaveChangesAsync();
             return RedirectToAction("DeleteAccount");
         }
-        //
+
+        /// <summary>
+        /// Wyświetla widok logowania.
+        /// </summary>
+        /// <param name="returnUrl">Adres URL powrotu.</param>
+        /// <returns>Widok logowania.</returns>
         // GET: /Account/Login
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
@@ -94,7 +132,13 @@ namespace OOP.Controllers
             return View();
         }
 
-        //
+        /// <summary>
+        /// Obsługuje żądanie logowania.
+        /// </summary>
+        /// <param name="model">Model logowania.</param>
+        /// <param name="returnUrl">Adres URL powrotu.</param>
+        /// <returns>Przekierowanie na odpowiednią stronę po zalogowaniu.</returns>
+        /// 
         // POST: /Account/Login
         [HttpPost]
         [AllowAnonymous]
@@ -124,6 +168,13 @@ namespace OOP.Controllers
             }
         }
 
+        /// <summary>
+        /// Wyświetla widok weryfikacji kodu dwuskładnikowego.
+        /// </summary>
+        /// <param name="provider">Dostawca kodu.</param>
+        /// <param name="returnUrl">Adres URL powrotu.</param>
+        /// <param name="rememberMe">Czy zapamiętać użytkownika.</param>
+        /// <returns>Widok weryfikacji kodu dwuskładnikowego.</returns>
         //
         // GET: /Account/VerifyCode
         [AllowAnonymous]
@@ -137,7 +188,11 @@ namespace OOP.Controllers
             return View(new VerifyCodeViewModel { Provider = provider, ReturnUrl = returnUrl, RememberMe = rememberMe });
         }
 
-        //
+        /// <summary>
+        /// Obsługuje żądanie weryfikacji kodu dwuskładnikowego.
+        /// </summary>
+        /// <param name="model">Model weryfikacji kodu.</param>
+        /// <returns>Przekierowanie na odpowiednią stronę po weryfikacji.</returns>
         // POST: /Account/VerifyCode
         [HttpPost]
         [AllowAnonymous]
@@ -167,7 +222,10 @@ namespace OOP.Controllers
             }
         }
 
-        //
+        /// <summary>
+        /// Wyświetla widok rejestracji użytkownika.
+        /// </summary>
+        /// <returns>Widok rejestracji.</returns>
         // GET: /Account/Register
         [AllowAnonymous]
         public ActionResult Register()
@@ -175,6 +233,11 @@ namespace OOP.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Obsługuje żądanie rejestracji nowego użytkownika.
+        /// </summary>
+        /// <param name="model">Model rejestracji.</param>
+        /// <returns>Przekierowanie na odpowiednią stronę po rejestracji.</returns>
         //
         // POST: /Account/Register
         [HttpPost]
@@ -229,6 +292,7 @@ namespace OOP.Controllers
             // Dotarcie do tego miejsca wskazuje, że wystąpił błąd, wyświetl ponownie formularz
             return View(model);
         }
+
 
         //
         // GET: /Account/ConfirmEmail
@@ -443,6 +507,10 @@ namespace OOP.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Wylogowuje użytkownika.
+        /// </summary>
+        /// <returns>Przekierowanie do strony głównej.</returns>
         //
         // POST: /Account/LogOff
         [HttpPost]

@@ -1,0 +1,252 @@
+\doxysection{Dokumentacja klasy OOP.\+Controllers.\+Manage\+Controller}
+\hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller}{}\label{class_o_o_p_1_1_controllers_1_1_manage_controller}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+Diagram dziedziczenia dla OOP.\+Controllers.\+Manage\+Controller\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_o_o_p_1_1_controllers_1_1_manage_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Typy publiczne}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c}{Manage\+Message\+Id}} \{ \newline
+\mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4caf08d36b2147213fadb3b223d149ac802}{Add\+Phone\+Success}}
+, \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4ca0053618c57496fec45c67daf91919394}{Change\+Password\+Success}}
+, \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4caf17987d9118fd576fed3cbec8d11bd8b}{Set\+Two\+Factor\+Success}}
+, \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4caf17ca72fcf8adaa46d5e87b12ec3a27d}{Set\+Password\+Success}}
+, \newline
+\mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4ca46e53931d0e837638a46368b2b04ba6a}{Remove\+Login\+Success}}
+, \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4ca70460d8db9c29752c1f591eb67a60fdc}{Remove\+Phone\+Success}}
+, \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4ca902b0d55fddef6f8d651fe1035b7d4bd}{Error}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a83d1df21338ada5dc5b9b6dd0c84e0d2}{Manage\+Controller}} ()
+\item 
+\mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a6d3c1eecd18015b8b6dee0545248162b}{Manage\+Controller}} (\mbox{\hyperlink{class_o_o_p_1_1_application_user_manager}{Application\+User\+Manager}} user\+Manager, \mbox{\hyperlink{class_o_o_p_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} sign\+In\+Manager)
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a2025b037402f3446a514d9d4fed4e1a2}{Index}} (\mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c}{Manage\+Message\+Id}}? message)
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a2c088806157b99cd5433a5a40aae331b}{Remove\+Login}} (string login\+Provider, string provider\+Key)
+\item 
+Action\+Result \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a25a17a83e35ed1f7c51b4a6ab53c6b82}{Add\+Phone\+Number}} ()
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a30e3ea28aa732290ac78462090d05c32}{Add\+Phone\+Number}} (\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_add_phone_number_view_model}{Add\+Phone\+Number\+View\+Model}} model)
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a187bc2fd006088871b84afe66b2edad1}{Enable\+Two\+Factor\+Authentication}} ()
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a7f863660327d2cc1f76b5cc9d21dba65}{Disable\+Two\+Factor\+Authentication}} ()
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a76a46a0965e15e7aa694831711a8a01a}{Verify\+Phone\+Number}} (string phone\+Number)
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_acc77ad5282b4691dd95df04dd2fdb18d}{Verify\+Phone\+Number}} (\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_verify_phone_number_view_model}{Verify\+Phone\+Number\+View\+Model}} model)
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_ae3ad80c5c7fe36d172b319f55121258c}{Remove\+Phone\+Number}} ()
+\item 
+Action\+Result \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a0055bed7b4bf9af556f9efa0247aab5f}{Change\+Password}} ()
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_ad47cf9a0792595e2f61c2a3d0041d6b8}{Change\+Password}} (\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_change_password_view_model}{Change\+Password\+View\+Model}} model)
+\item 
+Action\+Result \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_afeb000028fe432ebcddbc2b3f592e539}{Set\+Password}} ()
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_af03e8dbba6a550a8cbc8159f8d5fd4c2}{Set\+Password}} (\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_set_password_view_model}{Set\+Password\+View\+Model}} model)
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_ad193e64a9446f4a0d2d26b8c0dd51d69}{Manage\+Logins}} (\mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c}{Manage\+Message\+Id}}? message)
+\item 
+Action\+Result \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a7063076bbdc7f6f1da4f9c87e9d09b61}{Link\+Login}} (string provider)
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a331416edc4f8dec20892932e9a9a1c48}{Link\+Login\+Callback}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody chronione}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a3398af5fd1d12b4a75a7fc253635e583}{Dispose}} (bool disposing)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Właściwości}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_o_o_p_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_abeb70c30b2c9406875129c9ba4f68662}{Sign\+In\+Manager}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\hyperlink{class_o_o_p_1_1_application_user_manager}{Application\+User\+Manager}} \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_ae61f08cdb84d0e5c3c056cd4bf64aca6}{User\+Manager}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja składowych wyliczanych}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!ManageMessageId@{ManageMessageId}}
+\index{ManageMessageId@{ManageMessageId}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{ManageMessageId}{ManageMessageId}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c} 
+enum \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c}{OOP.\+Controllers.\+Manage\+Controller.\+Manage\+Message\+Id}}}
+
+\begin{DoxyEnumFields}{Wartości wyliczeń}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AddPhoneSuccess@{AddPhoneSuccess}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!AddPhoneSuccess@{AddPhoneSuccess}}}\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4caf08d36b2147213fadb3b223d149ac802}\label{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c} 
+Add\+Phone\+Success&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ChangePasswordSuccess@{ChangePasswordSuccess}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!ChangePasswordSuccess@{ChangePasswordSuccess}}}\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4ca0053618c57496fec45c67daf91919394}\label{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c} 
+Change\+Password\+Success&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SetTwoFactorSuccess@{SetTwoFactorSuccess}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!SetTwoFactorSuccess@{SetTwoFactorSuccess}}}\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4caf17987d9118fd576fed3cbec8d11bd8b}\label{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c} 
+Set\+Two\+Factor\+Success&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SetPasswordSuccess@{SetPasswordSuccess}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!SetPasswordSuccess@{SetPasswordSuccess}}}\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4caf17ca72fcf8adaa46d5e87b12ec3a27d}\label{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c} 
+Set\+Password\+Success&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RemoveLoginSuccess@{RemoveLoginSuccess}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!RemoveLoginSuccess@{RemoveLoginSuccess}}}\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4ca46e53931d0e837638a46368b2b04ba6a}\label{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c} 
+Remove\+Login\+Success&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RemovePhoneSuccess@{RemovePhoneSuccess}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!RemovePhoneSuccess@{RemovePhoneSuccess}}}\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4ca70460d8db9c29752c1f591eb67a60fdc}\label{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c} 
+Remove\+Phone\+Success&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Error@{Error}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!Error@{Error}}}\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4ca902b0d55fddef6f8d651fe1035b7d4bd}\label{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c} 
+Error&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a83d1df21338ada5dc5b9b6dd0c84e0d2}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!ManageController@{ManageController}}
+\index{ManageController@{ManageController}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{ManageController()}{ManageController()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a83d1df21338ada5dc5b9b6dd0c84e0d2} 
+OOP.\+Controllers.\+Manage\+Controller.\+Manage\+Controller (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a6d3c1eecd18015b8b6dee0545248162b}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!ManageController@{ManageController}}
+\index{ManageController@{ManageController}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{ManageController()}{ManageController()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a6d3c1eecd18015b8b6dee0545248162b} 
+OOP.\+Controllers.\+Manage\+Controller.\+Manage\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_o_o_p_1_1_application_user_manager}{Application\+User\+Manager}}}]{user\+Manager}{, }\item[{\mbox{\hyperlink{class_o_o_p_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}}}]{sign\+In\+Manager}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a25a17a83e35ed1f7c51b4a6ab53c6b82}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!AddPhoneNumber@{AddPhoneNumber}}
+\index{AddPhoneNumber@{AddPhoneNumber}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{AddPhoneNumber()}{AddPhoneNumber()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a25a17a83e35ed1f7c51b4a6ab53c6b82} 
+Action\+Result OOP.\+Controllers.\+Manage\+Controller.\+Add\+Phone\+Number (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a30e3ea28aa732290ac78462090d05c32}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!AddPhoneNumber@{AddPhoneNumber}}
+\index{AddPhoneNumber@{AddPhoneNumber}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{AddPhoneNumber()}{AddPhoneNumber()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a30e3ea28aa732290ac78462090d05c32} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Manage\+Controller.\+Add\+Phone\+Number (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_add_phone_number_view_model}{Add\+Phone\+Number\+View\+Model}}}]{model}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a0055bed7b4bf9af556f9efa0247aab5f}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!ChangePassword@{ChangePassword}}
+\index{ChangePassword@{ChangePassword}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{ChangePassword()}{ChangePassword()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a0055bed7b4bf9af556f9efa0247aab5f} 
+Action\+Result OOP.\+Controllers.\+Manage\+Controller.\+Change\+Password (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_ad47cf9a0792595e2f61c2a3d0041d6b8}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!ChangePassword@{ChangePassword}}
+\index{ChangePassword@{ChangePassword}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{ChangePassword()}{ChangePassword()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_ad47cf9a0792595e2f61c2a3d0041d6b8} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Manage\+Controller.\+Change\+Password (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_change_password_view_model}{Change\+Password\+View\+Model}}}]{model}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a7f863660327d2cc1f76b5cc9d21dba65}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!DisableTwoFactorAuthentication@{DisableTwoFactorAuthentication}}
+\index{DisableTwoFactorAuthentication@{DisableTwoFactorAuthentication}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{DisableTwoFactorAuthentication()}{DisableTwoFactorAuthentication()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a7f863660327d2cc1f76b5cc9d21dba65} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Manage\+Controller.\+Disable\+Two\+Factor\+Authentication (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a3398af5fd1d12b4a75a7fc253635e583}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a3398af5fd1d12b4a75a7fc253635e583} 
+override void OOP.\+Controllers.\+Manage\+Controller.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a187bc2fd006088871b84afe66b2edad1}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!EnableTwoFactorAuthentication@{EnableTwoFactorAuthentication}}
+\index{EnableTwoFactorAuthentication@{EnableTwoFactorAuthentication}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{EnableTwoFactorAuthentication()}{EnableTwoFactorAuthentication()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a187bc2fd006088871b84afe66b2edad1} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Manage\+Controller.\+Enable\+Two\+Factor\+Authentication (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a2025b037402f3446a514d9d4fed4e1a2}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!Index@{Index}}
+\index{Index@{Index}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a2025b037402f3446a514d9d4fed4e1a2} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Manage\+Controller.\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c}{Manage\+Message\+Id}}?}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a7063076bbdc7f6f1da4f9c87e9d09b61}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!LinkLogin@{LinkLogin}}
+\index{LinkLogin@{LinkLogin}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{LinkLogin()}{LinkLogin()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a7063076bbdc7f6f1da4f9c87e9d09b61} 
+Action\+Result OOP.\+Controllers.\+Manage\+Controller.\+Link\+Login (\begin{DoxyParamCaption}\item[{string}]{provider}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a331416edc4f8dec20892932e9a9a1c48}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!LinkLoginCallback@{LinkLoginCallback}}
+\index{LinkLoginCallback@{LinkLoginCallback}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{LinkLoginCallback()}{LinkLoginCallback()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a331416edc4f8dec20892932e9a9a1c48} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Manage\+Controller.\+Link\+Login\+Callback (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_ad193e64a9446f4a0d2d26b8c0dd51d69}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!ManageLogins@{ManageLogins}}
+\index{ManageLogins@{ManageLogins}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{ManageLogins()}{ManageLogins()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_ad193e64a9446f4a0d2d26b8c0dd51d69} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Manage\+Controller.\+Manage\+Logins (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c}{Manage\+Message\+Id}}?}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a2c088806157b99cd5433a5a40aae331b}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!RemoveLogin@{RemoveLogin}}
+\index{RemoveLogin@{RemoveLogin}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{RemoveLogin()}{RemoveLogin()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a2c088806157b99cd5433a5a40aae331b} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Manage\+Controller.\+Remove\+Login (\begin{DoxyParamCaption}\item[{string}]{login\+Provider}{, }\item[{string}]{provider\+Key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_ae3ad80c5c7fe36d172b319f55121258c}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!RemovePhoneNumber@{RemovePhoneNumber}}
+\index{RemovePhoneNumber@{RemovePhoneNumber}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{RemovePhoneNumber()}{RemovePhoneNumber()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_ae3ad80c5c7fe36d172b319f55121258c} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Manage\+Controller.\+Remove\+Phone\+Number (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_afeb000028fe432ebcddbc2b3f592e539}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!SetPassword@{SetPassword}}
+\index{SetPassword@{SetPassword}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{SetPassword()}{SetPassword()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_afeb000028fe432ebcddbc2b3f592e539} 
+Action\+Result OOP.\+Controllers.\+Manage\+Controller.\+Set\+Password (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_af03e8dbba6a550a8cbc8159f8d5fd4c2}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!SetPassword@{SetPassword}}
+\index{SetPassword@{SetPassword}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{SetPassword()}{SetPassword()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_af03e8dbba6a550a8cbc8159f8d5fd4c2} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Manage\+Controller.\+Set\+Password (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_set_password_view_model}{Set\+Password\+View\+Model}}}]{model}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a76a46a0965e15e7aa694831711a8a01a}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!VerifyPhoneNumber@{VerifyPhoneNumber}}
+\index{VerifyPhoneNumber@{VerifyPhoneNumber}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{VerifyPhoneNumber()}{VerifyPhoneNumber()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a76a46a0965e15e7aa694831711a8a01a} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Manage\+Controller.\+Verify\+Phone\+Number (\begin{DoxyParamCaption}\item[{string}]{phone\+Number}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_acc77ad5282b4691dd95df04dd2fdb18d}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!VerifyPhoneNumber@{VerifyPhoneNumber}}
+\index{VerifyPhoneNumber@{VerifyPhoneNumber}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{VerifyPhoneNumber()}{VerifyPhoneNumber()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_acc77ad5282b4691dd95df04dd2fdb18d} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Manage\+Controller.\+Verify\+Phone\+Number (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_verify_phone_number_view_model}{Verify\+Phone\+Number\+View\+Model}}}]{model}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Dokumentacja właściwości}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_abeb70c30b2c9406875129c9ba4f68662}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!SignInManager@{SignInManager}}
+\index{SignInManager@{SignInManager}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{SignInManager}{SignInManager}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_abeb70c30b2c9406875129c9ba4f68662} 
+\mbox{\hyperlink{class_o_o_p_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} OOP.\+Controllers.\+Manage\+Controller.\+Sign\+In\+Manager\hspace{0.3cm}{\ttfamily [get]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_ae61f08cdb84d0e5c3c056cd4bf64aca6}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!UserManager@{UserManager}}
+\index{UserManager@{UserManager}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{UserManager}{UserManager}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_ae61f08cdb84d0e5c3c056cd4bf64aca6} 
+\mbox{\hyperlink{class_o_o_p_1_1_application_user_manager}{Application\+User\+Manager}} OOP.\+Controllers.\+Manage\+Controller.\+User\+Manager\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+\item 
+Controllers/\mbox{\hyperlink{_manage_controller_8cs}{Manage\+Controller.\+cs}}\end{DoxyCompactItemize}

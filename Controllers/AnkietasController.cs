@@ -324,24 +324,13 @@ namespace OOP.Controllers
                                 {
                                     pole.Attachment = null;
                                 }
-                                if (!string.IsNullOrEmpty(pole.Comment.CommentText))
-                                {
-
-                                    Comment comment = new Comment();
-                                    comment.CommentText = pole.Comment.CommentText;
-                                    comment.PoleAnkiety = pole;
-                                    comment.PoleAnkietyID = pole.PoleAnkietyID;
-                                    context.Comments.Add(comment);
-                                    pole.CommentID = comment.CommentID;
-                                    pole.Comment = comment;
-                  
-
-                                }
+                                
 
 
                                 var entity = context.Entry(pole);
                                 entity.State = EntityState.Unchanged;
                                 entity.Property(p => p.LiczbaPunktow).IsModified = true;
+                                entity.Property(p=> p.PracownikComment).IsModified = true;
                             }
                         }
                     }
