@@ -1,0 +1,28 @@
+﻿@model List<OOP.Models.AnkietaPracownikViewModel>
+@{
+    ViewBag.Title = "DzialAction";
+}
+<h2>Ankiety do rozpatrzenia</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model[0].Pracownik.Imie)</th>
+            <th>@Html.DisplayNameFor(model => model[0].Pracownik.Nazwisko)</th>
+            <th>@Html.DisplayNameFor(model => model[0].Ankieta.Data)</th>
+            <th>Operacje</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var viewModel in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => viewModel.Imie)</td>
+                <td>@Html.DisplayFor(modelItem => viewModel.Nazwisko)</td>
+                <td>@Html.DisplayFor(modelItem => viewModel.DataAnkiety)</td>
+                <td>
+                    @Html.ActionLink("Szczegóły", "DzialDetails", new { id = viewModel.Ankieta.AnkietaID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

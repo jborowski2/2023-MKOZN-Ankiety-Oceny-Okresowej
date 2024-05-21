@@ -1,0 +1,64 @@
+﻿@model IEnumerable<OOP.Models.Ankieta>
+
+@{
+    ViewBag.Title = "Index";
+    bool isPracownik = User.IsInRole("Pracownik");
+    Layout = "~/Views/Shared/_SpecialLayout.cshtml";
+    ViewBag.UseSpecialNavbar = true;
+
+}
+
+<h2>Lista ankiet</h2>
+
+<p>
+    @Html.ActionLink("Złóż nową ankietę", "Create")
+</p>
+
+@if (!isPracownik)
+{
+    <form method="get" action="@Url.Action("Index")">
+        <div class="form-group">
+            <label for="searchInput">Wyszukaj pracownika:</label>
+            <input type="text" name="searchString" class="form-control" id="searchInput" />
+        </div>
+        <button type="submit" class="btn btn-primary">Szukaj</button>
+    </form>
+}
+
+
+<table class="table">
+    <tr>
+        @if (!isPracownik)
+        {
+        <th>
+            Nazwa pracownika
+        </th>
+        }
+
+        <th>
+            Data wypełnienia ankiety
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            @if (!isPracownik)
+            {
+            <td>
+                @item.Pracownik.Imie @item.Pracownik.Nazwisko
+            </td>
+            }
+            <td>
+                @item.Data.ToString("dd-MM-yyyy")
+            </td>
+            <td>
+                <button class="btn btn-primary" type="button" onclick="location.href='@Url.Action("Edit", new { id = item.AnkietaID })'">Edytuj</button>
+                <button class="btn btn-primary" type="button" onclick="location.href='@Url.Action("Details", new { id = item.AnkietaID })'">Szczegóły</button>
+                <button class="btn btn-danger" type="button" onclick="location.href='@Url.Action("Delete", new { id = item.AnkietaID })'">Usuń</button>
+            </td>
+        </tr>
+    }
+
+</table>

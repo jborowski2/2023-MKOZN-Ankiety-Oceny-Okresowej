@@ -1,0 +1,78 @@
+﻿@model OOP.Models.Pracownik
+
+@{
+    ViewBag.Title = "Usuń";
+    Layout = "~/Views/Shared/_SpecialLayout.cshtml";
+    ViewBag.UseSpecialNavbar = true;
+}
+
+<h3>Czy jesteś pewien, że chcesz usunąć ten element?</h3>
+<div>
+    <h4>Pracownik</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Imie)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Imie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nazwisko)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nazwisko)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tytul)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tytul)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumerTelefonu)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NumerTelefonu)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Usuń" class="btn btn-default" id="deletePracownikBtn" /> |
+            @Html.ActionLink("Powrót do listy", "Index")
+        </div>
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script>
+        document.getElementById("deletePracownikBtn").addEventListener("click", function (event) {
+            event.preventDefault();
+            var form = this.form;
+
+            Toastify({
+                text: "Pracownik został usunięty!",
+                duration: 1000,
+                gravity: "bottom",
+                backgroundColor: "#ff0000",
+                className: "info",
+
+                style: {
+                    textAlign: "center"
+                },
+                callback: function() {
+                    form.submit();
+                }
+            }).showToast();
+        });
+    </script>
+}

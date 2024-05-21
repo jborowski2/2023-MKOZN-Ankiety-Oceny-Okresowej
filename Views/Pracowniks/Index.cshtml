@@ -1,0 +1,83 @@
+﻿@model IEnumerable<OOP.Models.Pracownik>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_SpecialLayout.cshtml";
+    ViewBag.UseSpecialNavbar = true;
+
+}
+
+<h2>Zarządzanie pracownikami</h2>
+
+<p>
+    @Html.ActionLink("Utwórz nowego pracownika", "Create")
+</p>
+<form method="get" action="@Url.Action("Index")">
+    <div class="form-group">
+        <label for="searchInput">Wyszukaj pracownika:</label>
+        <input type="text" name="searchString" class="form-control" id="searchInput" />
+    </div>
+    <button type="submit" class="btn btn-primary">Szukaj</button>
+</form>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Imie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nazwisko)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Tytul)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Grupa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Stanowisko)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumerTelefonu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApplicationUser.Roles)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Imie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nazwisko)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Tytul)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grupa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stanowisko)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumerTelefonu)
+            </td>
+            <td>
+                @(ViewBag.ShowUserRoles(item.ApplicationUserID))
+
+            <td>
+                @Html.ActionLink("Edytuj", "Edit", new { id = item.PracownikID }) |
+                @Html.ActionLink("Szczegóły", "Details", new { id = item.PracownikID }) |
+                @Html.ActionLink("Usuń", "Delete", new { id = item.PracownikID })
+            </td>
+        </tr>
+    }
+
+</table>

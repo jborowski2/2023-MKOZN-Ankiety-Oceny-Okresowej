@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - moja aplikacja platformy ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        .container{
+            max-width: 90%;
+        }
+        .text-white {
+            color: #fff !important;
+            font-size: calc(7px + 0.5vw);
+            white-space: nowrap;
+        }
+
+        .padding {
+            padding-bottom: 25px;
+        }
+
+        .dark-theme {
+            background-color: #696969;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm" style="background-color: #012404;">
+        <div class="container">
+            <b>
+                @Html.ActionLink("Politechnika Białostocka - System oceny pracowników", "Index", "Home", new { area = "" }, new { @class = "navbar-brand text-white" })
+            </b>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title=" " aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <button type="button" class="btn btn-light" id="theme-toggle" onclick="toggleTheme()">Przełącz motyw</button>
+                <!-- <ul class="navbar-nav flex-grow-1">
+                     <li>@Html.ActionLink("Strona główna", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                     <li>@Html.ActionLink("Informacje", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                     <li>@Html.ActionLink("Kontakt", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                 </ul>-->
+                @Html.Partial("_LoginPartial", new { @class = "padding" })
+            </div>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const themeToggle = document.getElementById("theme-toggle");
+            const body = document.body;
+            const navbar = document.querySelector('.navbar');
+
+            // Odczytaj z localStorage ostatni wybrany motyw
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme) {
+                body.classList.toggle("dark-theme", savedTheme === "dark");
+                navbar.classList.toggle("dark-theme-navbar", savedTheme === "dark");
+            }
+
+            themeToggle.addEventListener("click", function () {
+                // Toggle klasę 'dark-theme' na body
+                body.classList.toggle("dark-theme");
+
+                // Toggle klasę 'dark-theme' na navbar
+                navbar.classList.toggle("dark-theme-navbar", body.classList.contains("dark-theme"));
+
+                // Zapisz aktualny motyw do localStorage
+                const currentTheme = body.classList.contains("dark-theme") ? "dark" : "light";
+                localStorage.setItem("theme", currentTheme);
+            });
+        });
+    </script>
+</body>
+
+</html>

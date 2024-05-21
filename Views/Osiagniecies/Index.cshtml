@@ -1,0 +1,57 @@
+﻿@model IEnumerable<OOP.Models.Osiagniecie>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_SpecialLayout.cshtml";
+    ViewBag.UseSpecialNavbar = true;
+}
+
+<h2>Zarządzanie osiągnięciami</h2>
+
+<p>
+    @Html.ActionLink("Utwórz nowe", "Create")
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            Imię pracownika
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data)
+        </th>
+        <th>
+            Nazwa
+        </th>
+        <th>
+           Szczegóły
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            @item.Pracownik.Imie @item.Pracownik.Nazwisko
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nazwa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Szczegoly)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edytuj", "Edit", new { id = item.OsiagniecieID }) |
+            @Html.ActionLink("Szczegóły", "Details", new { id = item.OsiagniecieID }) |
+            @Html.ActionLink("Usuń", "Delete", new { id = item.OsiagniecieID })
+        </td>
+    </tr>
+}
+
+</table>
