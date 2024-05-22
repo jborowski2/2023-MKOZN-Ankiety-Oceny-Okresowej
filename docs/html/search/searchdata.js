@@ -1,14 +1,15 @@
 var indexSectionsWithContent =
 {
-  0: ".2_abcdefghiklmnoprstuvwz",
+  0: ".2_abcdefghiklmnoprstuvwxz",
   1: "_abcdefhiklmoprsv",
   2: "ao",
   3: ".2_abcdefghiklmoprs",
-  4: "_acdefgilmorsuv",
-  5: "akm",
-  6: "abcdeorsuw",
-  7: "abcdefhiklmnoprstuz",
-  8: "l"
+  4: "_acdefghilmorsuv",
+  5: "_drx",
+  6: "akm",
+  7: "abcdeorsuw",
+  8: "abcdefhiklmnoprstuz",
+  9: "l"
 };
 
 var indexSectionNames =
@@ -18,10 +19,11 @@ var indexSectionNames =
   2: "namespaces",
   3: "files",
   4: "functions",
-  5: "enums",
-  6: "enumvalues",
-  7: "properties",
-  8: "pages"
+  5: "variables",
+  6: "enums",
+  7: "enumvalues",
+  8: "properties",
+  9: "pages"
 };
 
 var indexSectionLabels =
@@ -31,9 +33,10 @@ var indexSectionLabels =
   2: "Przestrzenie nazw",
   3: "Pliki",
   4: "Funkcje",
-  5: "Wyliczenia",
-  6: "Wartości wyliczeń",
-  7: "Właściwości",
-  8: "Strony"
+  5: "Zmienne",
+  6: "Wyliczenia",
+  7: "Wartości wyliczeń",
+  8: "Właściwości",
+  9: "Strony"
 };
 

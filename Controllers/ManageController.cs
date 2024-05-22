@@ -322,6 +322,10 @@ namespace OOP.Controllers
             return result.Succeeded ? RedirectToAction("ManageLogins") : RedirectToAction("ManageLogins", new { Message = ManageMessageId.Error });
         }
 
+        /// <summary>
+        /// Zwolnienie zasobów.
+        /// </summary>
+        /// <param name="disposing">Wartość true, jeśli zarządzane zasoby powinny być zwolnione; w przeciwnym razie false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && _userManager != null)

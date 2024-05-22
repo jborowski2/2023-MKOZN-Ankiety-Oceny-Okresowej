@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['verifycode_0',['VerifyCode',['../class_o_o_p_1_1_controllers_1_1_account_controller.html#af226f2497d2417a3edc39acca474006d',1,'OOP.Controllers.AccountController.VerifyCode(string provider, string returnUrl, bool rememberMe)'],['../class_o_o_p_1_1_controllers_1_1_account_controller.html#a67e710d21237dcd0ee9e24997868a8bd',1,'OOP.Controllers.AccountController.VerifyCode(VerifyCodeViewModel model)']]],
-  ['verifyphonenumber_1',['VerifyPhoneNumber',['../class_o_o_p_1_1_controllers_1_1_manage_controller.html#a76a46a0965e15e7aa694831711a8a01a',1,'OOP.Controllers.ManageController.VerifyPhoneNumber(string phoneNumber)'],['../class_o_o_p_1_1_controllers_1_1_manage_controller.html#acc77ad5282b4691dd95df04dd2fdb18d',1,'OOP.Controllers.ManageController.VerifyPhoneNumber(VerifyPhoneNumberViewModel model)']]]
+  ['up_0',['Up',['../class_o_o_p_1_1_migrations_1_1migracja7.html#a9b9460e576e487f9b2d672bdb452a397',1,'OOP.Migrations.migracja7.Up()'],['../class_o_o_p_1_1_migrations_1_1init.html#abd7db3bbf5eb0d73a8825f4104ab7caa',1,'OOP.Migrations.init.Up()'],['../class_o_o_p_1_1_migrations_1_1comment.html#ac449a24294531a21b5f9b6925a9d3992',1,'OOP.Migrations.comment.Up()']]]
 ];

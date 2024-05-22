@@ -67,9 +67,32 @@ override void \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller
 \doxysubsubsection*{Właściwości}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_o_o_p_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_abeb70c30b2c9406875129c9ba4f68662}{Sign\+In\+Manager}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\mbox{\hyperlink{class_o_o_p_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_abeb70c30b2c9406875129c9ba4f68662}{Sign\+In\+Manager}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
 \item 
-\mbox{\hyperlink{class_o_o_p_1_1_application_user_manager}{Application\+User\+Manager}} \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_ae61f08cdb84d0e5c3c056cd4bf64aca6}{User\+Manager}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\mbox{\hyperlink{class_o_o_p_1_1_application_user_manager}{Application\+User\+Manager}} \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_ae61f08cdb84d0e5c3c056cd4bf64aca6}{User\+Manager}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
+\item 
+IAuthentication\+Manager \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_aca2ce2a88453df0b334f0c99e3b35d99}{Authentication\+Manager}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody prywatne}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_ad126168abf04864ac6c4714df991ba5d}{Add\+Errors}} (Identity\+Result result)
+\item 
+bool \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a34e6ff16d873ed34235a18f143439c81}{Has\+Password}} ()
+\item 
+bool \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a5e2c2770c48e0c1c24c37d38deebf8c0}{Has\+Phone\+Number}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_o_o_p_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a8e1a0c2b9ce8efd389ef49fd379eb7c7}{\+\_\+sign\+In\+Manager}}
+\item 
+\mbox{\hyperlink{class_o_o_p_1_1_application_user_manager}{Application\+User\+Manager}} \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a0fb62c0b3bc7dbafc725b6c395972446}{\+\_\+user\+Manager}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Statyczne atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+const string \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_ac068c1b1b15847f557c0cade225363a4}{Xsrf\+Key}} = "{}Xsrf\+Id"{}
 \end{DoxyCompactItemize}
 
 
@@ -128,6 +151,12 @@ OOP.\+Controllers.\+Manage\+Controller.\+Manage\+Controller (\begin{DoxyParamCap
 
 
 \doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_ad126168abf04864ac6c4714df991ba5d}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!AddErrors@{AddErrors}}
+\index{AddErrors@{AddErrors}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{AddErrors()}{AddErrors()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_ad126168abf04864ac6c4714df991ba5d} 
+void OOP.\+Controllers.\+Manage\+Controller.\+Add\+Errors (\begin{DoxyParamCaption}\item[{Identity\+Result}]{result}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
 \Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a25a17a83e35ed1f7c51b4a6ab53c6b82}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!AddPhoneNumber@{AddPhoneNumber}}
 \index{AddPhoneNumber@{AddPhoneNumber}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
 \doxysubsubsection{\texorpdfstring{AddPhoneNumber()}{AddPhoneNumber()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -169,6 +198,18 @@ override void OOP.\+Controllers.\+Manage\+Controller.\+Dispose (\begin{DoxyParam
 \doxysubsubsection{\texorpdfstring{EnableTwoFactorAuthentication()}{EnableTwoFactorAuthentication()}}
 {\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a187bc2fd006088871b84afe66b2edad1} 
 async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Manage\+Controller.\+Enable\+Two\+Factor\+Authentication (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a34e6ff16d873ed34235a18f143439c81}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!HasPassword@{HasPassword}}
+\index{HasPassword@{HasPassword}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{HasPassword()}{HasPassword()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a34e6ff16d873ed34235a18f143439c81} 
+bool OOP.\+Controllers.\+Manage\+Controller.\+Has\+Password (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a5e2c2770c48e0c1c24c37d38deebf8c0}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!HasPhoneNumber@{HasPhoneNumber}}
+\index{HasPhoneNumber@{HasPhoneNumber}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{HasPhoneNumber()}{HasPhoneNumber()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a5e2c2770c48e0c1c24c37d38deebf8c0} 
+bool OOP.\+Controllers.\+Manage\+Controller.\+Has\+Phone\+Number (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
 \Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a2025b037402f3446a514d9d4fed4e1a2}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!Index@{Index}}
 \index{Index@{Index}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
@@ -232,18 +273,45 @@ async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Manage\+Controller.\+Verify
 
 
 
+\doxysubsection{Dokumentacja atrybutów składowych}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a8e1a0c2b9ce8efd389ef49fd379eb7c7}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!\_signInManager@{\_signInManager}}
+\index{\_signInManager@{\_signInManager}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{\_signInManager}{\_signInManager}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a8e1a0c2b9ce8efd389ef49fd379eb7c7} 
+\mbox{\hyperlink{class_o_o_p_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} OOP.\+Controllers.\+Manage\+Controller.\+\_\+sign\+In\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a0fb62c0b3bc7dbafc725b6c395972446}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!\_userManager@{\_userManager}}
+\index{\_userManager@{\_userManager}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{\_userManager}{\_userManager}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a0fb62c0b3bc7dbafc725b6c395972446} 
+\mbox{\hyperlink{class_o_o_p_1_1_application_user_manager}{Application\+User\+Manager}} OOP.\+Controllers.\+Manage\+Controller.\+\_\+user\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_ac068c1b1b15847f557c0cade225363a4}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!XsrfKey@{XsrfKey}}
+\index{XsrfKey@{XsrfKey}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{XsrfKey}{XsrfKey}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_ac068c1b1b15847f557c0cade225363a4} 
+const string OOP.\+Controllers.\+Manage\+Controller.\+Xsrf\+Key = "{}Xsrf\+Id"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
 \doxysubsection{Dokumentacja właściwości}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_aca2ce2a88453df0b334f0c99e3b35d99}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!AuthenticationManager@{AuthenticationManager}}
+\index{AuthenticationManager@{AuthenticationManager}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{AuthenticationManager}{AuthenticationManager}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_aca2ce2a88453df0b334f0c99e3b35d99} 
+IAuthentication\+Manager OOP.\+Controllers.\+Manage\+Controller.\+Authentication\+Manager\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private]}}
+
 \Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_abeb70c30b2c9406875129c9ba4f68662}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!SignInManager@{SignInManager}}
 \index{SignInManager@{SignInManager}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
 \doxysubsubsection{\texorpdfstring{SignInManager}{SignInManager}}
 {\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_abeb70c30b2c9406875129c9ba4f68662} 
-\mbox{\hyperlink{class_o_o_p_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} OOP.\+Controllers.\+Manage\+Controller.\+Sign\+In\+Manager\hspace{0.3cm}{\ttfamily [get]}}
+\mbox{\hyperlink{class_o_o_p_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} OOP.\+Controllers.\+Manage\+Controller.\+Sign\+In\+Manager\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private set]}}
 
 \Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_ae61f08cdb84d0e5c3c056cd4bf64aca6}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!UserManager@{UserManager}}
 \index{UserManager@{UserManager}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
 \doxysubsubsection{\texorpdfstring{UserManager}{UserManager}}
 {\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_ae61f08cdb84d0e5c3c056cd4bf64aca6} 
-\mbox{\hyperlink{class_o_o_p_1_1_application_user_manager}{Application\+User\+Manager}} OOP.\+Controllers.\+Manage\+Controller.\+User\+Manager\hspace{0.3cm}{\ttfamily [get]}}
+\mbox{\hyperlink{class_o_o_p_1_1_application_user_manager}{Application\+User\+Manager}} OOP.\+Controllers.\+Manage\+Controller.\+User\+Manager\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private set]}}
 
 
 

@@ -91,10 +91,15 @@ $(function(){ initResizable(false); });
   <div class="summary">
 <a href="#pub-methods">Metody publiczne</a> &#124;
 <a href="#pro-methods">Metody chronione</a> &#124;
+<a href="#pri-methods">Metody prywatne</a> &#124;
+<a href="#pri-attribs">Atrybuty prywatne</a> &#124;
 <a href="class_o_o_p_1_1_controllers_1_1_ankietas_controller-members.html">Lista wszystkich składowych</a>  </div>
   <div class="headertitle"><div class="title">Dokumentacja klasy OOP.Controllers.AnkietasController</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Kontroler do obsługi ankiet.  
+ <a href="#details">Więcej...</a></p>
 <div class="dynheader">
 Diagram dziedziczenia dla OOP.Controllers.AnkietasController</div>
 <div class="dyncontent">
@@ -105,36 +110,95 @@ Diagram dziedziczenia dla OOP.Controllers.AnkietasController</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Metody publiczne</h2></td></tr>
 <tr class="memitem:ac828ad53e90346f5bdd9c768b5c73de0" id="r_ac828ad53e90346f5bdd9c768b5c73de0"><td class="memItemLeft" align="right" valign="top">async Task&lt; ActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac828ad53e90346f5bdd9c768b5c73de0">Index</a> (string searchString)</td></tr>
+<tr class="memdesc:ac828ad53e90346f5bdd9c768b5c73de0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyświetla listę ankiet z możliwością wyszukiwania odpowiedniemu typowi użytkownika.  <br /></td></tr>
 <tr class="separator:ac828ad53e90346f5bdd9c768b5c73de0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe592a778114e8ab7f16217cade32e38" id="r_abe592a778114e8ab7f16217cade32e38"><td class="memItemLeft" align="right" valign="top">async Task&lt; ActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe592a778114e8ab7f16217cade32e38">DzialAction</a> (<a class="el" href="class_o_o_p_1_1_models_1_1_dzial.html">Dzial</a> dzial)</td></tr>
+<tr class="memdesc:abe592a778114e8ab7f16217cade32e38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Akcja dla roli "Dzial" wyświetlająca przypisane ankiety.  <br /></td></tr>
 <tr class="separator:abe592a778114e8ab7f16217cade32e38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b35eb3ded71bbf4fbedabb92f996ae0" id="r_a8b35eb3ded71bbf4fbedabb92f996ae0"><td class="memItemLeft" align="right" valign="top">async Task&lt; ActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b35eb3ded71bbf4fbedabb92f996ae0">DzialDetails</a> (int? id)</td></tr>
+<tr class="memdesc:a8b35eb3ded71bbf4fbedabb92f996ae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyświetla szczegóły ankiety dotyczące konkretnego działu.  <br /></td></tr>
 <tr class="separator:a8b35eb3ded71bbf4fbedabb92f996ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5d8f5b95f050f2128b81b984f2450fb" id="r_ad5d8f5b95f050f2128b81b984f2450fb"><td class="memItemLeft" align="right" valign="top">async Task&lt; ActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5d8f5b95f050f2128b81b984f2450fb">Details</a> (int? id)</td></tr>
+<tr class="memdesc:ad5d8f5b95f050f2128b81b984f2450fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyświetla szczegóły ankiety.  <br /></td></tr>
 <tr class="separator:ad5d8f5b95f050f2128b81b984f2450fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14f9fdb05d88d4e1b8b22855b63b7540" id="r_a14f9fdb05d88d4e1b8b22855b63b7540"><td class="memItemLeft" align="right" valign="top">ActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14f9fdb05d88d4e1b8b22855b63b7540">Create</a> ()</td></tr>
+<tr class="memdesc:a14f9fdb05d88d4e1b8b22855b63b7540"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyświetla formularz tworzenia nowej ankiety.  <br /></td></tr>
 <tr class="separator:a14f9fdb05d88d4e1b8b22855b63b7540"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe9eda9fe67e905657f3bb895608a1b5" id="r_abe9eda9fe67e905657f3bb895608a1b5"><td class="memItemLeft" align="right" valign="top">async Task&lt; ActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe9eda9fe67e905657f3bb895608a1b5">Create</a> ([Bind(Include=&quot;AnkietaID,Data,PracownikID&quot;)] <a class="el" href="class_o_o_p_1_1_models_1_1_ankieta.html">Ankieta</a> ankieta)</td></tr>
+<tr class="memdesc:abe9eda9fe67e905657f3bb895608a1b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tworzy nową ankietę na podstawie shematu.  <br /></td></tr>
 <tr class="separator:abe9eda9fe67e905657f3bb895608a1b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6f1403e037c670bd4e2878d1c1aeb83" id="r_ac6f1403e037c670bd4e2878d1c1aeb83"><td class="memItemLeft" align="right" valign="top">async Task&lt; ActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6f1403e037c670bd4e2878d1c1aeb83">Edit</a> (int? id)</td></tr>
+<tr class="memdesc:ac6f1403e037c670bd4e2878d1c1aeb83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Edytuje istniejącą ankietę.  <br /></td></tr>
 <tr class="separator:ac6f1403e037c670bd4e2878d1c1aeb83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cb0486c840aa51eb7696b46b0961a87" id="r_a9cb0486c840aa51eb7696b46b0961a87"><td class="memItemLeft" align="right" valign="top">async Task&lt; ActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9cb0486c840aa51eb7696b46b0961a87">Edit</a> ([Bind(Include=&quot;AnkietaID,Data,PracownikID&quot;)] <a class="el" href="class_o_o_p_1_1_models_1_1_ankieta.html">Ankieta</a> ankieta)</td></tr>
 <tr class="separator:a9cb0486c840aa51eb7696b46b0961a87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a659cc58cfbbfb3aa94e7bff0a76734aa" id="r_a659cc58cfbbfb3aa94e7bff0a76734aa"><td class="memItemLeft" align="right" valign="top">async Task&lt; ActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a659cc58cfbbfb3aa94e7bff0a76734aa">Delete</a> (int? id)</td></tr>
+<tr class="memdesc:a659cc58cfbbfb3aa94e7bff0a76734aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyświetla formularz usunięcia ankiety.  <br /></td></tr>
 <tr class="separator:a659cc58cfbbfb3aa94e7bff0a76734aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3ab3ebf514b1198d1edfeb1d36f61cd" id="r_af3ab3ebf514b1198d1edfeb1d36f61cd"><td class="memItemLeft" align="right" valign="top">async Task&lt; ActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3ab3ebf514b1198d1edfeb1d36f61cd">DeleteConfirmed</a> (int id)</td></tr>
+<tr class="memdesc:af3ab3ebf514b1198d1edfeb1d36f61cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usuwa ankietę.  <br /></td></tr>
 <tr class="separator:af3ab3ebf514b1198d1edfeb1d36f61cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46384745f9fbc145f8bf56604121c97f" id="r_a46384745f9fbc145f8bf56604121c97f"><td class="memItemLeft" align="right" valign="top">async Task&lt; ActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46384745f9fbc145f8bf56604121c97f">SaveFields</a> (<a class="el" href="class_o_o_p_1_1_models_1_1_ankieta.html">Ankieta</a> ankieta)</td></tr>
+<tr class="memdesc:a46384745f9fbc145f8bf56604121c97f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zapisuje pola ankiety.  <br /></td></tr>
 <tr class="separator:a46384745f9fbc145f8bf56604121c97f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcab756ba9c125a880fb97b0e82ff34e" id="r_adcab756ba9c125a880fb97b0e82ff34e"><td class="memItemLeft" align="right" valign="top">async Task&lt; ActionResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adcab756ba9c125a880fb97b0e82ff34e">DeleteAttachment</a> (int attachmentId)</td></tr>
+<tr class="memdesc:adcab756ba9c125a880fb97b0e82ff34e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usuwa załącznik.  <br /></td></tr>
 <tr class="separator:adcab756ba9c125a880fb97b0e82ff34e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Metody chronione</h2></td></tr>
 <tr class="memitem:a8940e4ece826f152285ef9adde33ae5f" id="r_a8940e4ece826f152285ef9adde33ae5f"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8940e4ece826f152285ef9adde33ae5f">Dispose</a> (bool disposing)</td></tr>
+<tr class="memdesc:a8940e4ece826f152285ef9adde33ae5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwolnienie zasobów.  <br /></td></tr>
 <tr class="separator:a8940e4ece826f152285ef9adde33ae5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Metody prywatne</h2></td></tr>
+<tr class="memitem:ae56c90ba4a3b448ca611aed63ddd7bf3" id="r_ae56c90ba4a3b448ca611aed63ddd7bf3"><td class="memItemLeft" align="right" valign="top">int[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae56c90ba4a3b448ca611aed63ddd7bf3">CalculateTotalPoints</a> (<a class="el" href="class_o_o_p_1_1_models_1_1_ankieta.html">Ankieta</a> ankieta)</td></tr>
+<tr class="memdesc:ae56c90ba4a3b448ca611aed63ddd7bf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oblicza sumę punktów ankiety z podziałem na punkty zdobyte za działalność Organizacyjną, Naukową.  <br /></td></tr>
+<tr class="separator:ae56c90ba4a3b448ca611aed63ddd7bf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Atrybuty prywatne</h2></td></tr>
+<tr class="memitem:a97399e7466b3b3c9a6718012c7b6e41d" id="r_a97399e7466b3b3c9a6718012c7b6e41d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_o_p_1_1_models_1_1_application_db_context.html">ApplicationDbContext</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97399e7466b3b3c9a6718012c7b6e41d">db</a> = new <a class="el" href="class_o_o_p_1_1_models_1_1_application_db_context.html">ApplicationDbContext</a>()</td></tr>
+<tr class="separator:a97399e7466b3b3c9a6718012c7b6e41d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Kontroler do obsługi ankiet. </p>
+</div><h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="ae56c90ba4a3b448ca611aed63ddd7bf3" name="ae56c90ba4a3b448ca611aed63ddd7bf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae56c90ba4a3b448ca611aed63ddd7bf3">&#9670;&#160;</a></span>CalculateTotalPoints()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int[] OOP.Controllers.AnkietasController.CalculateTotalPoints </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_o_o_p_1_1_models_1_1_ankieta.html">Ankieta</a></td>          <td class="paramname"><span class="paramname"><em>ankieta</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Oblicza sumę punktów ankiety z podziałem na punkty zdobyte za działalność Organizacyjną, Naukową. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ankieta</td><td>Obiekt ankiety.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>2 tablice z sumą punktów. pierwsza za działanosć Naukową , druga Organizacyją</dd></dl>
+
+</div>
+</div>
 <a id="a14f9fdb05d88d4e1b8b22855b63b7540" name="a14f9fdb05d88d4e1b8b22855b63b7540"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a14f9fdb05d88d4e1b8b22855b63b7540">&#9670;&#160;</a></span>Create() <span class="overload">[1/2]</span></h2>
 
@@ -157,6 +221,9 @@ Metody chronione</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Wyświetla formularz tworzenia nowej ankiety. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>Widok formularza tworzenia ankiety.</dd></dl>
 
 </div>
 </div>
@@ -183,6 +250,15 @@ Metody chronione</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Tworzy nową ankietę na podstawie shematu. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ankieta</td><td>Obiekt ankiety.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Przekierowanie do widoku ankiety.</dd></dl>
+
 </div>
 </div>
 <a id="a659cc58cfbbfb3aa94e7bff0a76734aa" name="a659cc58cfbbfb3aa94e7bff0a76734aa"></a>
@@ -207,6 +283,15 @@ Metody chronione</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Wyświetla formularz usunięcia ankiety. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>ID ankiety.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Widok formularza usunięcia ankiety.</dd></dl>
 
 </div>
 </div>
@@ -233,6 +318,15 @@ Metody chronione</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Usuwa załącznik. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">attachmentId</td><td>ID załącznika.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Informacja o powodzeniu operacji.</dd></dl>
+
 </div>
 </div>
 <a id="af3ab3ebf514b1198d1edfeb1d36f61cd" name="af3ab3ebf514b1198d1edfeb1d36f61cd"></a>
@@ -257,6 +351,15 @@ Metody chronione</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Usuwa ankietę. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>ID ankiety.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Przekierowanie do widoku listy ankiet.</dd></dl>
 
 </div>
 </div>
@@ -283,6 +386,15 @@ Metody chronione</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Wyświetla szczegóły ankiety. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>ID ankiety.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Widok szczegółów ankiety.</dd></dl>
+
 </div>
 </div>
 <a id="a8940e4ece826f152285ef9adde33ae5f" name="a8940e4ece826f152285ef9adde33ae5f"></a>
@@ -307,6 +419,14 @@ Metody chronione</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Zwolnienie zasobów. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">disposing</td><td>Wartość true, jeśli zarządzane zasoby powinny być zwolnione; w przeciwnym razie false.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -333,6 +453,15 @@ Metody chronione</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Akcja dla roli "Dzial" wyświetlająca przypisane ankiety. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dzial</td><td>Obiekt działu.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Widok listy ankiet.</dd></dl>
+
 </div>
 </div>
 <a id="a8b35eb3ded71bbf4fbedabb92f996ae0" name="a8b35eb3ded71bbf4fbedabb92f996ae0"></a>
@@ -357,6 +486,15 @@ Metody chronione</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Wyświetla szczegóły ankiety dotyczące konkretnego działu. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>ID ankiety.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Widok szczegółów dla aktualnie zalogowanego działu.</dd></dl>
 
 </div>
 </div>
@@ -408,6 +546,15 @@ Metody chronione</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Edytuje istniejącą ankietę. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ankieta</td><td>Obiekt ankiety.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Przekierowanie do widoku listy ankiet.</dd></dl>
+
 </div>
 </div>
 <a id="ac828ad53e90346f5bdd9c768b5c73de0" name="ac828ad53e90346f5bdd9c768b5c73de0"></a>
@@ -433,6 +580,15 @@ Metody chronione</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Wyświetla listę ankiet z możliwością wyszukiwania odpowiedniemu typowi użytkownika. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">searchString</td><td>Ciąg wyszukiwania.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Widok listy ankiet.</dd></dl>
+
 </div>
 </div>
 <a id="a46384745f9fbc145f8bf56604121c97f" name="a46384745f9fbc145f8bf56604121c97f"></a>
@@ -454,6 +610,38 @@ Metody chronione</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zapisuje pola ankiety. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ankieta</td><td>Obiekt ankiety.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Przekierowanie do szczegółów ankiety.</dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja atrybutów składowych</h2>
+<a id="a97399e7466b3b3c9a6718012c7b6e41d" name="a97399e7466b3b3c9a6718012c7b6e41d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97399e7466b3b3c9a6718012c7b6e41d">&#9670;&#160;</a></span>db</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_o_o_p_1_1_models_1_1_application_db_context.html">ApplicationDbContext</a> OOP.Controllers.AnkietasController.db = new <a class="el" href="class_o_o_p_1_1_models_1_1_application_db_context.html">ApplicationDbContext</a>()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

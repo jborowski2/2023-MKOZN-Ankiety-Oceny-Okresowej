@@ -15,7 +15,7 @@ Diagram dziedziczenia dla OOP.\+Controllers.\+Account\+Controller\begin{figure}[
 \begin{DoxyCompactItemize}
 \item 
 class {\bfseries Challenge\+Result}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Wynik wyzwania do uwierzytelniania. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Metody publiczne}
 \begin{DoxyCompactItemize}
 \item 
@@ -42,45 +42,68 @@ Action\+Result \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_account_controll
 async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_account_controller_a4fc59a11a18eec2efbe1d05ab06cff4d}{Register}} (\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_register_view_model}{Register\+View\+Model}} model)
 \begin{DoxyCompactList}\small\item\em Obsługuje żądanie rejestracji nowego użytkownika. \end{DoxyCompactList}\item 
 async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_account_controller_acae468a3bbf8648c8baa416a8b64bb3d}{Confirm\+Email}} (string user\+Id, string code)
-\item 
+\begin{DoxyCompactList}\small\item\em Potwierdza adres e-\/mail użytkownika. \end{DoxyCompactList}\item 
 Action\+Result \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_account_controller_aa53cf048c82c17a9fa113f12b2c43f8b}{Forgot\+Password}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Wyświetla formularz zapomnianego hasła. \end{DoxyCompactList}\item 
 async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_account_controller_adc77f82e95959d1f7d3ccf278f38e10f}{Forgot\+Password}} (\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_forgot_password_view_model}{Forgot\+Password\+View\+Model}} model)
-\item 
+\begin{DoxyCompactList}\small\item\em Przetwarza żądanie zapomnianego hasła. \end{DoxyCompactList}\item 
 Action\+Result \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_account_controller_abc76688ee8ef79c491b85b3c6431f753}{Forgot\+Password\+Confirmation}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Wyświetla potwierdzenie zapomnianego hasła. \end{DoxyCompactList}\item 
 Action\+Result \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_account_controller_ae8f060c99dada32958a179ed2fa1fe68}{Reset\+Password}} (string code)
-\item 
+\begin{DoxyCompactList}\small\item\em Wyświetla formularz resetowania hasła. \end{DoxyCompactList}\item 
 async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_account_controller_a2033624dfcea094c1dbf9daf9b07a118}{Reset\+Password}} (\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_reset_password_view_model}{Reset\+Password\+View\+Model}} model)
-\item 
+\begin{DoxyCompactList}\small\item\em Przetwarza żądanie resetowania hasła. \end{DoxyCompactList}\item 
 Action\+Result \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_account_controller_ab4a5712fd2e313e08ba35d9a3a80de73}{Reset\+Password\+Confirmation}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Wyświetla potwierdzenie resetowania hasła. \end{DoxyCompactList}\item 
 Action\+Result \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_account_controller_a4d96d63fa888fdfbbbbe85872ee5c4f3}{External\+Login}} (string provider, string return\+Url)
-\item 
+\begin{DoxyCompactList}\small\item\em Przetwarza żądanie logowania zewnętrznego. \end{DoxyCompactList}\item 
 async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_account_controller_a3e1ef276a7411c37b2afaa54f4c40429}{Send\+Code}} (string return\+Url, bool remember\+Me)
-\item 
+\begin{DoxyCompactList}\small\item\em Wyświetla formularz wysyłania kodu dwuskładnikowego uwierzytelniania. \end{DoxyCompactList}\item 
 async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_account_controller_a6960d3875ee3e2695e4e9a667514df1c}{Send\+Code}} (\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_send_code_view_model}{Send\+Code\+View\+Model}} model)
-\item 
+\begin{DoxyCompactList}\small\item\em Przetwarza żądanie wysłania kodu dwuskładnikowego uwierzytelniania. \end{DoxyCompactList}\item 
 async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_account_controller_a496d2aea47d02266813a20823c3e14e4}{External\+Login\+Callback}} (string return\+Url)
-\item 
+\begin{DoxyCompactList}\small\item\em Przetwarza odpowiedź z zewnętrznego logowania. \end{DoxyCompactList}\item 
 async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_account_controller_a7b22d95811cd90ae947e1d71b196d458}{External\+Login\+Confirmation}} (\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_external_login_confirmation_view_model}{External\+Login\+Confirmation\+View\+Model}} model, string return\+Url)
-\item 
+\begin{DoxyCompactList}\small\item\em Przetwarza potwierdzenie zewnętrznego logowania. \end{DoxyCompactList}\item 
 Action\+Result \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_account_controller_a97b8f66593a3ff9876c08426db7bc4cd}{Log\+Off}} ()
 \begin{DoxyCompactList}\small\item\em Wylogowuje użytkownika. \end{DoxyCompactList}\item 
 Action\+Result \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_account_controller_aa12095aa058873a8f62a95d5f2301b18}{External\+Login\+Failure}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Wyświetla widok błędu logowania zewnętrznego. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Metody chronione}
 \begin{DoxyCompactItemize}
 \item 
 override void \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_account_controller_a1d877fe35ff8d12828243d7d17d122cb}{Dispose}} (bool disposing)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Zwalnia zasoby używane przez kontroler. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Właściwości}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_o_o_p_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_account_controller_a182acec70a327a17d2e50aeff1da98f3}{Sign\+In\+Manager}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\mbox{\hyperlink{class_o_o_p_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_account_controller_a182acec70a327a17d2e50aeff1da98f3}{Sign\+In\+Manager}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Pobiera menedżera logowania. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_o_o_p_1_1_application_user_manager}{Application\+User\+Manager}} \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_account_controller_a1c4453f230eb6f5e110142eca278ccf5}{User\+Manager}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\begin{DoxyCompactList}\small\item\em Pobiera menedżera użytkowników. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_o_o_p_1_1_application_user_manager}{Application\+User\+Manager}} \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_account_controller_a1c4453f230eb6f5e110142eca278ccf5}{User\+Manager}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Pobiera menedżera użytkowników. \end{DoxyCompactList}\item 
+IAuthentication\+Manager \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_account_controller_abd3c25f532ce796a7dea6471ae74d25a}{Authentication\+Manager}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody prywatne}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_account_controller_a46c2de969b4a390b1d2ccc4b451e0cdb}{Add\+Errors}} (Identity\+Result result)
+\begin{DoxyCompactList}\small\item\em Dodaje błędy do stanu modelu. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_account_controller_ab3d43ff67123a3024e6a7c08b7635c69}{Redirect\+To\+Local}} (string return\+Url)
+\begin{DoxyCompactList}\small\item\em Przekierowuje do lokalnego adresu URL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_o_o_p_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_account_controller_ab4eac45f1e1429a3472c34dfcf299ba1}{\+\_\+sign\+In\+Manager}}
+\item 
+\mbox{\hyperlink{class_o_o_p_1_1_application_user_manager}{Application\+User\+Manager}} \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_account_controller_a162abbf825f147dca8238881672e2221}{\+\_\+user\+Manager}}
+\item 
+\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_application_db_context}{Application\+Db\+Context}} \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_account_controller_a5e59ff2d350e11249de3fa0059d38ab7}{db}} = new \mbox{\hyperlink{class_o_o_p_1_1_models_1_1_application_db_context}{Application\+Db\+Context}}()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Statyczne atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+const string \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_account_controller_a36b6928aa6176c9574e09150b1a244f1}{Xsrf\+Key}} = "{}Xsrf\+Id"{}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Opis szczegółowy}
@@ -117,6 +140,21 @@ Inicjalizuje nową instancję klasy \doxylink{class_o_o_p_1_1_controllers_1_1_ac
 
 
 \doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_account_controller_a46c2de969b4a390b1d2ccc4b451e0cdb}\index{OOP.Controllers.AccountController@{OOP.Controllers.AccountController}!AddErrors@{AddErrors}}
+\index{AddErrors@{AddErrors}!OOP.Controllers.AccountController@{OOP.Controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{AddErrors()}{AddErrors()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_account_controller_a46c2de969b4a390b1d2ccc4b451e0cdb} 
+void OOP.\+Controllers.\+Account\+Controller.\+Add\+Errors (\begin{DoxyParamCaption}\item[{Identity\+Result}]{result}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Dodaje błędy do stanu modelu. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em result} & Wynik operacji tożsamości.\\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_o_o_p_1_1_controllers_1_1_account_controller_af67d590b2868eb5256e808a84c4cae86}\index{OOP.Controllers.AccountController@{OOP.Controllers.AccountController}!ConfirmDelete@{ConfirmDelete}}
 \index{ConfirmDelete@{ConfirmDelete}!OOP.Controllers.AccountController@{OOP.Controllers.AccountController}}
 \doxysubsubsection{\texorpdfstring{ConfirmDelete()}{ConfirmDelete()}}
@@ -141,6 +179,20 @@ Widok potwierdzenia usunięcia użytkownika.
 {\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_account_controller_acae468a3bbf8648c8baa416a8b64bb3d} 
 async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Account\+Controller.\+Confirm\+Email (\begin{DoxyParamCaption}\item[{string}]{user\+Id}{, }\item[{string}]{code}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Potwierdza adres e-\/mail użytkownika. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em user\+Id} & Identyfikator użytkownika.\\
+\hline
+{\em code} & Kod potwierdzający.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Widok potwierdzenia lub błąd.
+\end{DoxyReturn}
 \Hypertarget{class_o_o_p_1_1_controllers_1_1_account_controller_a957a11f56cd6bf496a75a018a4bc9ef3}\index{OOP.Controllers.AccountController@{OOP.Controllers.AccountController}!DeleteAccount@{DeleteAccount}}
 \index{DeleteAccount@{DeleteAccount}!OOP.Controllers.AccountController@{OOP.Controllers.AccountController}}
 \doxysubsubsection{\texorpdfstring{DeleteAccount()}{DeleteAccount()}}
@@ -183,48 +235,130 @@ Przekierowanie do widoku usuwania kont.
 {\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_account_controller_a1d877fe35ff8d12828243d7d17d122cb} 
 override void OOP.\+Controllers.\+Account\+Controller.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
 
+
+
+Zwalnia zasoby używane przez kontroler. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em disposing} & Wartość logiczna wskazująca, czy zarządzane zasoby powinny być zwolnione.\\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_o_o_p_1_1_controllers_1_1_account_controller_a4d96d63fa888fdfbbbbe85872ee5c4f3}\index{OOP.Controllers.AccountController@{OOP.Controllers.AccountController}!ExternalLogin@{ExternalLogin}}
 \index{ExternalLogin@{ExternalLogin}!OOP.Controllers.AccountController@{OOP.Controllers.AccountController}}
 \doxysubsubsection{\texorpdfstring{ExternalLogin()}{ExternalLogin()}}
 {\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_account_controller_a4d96d63fa888fdfbbbbe85872ee5c4f3} 
 Action\+Result OOP.\+Controllers.\+Account\+Controller.\+External\+Login (\begin{DoxyParamCaption}\item[{string}]{provider}{, }\item[{string}]{return\+Url}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Przetwarza żądanie logowania zewnętrznego. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em provider} & Dostawca logowania zewnętrznego.\\
+\hline
+{\em return\+Url} & Adres URL powrotu.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Wywołanie Challenge\+Result.
+\end{DoxyReturn}
 \Hypertarget{class_o_o_p_1_1_controllers_1_1_account_controller_a496d2aea47d02266813a20823c3e14e4}\index{OOP.Controllers.AccountController@{OOP.Controllers.AccountController}!ExternalLoginCallback@{ExternalLoginCallback}}
 \index{ExternalLoginCallback@{ExternalLoginCallback}!OOP.Controllers.AccountController@{OOP.Controllers.AccountController}}
 \doxysubsubsection{\texorpdfstring{ExternalLoginCallback()}{ExternalLoginCallback()}}
 {\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_account_controller_a496d2aea47d02266813a20823c3e14e4} 
 async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Account\+Controller.\+External\+Login\+Callback (\begin{DoxyParamCaption}\item[{string}]{return\+Url}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Przetwarza odpowiedź z zewnętrznego logowania. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em return\+Url} & Adres URL powrotu.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Widok odpowiedzi z logowania zewnętrznego.
+\end{DoxyReturn}
 \Hypertarget{class_o_o_p_1_1_controllers_1_1_account_controller_a7b22d95811cd90ae947e1d71b196d458}\index{OOP.Controllers.AccountController@{OOP.Controllers.AccountController}!ExternalLoginConfirmation@{ExternalLoginConfirmation}}
 \index{ExternalLoginConfirmation@{ExternalLoginConfirmation}!OOP.Controllers.AccountController@{OOP.Controllers.AccountController}}
 \doxysubsubsection{\texorpdfstring{ExternalLoginConfirmation()}{ExternalLoginConfirmation()}}
 {\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_account_controller_a7b22d95811cd90ae947e1d71b196d458} 
 async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Account\+Controller.\+External\+Login\+Confirmation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_external_login_confirmation_view_model}{External\+Login\+Confirmation\+View\+Model}}}]{model}{, }\item[{string}]{return\+Url}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Przetwarza potwierdzenie zewnętrznego logowania. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em model} & Model potwierdzenia zewnętrznego logowania.\\
+\hline
+{\em return\+Url} & Adres URL powrotu.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Widok potwierdzenia zewnętrznego logowania.
+\end{DoxyReturn}
 \Hypertarget{class_o_o_p_1_1_controllers_1_1_account_controller_aa12095aa058873a8f62a95d5f2301b18}\index{OOP.Controllers.AccountController@{OOP.Controllers.AccountController}!ExternalLoginFailure@{ExternalLoginFailure}}
 \index{ExternalLoginFailure@{ExternalLoginFailure}!OOP.Controllers.AccountController@{OOP.Controllers.AccountController}}
 \doxysubsubsection{\texorpdfstring{ExternalLoginFailure()}{ExternalLoginFailure()}}
 {\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_account_controller_aa12095aa058873a8f62a95d5f2301b18} 
 Action\+Result OOP.\+Controllers.\+Account\+Controller.\+External\+Login\+Failure (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Wyświetla widok błędu logowania zewnętrznego. 
+
+\begin{DoxyReturn}{Zwraca}
+Widok błędu logowania zewnętrznego.
+\end{DoxyReturn}
 \Hypertarget{class_o_o_p_1_1_controllers_1_1_account_controller_aa53cf048c82c17a9fa113f12b2c43f8b}\index{OOP.Controllers.AccountController@{OOP.Controllers.AccountController}!ForgotPassword@{ForgotPassword}}
 \index{ForgotPassword@{ForgotPassword}!OOP.Controllers.AccountController@{OOP.Controllers.AccountController}}
 \doxysubsubsection{\texorpdfstring{ForgotPassword()}{ForgotPassword()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_account_controller_aa53cf048c82c17a9fa113f12b2c43f8b} 
 Action\+Result OOP.\+Controllers.\+Account\+Controller.\+Forgot\+Password (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Wyświetla formularz zapomnianego hasła. 
+
+\begin{DoxyReturn}{Zwraca}
+Widok formularza zapomnianego hasła.
+\end{DoxyReturn}
 \Hypertarget{class_o_o_p_1_1_controllers_1_1_account_controller_adc77f82e95959d1f7d3ccf278f38e10f}\index{OOP.Controllers.AccountController@{OOP.Controllers.AccountController}!ForgotPassword@{ForgotPassword}}
 \index{ForgotPassword@{ForgotPassword}!OOP.Controllers.AccountController@{OOP.Controllers.AccountController}}
 \doxysubsubsection{\texorpdfstring{ForgotPassword()}{ForgotPassword()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_account_controller_adc77f82e95959d1f7d3ccf278f38e10f} 
 async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Account\+Controller.\+Forgot\+Password (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_forgot_password_view_model}{Forgot\+Password\+View\+Model}}}]{model}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Przetwarza żądanie zapomnianego hasła. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em model} & Model zapomnianego hasła.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Widok potwierdzenia zapomnianego hasła lub formularza z błędami.
+\end{DoxyReturn}
 \Hypertarget{class_o_o_p_1_1_controllers_1_1_account_controller_abc76688ee8ef79c491b85b3c6431f753}\index{OOP.Controllers.AccountController@{OOP.Controllers.AccountController}!ForgotPasswordConfirmation@{ForgotPasswordConfirmation}}
 \index{ForgotPasswordConfirmation@{ForgotPasswordConfirmation}!OOP.Controllers.AccountController@{OOP.Controllers.AccountController}}
 \doxysubsubsection{\texorpdfstring{ForgotPasswordConfirmation()}{ForgotPasswordConfirmation()}}
 {\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_account_controller_abc76688ee8ef79c491b85b3c6431f753} 
 Action\+Result OOP.\+Controllers.\+Account\+Controller.\+Forgot\+Password\+Confirmation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Wyświetla potwierdzenie zapomnianego hasła. 
+
+\begin{DoxyReturn}{Zwraca}
+Widok potwierdzenia zapomnianego hasła.
+\end{DoxyReturn}
 \Hypertarget{class_o_o_p_1_1_controllers_1_1_account_controller_a809d5bbee796c15451cb8d2b1b9a9067}\index{OOP.Controllers.AccountController@{OOP.Controllers.AccountController}!Login@{Login}}
 \index{Login@{Login}!OOP.Controllers.AccountController@{OOP.Controllers.AccountController}}
 \doxysubsubsection{\texorpdfstring{Login()}{Login()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -276,6 +410,24 @@ Wylogowuje użytkownika.
 \begin{DoxyReturn}{Zwraca}
 Przekierowanie do strony głównej.
 \end{DoxyReturn}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_account_controller_ab3d43ff67123a3024e6a7c08b7635c69}\index{OOP.Controllers.AccountController@{OOP.Controllers.AccountController}!RedirectToLocal@{RedirectToLocal}}
+\index{RedirectToLocal@{RedirectToLocal}!OOP.Controllers.AccountController@{OOP.Controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{RedirectToLocal()}{RedirectToLocal()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_account_controller_ab3d43ff67123a3024e6a7c08b7635c69} 
+Action\+Result OOP.\+Controllers.\+Account\+Controller.\+Redirect\+To\+Local (\begin{DoxyParamCaption}\item[{string}]{return\+Url}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Przekierowuje do lokalnego adresu URL. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em return\+Url} & Adres URL powrotu.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Akcja przekierowania.
+\end{DoxyReturn}
 \Hypertarget{class_o_o_p_1_1_controllers_1_1_account_controller_af8d6838ff0923b454396db537e6a6883}\index{OOP.Controllers.AccountController@{OOP.Controllers.AccountController}!Register@{Register}}
 \index{Register@{Register}!OOP.Controllers.AccountController@{OOP.Controllers.AccountController}}
 \doxysubsubsection{\texorpdfstring{Register()}{Register()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -313,30 +465,87 @@ Przekierowanie na odpowiednią stronę po rejestracji.
 {\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_account_controller_a2033624dfcea094c1dbf9daf9b07a118} 
 async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Account\+Controller.\+Reset\+Password (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_reset_password_view_model}{Reset\+Password\+View\+Model}}}]{model}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Przetwarza żądanie resetowania hasła. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em model} & Model resetowania hasła.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Widok potwierdzenia resetowania hasła lub formularza z błędami.
+\end{DoxyReturn}
 \Hypertarget{class_o_o_p_1_1_controllers_1_1_account_controller_ae8f060c99dada32958a179ed2fa1fe68}\index{OOP.Controllers.AccountController@{OOP.Controllers.AccountController}!ResetPassword@{ResetPassword}}
 \index{ResetPassword@{ResetPassword}!OOP.Controllers.AccountController@{OOP.Controllers.AccountController}}
 \doxysubsubsection{\texorpdfstring{ResetPassword()}{ResetPassword()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_account_controller_ae8f060c99dada32958a179ed2fa1fe68} 
 Action\+Result OOP.\+Controllers.\+Account\+Controller.\+Reset\+Password (\begin{DoxyParamCaption}\item[{string}]{code}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Wyświetla formularz resetowania hasła. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em code} & Kod resetowania hasła.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Widok formularza resetowania hasła lub błąd.
+\end{DoxyReturn}
 \Hypertarget{class_o_o_p_1_1_controllers_1_1_account_controller_ab4a5712fd2e313e08ba35d9a3a80de73}\index{OOP.Controllers.AccountController@{OOP.Controllers.AccountController}!ResetPasswordConfirmation@{ResetPasswordConfirmation}}
 \index{ResetPasswordConfirmation@{ResetPasswordConfirmation}!OOP.Controllers.AccountController@{OOP.Controllers.AccountController}}
 \doxysubsubsection{\texorpdfstring{ResetPasswordConfirmation()}{ResetPasswordConfirmation()}}
 {\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_account_controller_ab4a5712fd2e313e08ba35d9a3a80de73} 
 Action\+Result OOP.\+Controllers.\+Account\+Controller.\+Reset\+Password\+Confirmation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Wyświetla potwierdzenie resetowania hasła. 
+
+\begin{DoxyReturn}{Zwraca}
+Widok potwierdzenia resetowania hasła.
+\end{DoxyReturn}
 \Hypertarget{class_o_o_p_1_1_controllers_1_1_account_controller_a6960d3875ee3e2695e4e9a667514df1c}\index{OOP.Controllers.AccountController@{OOP.Controllers.AccountController}!SendCode@{SendCode}}
 \index{SendCode@{SendCode}!OOP.Controllers.AccountController@{OOP.Controllers.AccountController}}
 \doxysubsubsection{\texorpdfstring{SendCode()}{SendCode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_account_controller_a6960d3875ee3e2695e4e9a667514df1c} 
 async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Account\+Controller.\+Send\+Code (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_send_code_view_model}{Send\+Code\+View\+Model}}}]{model}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Przetwarza żądanie wysłania kodu dwuskładnikowego uwierzytelniania. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em model} & Model wysyłania kodu.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Widok potwierdzenia wysłania kodu lub formularza z błędami.
+\end{DoxyReturn}
 \Hypertarget{class_o_o_p_1_1_controllers_1_1_account_controller_a3e1ef276a7411c37b2afaa54f4c40429}\index{OOP.Controllers.AccountController@{OOP.Controllers.AccountController}!SendCode@{SendCode}}
 \index{SendCode@{SendCode}!OOP.Controllers.AccountController@{OOP.Controllers.AccountController}}
 \doxysubsubsection{\texorpdfstring{SendCode()}{SendCode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_account_controller_a3e1ef276a7411c37b2afaa54f4c40429} 
 async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Account\+Controller.\+Send\+Code (\begin{DoxyParamCaption}\item[{string}]{return\+Url}{, }\item[{bool}]{remember\+Me}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Wyświetla formularz wysyłania kodu dwuskładnikowego uwierzytelniania. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em return\+Url} & Adres URL powrotu.\\
+\hline
+{\em remember\+Me} & Flaga pamiętaj mnie.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Widok formularza wysyłania kodu.
+\end{DoxyReturn}
 \Hypertarget{class_o_o_p_1_1_controllers_1_1_account_controller_af226f2497d2417a3edc39acca474006d}\index{OOP.Controllers.AccountController@{OOP.Controllers.AccountController}!VerifyCode@{VerifyCode}}
 \index{VerifyCode@{VerifyCode}!OOP.Controllers.AccountController@{OOP.Controllers.AccountController}}
 \doxysubsubsection{\texorpdfstring{VerifyCode()}{VerifyCode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -379,12 +588,45 @@ Przekierowanie na odpowiednią stronę po weryfikacji.
 \end{DoxyReturn}
 
 
+\doxysubsection{Dokumentacja atrybutów składowych}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_account_controller_ab4eac45f1e1429a3472c34dfcf299ba1}\index{OOP.Controllers.AccountController@{OOP.Controllers.AccountController}!\_signInManager@{\_signInManager}}
+\index{\_signInManager@{\_signInManager}!OOP.Controllers.AccountController@{OOP.Controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{\_signInManager}{\_signInManager}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_account_controller_ab4eac45f1e1429a3472c34dfcf299ba1} 
+\mbox{\hyperlink{class_o_o_p_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} OOP.\+Controllers.\+Account\+Controller.\+\_\+sign\+In\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_account_controller_a162abbf825f147dca8238881672e2221}\index{OOP.Controllers.AccountController@{OOP.Controllers.AccountController}!\_userManager@{\_userManager}}
+\index{\_userManager@{\_userManager}!OOP.Controllers.AccountController@{OOP.Controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{\_userManager}{\_userManager}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_account_controller_a162abbf825f147dca8238881672e2221} 
+\mbox{\hyperlink{class_o_o_p_1_1_application_user_manager}{Application\+User\+Manager}} OOP.\+Controllers.\+Account\+Controller.\+\_\+user\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_account_controller_a5e59ff2d350e11249de3fa0059d38ab7}\index{OOP.Controllers.AccountController@{OOP.Controllers.AccountController}!db@{db}}
+\index{db@{db}!OOP.Controllers.AccountController@{OOP.Controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{db}{db}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_account_controller_a5e59ff2d350e11249de3fa0059d38ab7} 
+\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_application_db_context}{Application\+Db\+Context}} OOP.\+Controllers.\+Account\+Controller.\+db = new \mbox{\hyperlink{class_o_o_p_1_1_models_1_1_application_db_context}{Application\+Db\+Context}}()\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_account_controller_a36b6928aa6176c9574e09150b1a244f1}\index{OOP.Controllers.AccountController@{OOP.Controllers.AccountController}!XsrfKey@{XsrfKey}}
+\index{XsrfKey@{XsrfKey}!OOP.Controllers.AccountController@{OOP.Controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{XsrfKey}{XsrfKey}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_account_controller_a36b6928aa6176c9574e09150b1a244f1} 
+const string OOP.\+Controllers.\+Account\+Controller.\+Xsrf\+Key = "{}Xsrf\+Id"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
 \doxysubsection{Dokumentacja właściwości}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_account_controller_abd3c25f532ce796a7dea6471ae74d25a}\index{OOP.Controllers.AccountController@{OOP.Controllers.AccountController}!AuthenticationManager@{AuthenticationManager}}
+\index{AuthenticationManager@{AuthenticationManager}!OOP.Controllers.AccountController@{OOP.Controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{AuthenticationManager}{AuthenticationManager}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_account_controller_abd3c25f532ce796a7dea6471ae74d25a} 
+IAuthentication\+Manager OOP.\+Controllers.\+Account\+Controller.\+Authentication\+Manager\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private]}}
+
 \Hypertarget{class_o_o_p_1_1_controllers_1_1_account_controller_a182acec70a327a17d2e50aeff1da98f3}\index{OOP.Controllers.AccountController@{OOP.Controllers.AccountController}!SignInManager@{SignInManager}}
 \index{SignInManager@{SignInManager}!OOP.Controllers.AccountController@{OOP.Controllers.AccountController}}
 \doxysubsubsection{\texorpdfstring{SignInManager}{SignInManager}}
 {\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_account_controller_a182acec70a327a17d2e50aeff1da98f3} 
-\mbox{\hyperlink{class_o_o_p_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} OOP.\+Controllers.\+Account\+Controller.\+Sign\+In\+Manager\hspace{0.3cm}{\ttfamily [get]}}
+\mbox{\hyperlink{class_o_o_p_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} OOP.\+Controllers.\+Account\+Controller.\+Sign\+In\+Manager\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private set]}}
 
 
 
@@ -394,7 +636,7 @@ Pobiera menedżera logowania.
 \index{UserManager@{UserManager}!OOP.Controllers.AccountController@{OOP.Controllers.AccountController}}
 \doxysubsubsection{\texorpdfstring{UserManager}{UserManager}}
 {\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_account_controller_a1c4453f230eb6f5e110142eca278ccf5} 
-\mbox{\hyperlink{class_o_o_p_1_1_application_user_manager}{Application\+User\+Manager}} OOP.\+Controllers.\+Account\+Controller.\+User\+Manager\hspace{0.3cm}{\ttfamily [get]}}
+\mbox{\hyperlink{class_o_o_p_1_1_application_user_manager}{Application\+User\+Manager}} OOP.\+Controllers.\+Account\+Controller.\+User\+Manager\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private set]}}
 
 
 

@@ -42,6 +42,7 @@ namespace OOP.Controllers
             UserManager = userManager;
             SignInManager = signInManager;
         }
+
         /// <summary>
         /// Pobiera menedżera logowania.
         /// </summary>
@@ -56,6 +57,7 @@ namespace OOP.Controllers
                 _signInManager = value;
             }
         }
+
         /// <summary>
         /// Pobiera menedżera użytkowników.
         /// </summary>
@@ -70,6 +72,7 @@ namespace OOP.Controllers
                 _userManager = value;
             }
         }
+
         /// <summary>
         /// Wyświetla widok usuwania kont użytkowników.
         /// </summary>
@@ -293,7 +296,12 @@ namespace OOP.Controllers
             return View(model);
         }
 
-
+        /// <summary>
+        /// Potwierdza adres e-mail użytkownika.
+        /// </summary>
+        /// <param name="userId">Identyfikator użytkownika.</param>
+        /// <param name="code">Kod potwierdzający.</param>
+        /// <returns>Widok potwierdzenia lub błąd.</returns>
         //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]
@@ -307,6 +315,10 @@ namespace OOP.Controllers
             return View(result.Succeeded ? "ConfirmEmail" : "Error");
         }
 
+        /// <summary>
+        /// Wyświetla formularz zapomnianego hasła.
+        /// </summary>
+        /// <returns>Widok formularza zapomnianego hasła.</returns>
         //
         // GET: /Account/ForgotPassword
         [AllowAnonymous]
@@ -315,6 +327,11 @@ namespace OOP.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Przetwarza żądanie zapomnianego hasła.
+        /// </summary>
+        /// <param name="model">Model zapomnianego hasła.</param>
+        /// <returns>Widok potwierdzenia zapomnianego hasła lub formularza z błędami.</returns>
         //
         // POST: /Account/ForgotPassword
         [HttpPost]
@@ -343,6 +360,10 @@ namespace OOP.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Wyświetla potwierdzenie zapomnianego hasła.
+        /// </summary>
+        /// <returns>Widok potwierdzenia zapomnianego hasła.</returns>
         //
         // GET: /Account/ForgotPasswordConfirmation
         [AllowAnonymous]
@@ -351,6 +372,11 @@ namespace OOP.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Wyświetla formularz resetowania hasła.
+        /// </summary>
+        /// <param name="code">Kod resetowania hasła.</param>
+        /// <returns>Widok formularza resetowania hasła lub błąd.</returns>
         //
         // GET: /Account/ResetPassword
         [AllowAnonymous]
@@ -359,6 +385,11 @@ namespace OOP.Controllers
             return code == null ? View("Error") : View();
         }
 
+        /// <summary>
+        /// Przetwarza żądanie resetowania hasła.
+        /// </summary>
+        /// <param name="model">Model resetowania hasła.</param>
+        /// <returns>Widok potwierdzenia resetowania hasła lub formularza z błędami.</returns>
         //
         // POST: /Account/ResetPassword
         [HttpPost]
@@ -385,6 +416,10 @@ namespace OOP.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Wyświetla potwierdzenie resetowania hasła.
+        /// </summary>
+        /// <returns>Widok potwierdzenia resetowania hasła.</returns>
         //
         // GET: /Account/ResetPasswordConfirmation
         [AllowAnonymous]
@@ -393,6 +428,12 @@ namespace OOP.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Przetwarza żądanie logowania zewnętrznego.
+        /// </summary>
+        /// <param name="provider">Dostawca logowania zewnętrznego.</param>
+        /// <param name="returnUrl">Adres URL powrotu.</param>
+        /// <returns>Wywołanie ChallengeResult.</returns>
         //
         // POST: /Account/ExternalLogin
         [HttpPost]
@@ -404,6 +445,12 @@ namespace OOP.Controllers
             return new ChallengeResult(provider, Url.Action("ExternalLoginCallback", "Account", new { ReturnUrl = returnUrl }));
         }
 
+        /// <summary>
+        /// Wyświetla formularz wysyłania kodu dwuskładnikowego uwierzytelniania.
+        /// </summary>
+        /// <param name="returnUrl">Adres URL powrotu.</param>
+        /// <param name="rememberMe">Flaga pamiętaj mnie.</param>
+        /// <returns>Widok formularza wysyłania kodu.</returns>
         //
         // GET: /Account/SendCode
         [AllowAnonymous]
@@ -419,6 +466,11 @@ namespace OOP.Controllers
             return View(new SendCodeViewModel { Providers = factorOptions, ReturnUrl = returnUrl, RememberMe = rememberMe });
         }
 
+        /// <summary>
+        /// Przetwarza żądanie wysłania kodu dwuskładnikowego uwierzytelniania.
+        /// </summary>
+        /// <param name="model">Model wysyłania kodu.</param>
+        /// <returns>Widok potwierdzenia wysłania kodu lub formularza z błędami.</returns>
         //
         // POST: /Account/SendCode
         [HttpPost]
@@ -439,6 +491,11 @@ namespace OOP.Controllers
             return RedirectToAction("VerifyCode", new { Provider = model.SelectedProvider, ReturnUrl = model.ReturnUrl, RememberMe = model.RememberMe });
         }
 
+        /// <summary>
+        /// Przetwarza odpowiedź z zewnętrznego logowania.
+        /// </summary>
+        /// <param name="returnUrl">Adres URL powrotu.</param>
+        /// <returns>Widok odpowiedzi z logowania zewnętrznego.</returns>
         //
         // GET: /Account/ExternalLoginCallback
         [AllowAnonymous]
@@ -469,6 +526,12 @@ namespace OOP.Controllers
             }
         }
 
+        /// <summary>
+        /// Przetwarza potwierdzenie zewnętrznego logowania.
+        /// </summary>
+        /// <param name="model">Model potwierdzenia zewnętrznego logowania.</param>
+        /// <param name="returnUrl">Adres URL powrotu.</param>
+        /// <returns>Widok potwierdzenia zewnętrznego logowania.</returns>
         //
         // POST: /Account/ExternalLoginConfirmation
         [HttpPost]
@@ -521,6 +584,10 @@ namespace OOP.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        /// <summary>
+        /// Wyświetla widok błędu logowania zewnętrznego.
+        /// </summary>
+        /// <returns>Widok błędu logowania zewnętrznego.</returns>
         //
         // GET: /Account/ExternalLoginFailure
         [AllowAnonymous]
@@ -529,6 +596,10 @@ namespace OOP.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Zwalnia zasoby używane przez kontroler.
+        /// </summary>
+        /// <param name="disposing">Wartość logiczna wskazująca, czy zarządzane zasoby powinny być zwolnione.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -561,6 +632,10 @@ namespace OOP.Controllers
             }
         }
 
+        /// <summary>
+        /// Dodaje błędy do stanu modelu.
+        /// </summary>
+        /// <param name="result">Wynik operacji tożsamości.</param>
         private void AddErrors(IdentityResult result)
         {
             foreach (var error in result.Errors)
@@ -569,6 +644,11 @@ namespace OOP.Controllers
             }
         }
 
+        /// <summary>
+        /// Przekierowuje do lokalnego adresu URL.
+        /// </summary>
+        /// <param name="returnUrl">Adres URL powrotu.</param>
+        /// <returns>Akcja przekierowania.</returns>
         private ActionResult RedirectToLocal(string returnUrl)
         {
             if (Url.IsLocalUrl(returnUrl))
@@ -578,6 +658,9 @@ namespace OOP.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        /// <summary>
+        /// Wynik wyzwania do uwierzytelniania.
+        /// </summary>
         internal class ChallengeResult : HttpUnauthorizedResult
         {
             public ChallengeResult(string provider, string redirectUri)

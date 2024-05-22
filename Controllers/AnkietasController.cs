@@ -15,9 +15,18 @@ using System.IO;
 
 namespace OOP.Controllers
 {
+    /// <summary>
+    /// Kontroler do obsługi ankiet.
+    /// </summary>
     public class AnkietasController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+
+        /// <summary>
+        /// Wyświetla listę ankiet z możliwością wyszukiwania odpowiedniemu typowi użytkownika
+        /// </summary>
+        /// <param name="searchString">Ciąg wyszukiwania.</param>
+        /// <returns>Widok listy ankiet.</returns>
         public async Task<ActionResult> Index(string searchString)
     {
         var user = User.Identity;
@@ -65,7 +74,12 @@ namespace OOP.Controllers
         }
     }
 
-    public async Task<ActionResult> DzialAction(Dzial dzial)
+        /// <summary>
+        /// Akcja dla roli "Dzial" wyświetlająca przypisane ankiety.
+        /// </summary>
+        /// <param name="dzial">Obiekt działu.</param>
+        /// <returns>Widok listy ankiet.</returns>
+        public async Task<ActionResult> DzialAction(Dzial dzial)
         {
 
             var stronyAnkiet = await db.StronyAnkiet
@@ -85,6 +99,11 @@ namespace OOP.Controllers
             return View(viewModels);
         }
 
+        /// <summary>
+        /// Wyświetla szczegóły ankiety dotyczące konkretnego działu 
+        /// </summary>
+        /// <param name="id">ID ankiety.</param>
+        /// <returns>Widok szczegółów dla aktualnie zalogowanego działu.</returns>
         public async Task<ActionResult> DzialDetails(int? id)
         {
             if (id == null)
@@ -110,7 +129,11 @@ namespace OOP.Controllers
             return View(stronaAnkiety);
         }
 
-
+        /// <summary>
+        /// Wyświetla szczegóły ankiety.
+        /// </summary>
+        /// <param name="id">ID ankiety.</param>
+        /// <returns>Widok szczegółów ankiety.</returns>
         // GET: Ankietas/Details/5
         public async Task<ActionResult> Details(int? id)
         {
@@ -129,6 +152,10 @@ namespace OOP.Controllers
             return View(ankieta);
         }
 
+        /// <summary>
+        /// Wyświetla formularz tworzenia nowej ankiety.
+        /// </summary>
+        /// <returns>Widok formularza tworzenia ankiety.</returns>
         // GET: Ankietas/Create
         public ActionResult Create()
         {
@@ -155,6 +182,12 @@ namespace OOP.Controllers
 
 
         }
+
+        /// <summary>
+        /// Tworzy nową ankietę na podstawie shematu.
+        /// </summary>
+        /// <param name="ankieta">Obiekt ankiety.</param>
+        /// <returns>Przekierowanie do widoku ankiety.</returns>
         // POST: Ankietas/Create
         // Aby zapewnić ochronę przed atakami polegającymi na przesyłaniu dodatkowych danych, włącz określone właściwości, z którymi chcesz utworzyć powiązania.
         // Aby uzyskać więcej szczegółów, zobacz https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -210,6 +243,11 @@ namespace OOP.Controllers
             return View(ankieta);
         }
 
+        /// <summary>
+        /// Edytuje istniejącą ankietę.
+        /// </summary>
+        /// <param name="ankieta">Obiekt ankiety.</param>
+        /// <returns>Przekierowanie do widoku listy ankiet.</returns>
         // GET: Ankietas/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
@@ -243,6 +281,11 @@ namespace OOP.Controllers
             return View(ankieta);
         }
 
+        /// <summary>
+        /// Wyświetla formularz usunięcia ankiety.
+        /// </summary>
+        /// <param name="id">ID ankiety.</param>
+        /// <returns>Widok formularza usunięcia ankiety.</returns>
         // GET: Ankietas/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
@@ -258,6 +301,11 @@ namespace OOP.Controllers
             return View(ankieta);
         }
 
+        /// <summary>
+        /// Usuwa ankietę.
+        /// </summary>
+        /// <param name="id">ID ankiety.</param>
+        /// <returns>Przekierowanie do widoku listy ankiet.</returns>
         // POST: Ankietas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -269,6 +317,10 @@ namespace OOP.Controllers
             return RedirectToAction("Index");
         }
 
+        /// <summary>
+        /// Zwolnienie zasobów.
+        /// </summary>
+        /// <param name="disposing">Wartość true, jeśli zarządzane zasoby powinny być zwolnione; w przeciwnym razie false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -277,6 +329,12 @@ namespace OOP.Controllers
             }
             base.Dispose(disposing);
         }
+
+        /// <summary>
+        /// Zapisuje pola ankiety.
+        /// </summary>
+        /// <param name="ankieta">Obiekt ankiety.</param>
+        /// <returns>Przekierowanie do szczegółów ankiety.</returns>
         [HttpPost]
         public async Task<ActionResult> SaveFields(Ankieta ankieta)
         {
@@ -347,6 +405,11 @@ namespace OOP.Controllers
             return RedirectToAction("Details", new { id = ankieta.AnkietaID });
         }
 
+        /// <summary>
+        /// Usuwa załącznik.
+        /// </summary>
+        /// <param name="attachmentId">ID załącznika.</param>
+        /// <returns>Informacja o powodzeniu operacji.</returns>
         [HttpPost]
         public async Task<ActionResult> DeleteAttachment(int attachmentId)
         {
@@ -377,6 +440,11 @@ namespace OOP.Controllers
             }
         }
 
+        /// <summary>
+        /// Oblicza sumę punktów ankiety z podziałem na punkty zdobyte za działalność Organizacyjną, Naukową.
+        /// </summary>
+        /// <param name="ankieta">Obiekt ankiety.</param>
+        /// <returns>2 tablice z sumą punktów. pierwsza za działanosć Naukową , druga Organizacyją</returns>
         private int[] CalculateTotalPoints(Ankieta ankieta)
         {
             int sumaO = 0;

@@ -126,6 +126,10 @@ namespace OOP.Controllers
             return RedirectToAction("Index");
         }
 
+        /// <summary>
+        /// Zwolnienie zasobów.
+        /// </summary>
+        /// <param name="disposing">Wartość true, jeśli zarządzane zasoby powinny być zwolnione; w przeciwnym razie false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing)
