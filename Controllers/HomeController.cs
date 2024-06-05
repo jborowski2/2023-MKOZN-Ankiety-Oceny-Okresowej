@@ -12,10 +12,18 @@ using Microsoft.AspNet.Identity;
 
 namespace OOP.Controllers
 {
+    /// <summary>
+    /// Kontroler odpowiedzialny za obsługę strony głównej oraz statycznych stron informacyjnych.
+    /// </summary>
     [Authorize]
     public class HomeController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+
+        /// <summary>
+        /// Wyświetla stronę główną z listą osiągnięć zalogowanego użytkownika.
+        /// </summary>
+        /// <returns>Widok z listą osiągnięć zalogowanego użytkownika.</returns>
         public async Task<ActionResult> Index()
         {
             var userId = User.Identity.GetUserId();
@@ -24,6 +32,10 @@ namespace OOP.Controllers
             return View(await osiagniecia.ToListAsync());
         }
 
+        /// <summary>
+        /// Wyświetla stronę "O aplikacji".
+        /// </summary>
+        /// <returns>Widok strony "O aplikacji".</returns>
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -31,6 +43,10 @@ namespace OOP.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Wyświetla stronę kontaktową.
+        /// </summary>
+        /// <returns>Widok strony kontaktowej.</returns>
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

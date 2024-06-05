@@ -1,5 +1,10 @@
 \doxysection{Dokumentacja klasy OOP.\+Controllers.\+Home\+Controller}
 \hypertarget{class_o_o_p_1_1_controllers_1_1_home_controller}{}\label{class_o_o_p_1_1_controllers_1_1_home_controller}\index{OOP.Controllers.HomeController@{OOP.Controllers.HomeController}}
+
+
+Kontroler odpowiedzialny za obsługę strony głównej oraz statycznych stron informacyjnych.  
+
+
 Diagram dziedziczenia dla OOP.\+Controllers.\+Home\+Controller\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,17 +15,20 @@ Diagram dziedziczenia dla OOP.\+Controllers.\+Home\+Controller\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_home_controller_a5a4c2cb5b0ad6a0d4a8262766f2f879f}{Index}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Wyświetla stronę główną z listą osiągnięć zalogowanego użytkownika. \end{DoxyCompactList}\item 
 Action\+Result \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_home_controller_a563b4ab4dc57aae0f54d8085c8eeb4f0}{About}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Wyświetla stronę "{}\+O aplikacji"{}. \end{DoxyCompactList}\item 
 Action\+Result \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_home_controller_a18979af91db99d77f1d46a7309684b3c}{Contact}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Wyświetla stronę kontaktową. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Atrybuty prywatne}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_o_o_p_1_1_models_1_1_application_db_context}{Application\+Db\+Context}} \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_home_controller_a245abba72f2d4883797e0336b530b31a}{db}} = new \mbox{\hyperlink{class_o_o_p_1_1_models_1_1_application_db_context}{Application\+Db\+Context}}()
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Opis szczegółowy}
+Kontroler odpowiedzialny za obsługę strony głównej oraz statycznych stron informacyjnych. 
 
 \doxysubsection{Dokumentacja funkcji składowych}
 \Hypertarget{class_o_o_p_1_1_controllers_1_1_home_controller_a563b4ab4dc57aae0f54d8085c8eeb4f0}\index{OOP.Controllers.HomeController@{OOP.Controllers.HomeController}!About@{About}}
@@ -29,18 +37,39 @@ Action\+Result \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_home_controller_
 {\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_home_controller_a563b4ab4dc57aae0f54d8085c8eeb4f0} 
 Action\+Result OOP.\+Controllers.\+Home\+Controller.\+About (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Wyświetla stronę "{}\+O aplikacji"{}. 
+
+\begin{DoxyReturn}{Zwraca}
+Widok strony "{}\+O aplikacji"{}.
+\end{DoxyReturn}
 \Hypertarget{class_o_o_p_1_1_controllers_1_1_home_controller_a18979af91db99d77f1d46a7309684b3c}\index{OOP.Controllers.HomeController@{OOP.Controllers.HomeController}!Contact@{Contact}}
 \index{Contact@{Contact}!OOP.Controllers.HomeController@{OOP.Controllers.HomeController}}
 \doxysubsubsection{\texorpdfstring{Contact()}{Contact()}}
 {\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_home_controller_a18979af91db99d77f1d46a7309684b3c} 
 Action\+Result OOP.\+Controllers.\+Home\+Controller.\+Contact (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Wyświetla stronę kontaktową. 
+
+\begin{DoxyReturn}{Zwraca}
+Widok strony kontaktowej.
+\end{DoxyReturn}
 \Hypertarget{class_o_o_p_1_1_controllers_1_1_home_controller_a5a4c2cb5b0ad6a0d4a8262766f2f879f}\index{OOP.Controllers.HomeController@{OOP.Controllers.HomeController}!Index@{Index}}
 \index{Index@{Index}!OOP.Controllers.HomeController@{OOP.Controllers.HomeController}}
 \doxysubsubsection{\texorpdfstring{Index()}{Index()}}
 {\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_home_controller_a5a4c2cb5b0ad6a0d4a8262766f2f879f} 
 async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Home\+Controller.\+Index (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Wyświetla stronę główną z listą osiągnięć zalogowanego użytkownika. 
+
+\begin{DoxyReturn}{Zwraca}
+Widok z listą osiągnięć zalogowanego użytkownika.
+\end{DoxyReturn}
 
 
 \doxysubsection{Dokumentacja atrybutów składowych}

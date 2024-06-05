@@ -6,6 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace OOP.Controllers
 {
@@ -47,7 +49,7 @@ namespace OOP.Controllers
         /// </summary>
         /// <param name="id">Identyfikator pliku.</param>
         /// <returns>Ścieżka pliku.</returns>
-        private async Task<string> GetFilePathById(int id)
+        private async Task<string> GetFilePathById(int? id)
         {
 
             var file = await db.Attachments.FindAsync(id);
@@ -56,6 +58,47 @@ namespace OOP.Controllers
             return filePath;
         }
 
+        public async Task<string> AnkietaToPdfConv(Ankieta ankieta, string targetFolderPath)
+        {
+
+            Document doc = new Document();
+            try
+            {
+                
+                string filePath = Path.Combine(targetFolderPath, ankieta.AnkietaID + ".pdf");
+                PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(filePath, FileMode.Create));
+                doc.Open();
+
+                doc.Add(new Paragraph($"Ankieta ID: {ankieta.AnkietaID}"));
+                doc.Add(new Paragraph($"Stan: {ankieta.AnkietaState}"));
+                doc.Add(new Paragraph($"Data: {ankieta.Data:dd-MM-yyyy}"));
+                doc.Add(new Paragraph($"Pracownik: {ankieta.Pracownik.Imie} {ankieta.Pracownik.Nazwisko}"));
+                doc.Add(new Paragraph($"Punkty Organizacyjne: {ankieta.CalculateTotalPointsO()}"));
+                doc.Add(new Paragraph($"Punkty Nieorganizacyjne: {ankieta.CalculateTotalPointsN()}"));
+                doc.Add(new Paragraph(""));
+
+                foreach (var strona in ankieta.StronyAnkiet)
+                {
+                    foreach (var pole in strona.PolaAnkiety)
+                    {
+                        if(pole.Organizacyjne)
+                        doc.Add(new Paragraph($"Nazwa: {pole.Tresc}, Liczba Punktow: {pole.LiczbaPunktow}"));
+                    }
+                    foreach (var pole in strona.PolaAnkiety)
+                    {
+                        if (!pole.Organizacyjne)
+                            doc.Add(new Paragraph($"Nazwa: {pole.Tresc}, Liczba Punktow: {pole.LiczbaPunktow}"));
+                    }
+                    doc.Add(new Paragraph(""));
+                }
+                doc.CloseDocument();
+            }
+            catch (Exception ex) {
+                return ex.ToString();
+            }
+
+            return "ok";
+        }
     }
 
 }

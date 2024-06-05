@@ -94,6 +94,9 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">Dokumentacja klasy OOP.Controllers.RoleController</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Kontroler odpowiedzialny za zarządzanie rolami użytkowników.  
+ <a href="#details">Więcej...</a></p>
 <div class="dynheader">
 Diagram dziedziczenia dla OOP.Controllers.RoleController</div>
 <div class="dyncontent">
@@ -104,11 +107,15 @@ Diagram dziedziczenia dla OOP.Controllers.RoleController</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Metody publiczne</h2></td></tr>
 <tr class="memitem:abca766c850ea75df56d43b656dc64af8" id="r_abca766c850ea75df56d43b656dc64af8"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abca766c850ea75df56d43b656dc64af8">Create</a> ()</td></tr>
+<tr class="memdesc:abca766c850ea75df56d43b656dc64af8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tworzy domyślne role w systemie.  <br /></td></tr>
 <tr class="separator:abca766c850ea75df56d43b656dc64af8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82de0b2fce6825bee34c36d619ecee7c" id="r_a82de0b2fce6825bee34c36d619ecee7c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82de0b2fce6825bee34c36d619ecee7c">AddToRole</a> ()</td></tr>
+<tr class="memdesc:a82de0b2fce6825bee34c36d619ecee7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dodaje użytkownika do roli.  <br /></td></tr>
 <tr class="separator:a82de0b2fce6825bee34c36d619ecee7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Kontroler odpowiedzialny za zarządzanie rolami użytkowników. </p>
+</div><h2 class="groupheader">Dokumentacja funkcji składowych</h2>
 <a id="a82de0b2fce6825bee34c36d619ecee7c" name="a82de0b2fce6825bee34c36d619ecee7c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a82de0b2fce6825bee34c36d619ecee7c">&#9670;&#160;</a></span>AddToRole()</h2>
 
@@ -131,6 +138,10 @@ Metody publiczne</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Dodaje użytkownika do roli. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>Informacja o wyniku operacji.</dd></dl>
+<p>Aktualnie metoda nie implementuje żadnej logiki dodawania użytkownika do roli. </p>
 
 </div>
 </div>
@@ -156,6 +167,15 @@ Metody publiczne</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Tworzy domyślne role w systemie. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>Informacja o wyniku operacji.</dd></dl>
+<p>Role tworzone przez tę metodę to:</p><ul>
+<li>Admin</li>
+<li>Pracownik</li>
+<li>Dziekan</li>
+<li>Rektor </li>
+</ul>
 
 </div>
 </div>

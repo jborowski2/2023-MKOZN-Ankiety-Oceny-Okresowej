@@ -151,7 +151,22 @@ namespace OOP.Controllers
             ViewBag.Message = CalculateTotalPoints(ankieta);
             return View(ankieta);
         }
+        public async Task<ActionResult> AnkietaToPdfConv(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var ankieta = await db.Ankiety.FindAsync(id);
+            if(ankieta != null)
+            {
+                var fc = new FileController();
+                string serverFolderPath = Server.MapPath("~/App_Data/Ankietas");
+                var filePath = await fc.AnkietaToPdfConv(ankieta, serverFolderPath);
+            }
+            return RedirectToAction("Details", ankieta.AnkietaID);
 
+        }
         /// <summary>
         /// Wyświetla formularz tworzenia nowej ankiety.
         /// </summary>

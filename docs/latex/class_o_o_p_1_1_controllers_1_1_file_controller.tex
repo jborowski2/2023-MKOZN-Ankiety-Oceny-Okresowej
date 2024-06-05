@@ -1,5 +1,10 @@
 \doxysection{Dokumentacja klasy OOP.\+Controllers.\+File\+Controller}
 \hypertarget{class_o_o_p_1_1_controllers_1_1_file_controller}{}\label{class_o_o_p_1_1_controllers_1_1_file_controller}\index{OOP.Controllers.FileController@{OOP.Controllers.FileController}}
+
+
+Kontroler odpowiedzialny za zarządzanie plikami.  
+
+
 Diagram dziedziczenia dla OOP.\+Controllers.\+File\+Controller\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,20 +15,23 @@ Diagram dziedziczenia dla OOP.\+Controllers.\+File\+Controller\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 Action\+Result \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_file_controller_aa23204baad116f137d497d96659779cf}{Index}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Wyświetla stronę główną kontrolera File. \end{DoxyCompactList}\item 
 async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_file_controller_a8c830d2c1ef1f4e754d9a5f6ebd8649e}{Download}} (int id)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Pobiera plik na podstawie identyfikatora. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Metody prywatne}
 \begin{DoxyCompactItemize}
 \item 
 async Task$<$ string $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_file_controller_afe1c19212c956057d9ada980f3d32baf}{Get\+File\+Path\+By\+Id}} (int id)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Pobiera ścieżkę pliku na podstawie identyfikatora. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Atrybuty prywatne}
 \begin{DoxyCompactItemize}
 \item 
 readonly \mbox{\hyperlink{class_o_o_p_1_1_models_1_1_application_db_context}{Application\+Db\+Context}} \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_file_controller_a390c9987ef40d1960e04bbfad64284b1}{db}} = new \mbox{\hyperlink{class_o_o_p_1_1_models_1_1_application_db_context}{Application\+Db\+Context}}()
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Opis szczegółowy}
+Kontroler odpowiedzialny za zarządzanie plikami. 
 
 \doxysubsection{Dokumentacja funkcji składowych}
 \Hypertarget{class_o_o_p_1_1_controllers_1_1_file_controller_a8c830d2c1ef1f4e754d9a5f6ebd8649e}\index{OOP.Controllers.FileController@{OOP.Controllers.FileController}!Download@{Download}}
@@ -32,18 +40,49 @@ readonly \mbox{\hyperlink{class_o_o_p_1_1_models_1_1_application_db_context}{App
 {\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_file_controller_a8c830d2c1ef1f4e754d9a5f6ebd8649e} 
 async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+File\+Controller.\+Download (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Pobiera plik na podstawie identyfikatora. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em id} & Identyfikator pliku.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Plik do pobrania.
+\end{DoxyReturn}
 \Hypertarget{class_o_o_p_1_1_controllers_1_1_file_controller_afe1c19212c956057d9ada980f3d32baf}\index{OOP.Controllers.FileController@{OOP.Controllers.FileController}!GetFilePathById@{GetFilePathById}}
 \index{GetFilePathById@{GetFilePathById}!OOP.Controllers.FileController@{OOP.Controllers.FileController}}
 \doxysubsubsection{\texorpdfstring{GetFilePathById()}{GetFilePathById()}}
 {\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_file_controller_afe1c19212c956057d9ada980f3d32baf} 
 async Task$<$ string $>$ OOP.\+Controllers.\+File\+Controller.\+Get\+File\+Path\+By\+Id (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
+
+
+Pobiera ścieżkę pliku na podstawie identyfikatora. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em id} & Identyfikator pliku.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Ścieżka pliku.
+\end{DoxyReturn}
 \Hypertarget{class_o_o_p_1_1_controllers_1_1_file_controller_aa23204baad116f137d497d96659779cf}\index{OOP.Controllers.FileController@{OOP.Controllers.FileController}!Index@{Index}}
 \index{Index@{Index}!OOP.Controllers.FileController@{OOP.Controllers.FileController}}
 \doxysubsubsection{\texorpdfstring{Index()}{Index()}}
 {\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_file_controller_aa23204baad116f137d497d96659779cf} 
 Action\+Result OOP.\+Controllers.\+File\+Controller.\+Index (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Wyświetla stronę główną kontrolera File. 
+
+/// \begin{DoxyReturn}{Zwraca}
+Widok strony głównej kontrolera File.
+\end{DoxyReturn}
 
 
 \doxysubsection{Dokumentacja atrybutów składowych}

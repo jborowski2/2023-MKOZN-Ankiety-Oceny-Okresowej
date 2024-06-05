@@ -10,22 +10,35 @@ using OOP.Models;
 
 namespace OOP.Controllers
 {
+    /// <summary>
+    /// Kontroler zarządzający operacjami związanymi z kontem użytkownika.
+    /// </summary>
     [Authorize]
     public class ManageController : Controller
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
+
+        /// <summary>
+        /// Inicjalizuje nową instancję klasy <see cref="ManageController"/>.
+        /// </summary>
         public ManageController()
         {
         }
-
+        /// <summary>
+        /// Inicjalizuje nową instancję klasy <see cref="ManageController"/> z określonymi menedżerami użytkowników i logowania.
+        /// </summary>
+        /// <param name="userManager">Menedżer użytkowników.</param>
+        /// <param name="signInManager">Menedżer logowania.</param>
         public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
         }
-
+        /// <summary>
+        /// Pobiera menedżera logowania.
+        /// </summary>
         public ApplicationSignInManager SignInManager
         {
             get
@@ -37,7 +50,9 @@ namespace OOP.Controllers
                 _signInManager = value; 
             }
         }
-
+        /// <summary>
+        /// Pobiera menedżera użytkowników.
+        /// </summary>
         public ApplicationUserManager UserManager
         {
             get
@@ -49,7 +64,11 @@ namespace OOP.Controllers
                 _userManager = value;
             }
         }
-
+        /// <summary>
+        /// Wyświetla stronę główną zarządzania kontem.
+        /// </summary>
+        /// <param name="message">Opcjonalna wiadomość statusu.</param>
+        /// <returns>Widok strony głównej zarządzania kontem.</returns>
         //
         // GET: /Manage/Index
         public async Task<ActionResult> Index(ManageMessageId? message)
@@ -75,6 +94,12 @@ namespace OOP.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Usuwa logowanie zewnętrzne.
+        /// </summary>
+        /// <param name="loginProvider">Dostawca logowania.</param>
+        /// <param name="providerKey">Klucz dostawcy.</param>
+        /// <returns>Przekierowanie do strony zarządzania logowaniami.</returns>
         //
         // POST: /Manage/RemoveLogin
         [HttpPost]
@@ -99,13 +124,21 @@ namespace OOP.Controllers
             return RedirectToAction("ManageLogins", new { Message = message });
         }
 
+        /// <summary>
+        /// Wyświetla formularz dodawania numeru telefonu.
+        /// </summary>
+        /// <returns>Widok formularza dodawania numeru telefonu.</returns>
         //
         // GET: /Manage/AddPhoneNumber
         public ActionResult AddPhoneNumber()
         {
             return View();
         }
-
+        /// <summary>
+        /// Dodaje numer telefonu do konta użytkownika.
+        /// </summary>
+        /// <param name="model">Model dodawania numeru telefonu.</param>
+        /// <returns>Przekierowanie do weryfikacji numeru telefonu.</returns>
         //
         // POST: /Manage/AddPhoneNumber
         [HttpPost]
@@ -129,7 +162,10 @@ namespace OOP.Controllers
             }
             return RedirectToAction("VerifyPhoneNumber", new { PhoneNumber = model.Number });
         }
-
+        /// <summary>
+        /// Włącza uwierzytelnianie dwuskładnikowe.
+        /// </summary>
+        /// <returns>Przekierowanie do strony głównej zarządzania kontem.</returns>
         //
         // POST: /Manage/EnableTwoFactorAuthentication
         [HttpPost]
@@ -145,6 +181,10 @@ namespace OOP.Controllers
             return RedirectToAction("Index", "Manage");
         }
 
+        /// <summary>
+        /// Wyłącza uwierzytelnianie dwuskładnikowe.
+        /// </summary>
+        /// <returns>Przekierowanie do strony głównej zarządzania kontem.</returns>
         //
         // POST: /Manage/DisableTwoFactorAuthentication
         [HttpPost]
@@ -159,7 +199,11 @@ namespace OOP.Controllers
             }
             return RedirectToAction("Index", "Manage");
         }
-
+        /// <summary>
+        /// Wyświetla formularz weryfikacji numeru telefonu.
+        /// </summary>
+        /// <param name="phoneNumber">Numer telefonu do weryfikacji.</param>
+        /// <returns>Widok formularza weryfikacji numeru telefonu.</returns>
         //
         // GET: /Manage/VerifyPhoneNumber
         public async Task<ActionResult> VerifyPhoneNumber(string phoneNumber)
@@ -168,7 +212,11 @@ namespace OOP.Controllers
             // Wyślij wiadomość SMS za pośrednictwem dostawcy usług SMS w celu zweryfikowania numeru telefonu
             return phoneNumber == null ? View("Error") : View(new VerifyPhoneNumberViewModel { PhoneNumber = phoneNumber });
         }
-
+        /// <summary>
+        /// Weryfikuje numer telefonu użytkownika.
+        /// </summary>
+        /// <param name="model">Model weryfikacji numeru telefonu.</param>
+        /// <returns>Przekierowanie do strony głównej zarządzania kontem.</returns>
         //
         // POST: /Manage/VerifyPhoneNumber
         [HttpPost]
@@ -194,6 +242,10 @@ namespace OOP.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Usuwa numer telefonu z konta użytkownika.
+        /// </summary>
+        /// <returns>Przekierowanie do strony głównej zarządzania kontem.</returns>
         //
         // POST: /Manage/RemovePhoneNumber
         [HttpPost]
@@ -212,7 +264,10 @@ namespace OOP.Controllers
             }
             return RedirectToAction("Index", new { Message = ManageMessageId.RemovePhoneSuccess });
         }
-
+        /// <summary>
+        /// Wyświetla formularz zmiany hasła.
+        /// </summary>
+        /// <returns>Widok formularza zmiany hasła.</returns>
         //
         // GET: /Manage/ChangePassword
         public ActionResult ChangePassword()
@@ -220,6 +275,11 @@ namespace OOP.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Zmienia hasło użytkownika.
+        /// </summary>
+        /// <param name="model">Model zmiany hasła.</param>
+        /// <returns>Przekierowanie do strony głównej zarządzania kontem.</returns>
         //
         // POST: /Manage/ChangePassword
         [HttpPost]
@@ -243,14 +303,21 @@ namespace OOP.Controllers
             AddErrors(result);
             return View(model);
         }
-
+        /// <summary>
+        /// Wyświetla formularz ustawienia hasła.
+        /// </summary>
+        /// <returns>Widok formularza ustawienia hasła.</returns>
         //
         // GET: /Manage/SetPassword
         public ActionResult SetPassword()
         {
             return View();
         }
-
+        /// <summary>
+        /// Ustawia hasło użytkownika.
+        /// </summary>
+        /// <param name="model">Model ustawienia hasła.</param>
+        /// <returns>Przekierowanie do strony głównej zarządzania kontem.</returns>
         //
         // POST: /Manage/SetPassword
         [HttpPost]
@@ -275,7 +342,11 @@ namespace OOP.Controllers
             // Dotarcie do tego miejsca wskazuje, że wystąpił błąd, wyświetl ponownie formularz
             return View(model);
         }
-
+        /// <summary>
+        /// Zarządza logowaniami zewnętrznymi użytkownika.
+        /// </summary>
+        /// <param name="message">Opcjonalna wiadomość statusu.</param>
+        /// <returns>Widok zarządzania logowaniami.</returns>
         //
         // GET: /Manage/ManageLogins
         public async Task<ActionResult> ManageLogins(ManageMessageId? message)
@@ -298,7 +369,11 @@ namespace OOP.Controllers
                 OtherLogins = otherLogins
             });
         }
-
+        /// <summary>
+        /// Inicjuje połączenie z logowaniem zewnętrznym.
+        /// </summary>
+        /// <param name="provider">Dostawca logowania zewnętrznego.</param>
+        /// <returns>Przekierowanie do dostawcy logowania zewnętrznego.</returns>
         //
         // POST: /Manage/LinkLogin
         [HttpPost]
@@ -308,8 +383,10 @@ namespace OOP.Controllers
             // Żądaj przekierowania do dostawcy logowania zewnętrznego w celu połączenia logowania bieżącego użytkownika
             return new AccountController.ChallengeResult(provider, Url.Action("LinkLoginCallback", "Manage"), User.Identity.GetUserId());
         }
-
-        //
+        /// <summary>
+        /// Callback po połączeniu z logowaniem zewnętrznym.
+        /// </summary>
+        /// <returns>Przekierowanie do zarządzania logowaniami.</returns>
         // GET: /Manage/LinkLoginCallback
         public async Task<ActionResult> LinkLoginCallback()
         {
@@ -337,10 +414,15 @@ namespace OOP.Controllers
             base.Dispose(disposing);
         }
 
-#region Pomocnicy
+        #region Pomocnicy
         // Używane w przypadku ochrony XSRF podczas dodawania logowań zewnętrznych
+        /// <summary>
+        /// Identyfikator dla zapytań XSRF.
+        /// </summary>
         private const string XsrfKey = "XsrfId";
-
+        /// <summary>
+        /// Pobiera menedżera uwierzytelniania.
+        /// </summary>
         private IAuthenticationManager AuthenticationManager
         {
             get
@@ -348,7 +430,10 @@ namespace OOP.Controllers
                 return HttpContext.GetOwinContext().Authentication;
             }
         }
-
+        /// <summary>
+        /// Dodaje błędy do ModelState.
+        /// </summary>
+        /// <param name="result">Wynik operacji tożsamości.</param>
         private void AddErrors(IdentityResult result)
         {
             foreach (var error in result.Errors)
@@ -356,7 +441,10 @@ namespace OOP.Controllers
                 ModelState.AddModelError("", error);
             }
         }
-
+        /// <summary>
+        /// Sprawdza, czy użytkownik ma ustawione hasło.
+        /// </summary>
+        /// <returns>Prawda, jeśli użytkownik ma ustawione hasło, w przeciwnym razie fałsz.</returns>
         private bool HasPassword()
         {
             var user = UserManager.FindById(User.Identity.GetUserId());
@@ -376,7 +464,9 @@ namespace OOP.Controllers
             }
             return false;
         }
-
+        /// <summary>
+        /// Enums zarządzania wiadomościami.
+        /// </summary>
         public enum ManageMessageId
         {
             AddPhoneSuccess,

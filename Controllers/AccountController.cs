@@ -663,22 +663,43 @@ namespace OOP.Controllers
         /// </summary>
         internal class ChallengeResult : HttpUnauthorizedResult
         {
+            /// <summary>
+            /// Inicjalizuje nowe wystąpienie klasy ChallengeResult z podanym dostawcą i URI przekierowania.
+            /// </summary>
+            /// <param name="provider">Nazwa dostawcy logowania.</param>
+            /// <param name="redirectUri">URI przekierowania po zakończeniu uwierzytelniania.</param>
             public ChallengeResult(string provider, string redirectUri)
                 : this(provider, redirectUri, null)
             {
             }
-
+            /// <summary>
+            /// Inicjalizuje nowe wystąpienie klasy ChallengeResult z podanym dostawcą, URI przekierowania i identyfikatorem użytkownika.
+            /// </summary>
+            /// <param name="provider">Nazwa dostawcy logowania.</param>
+            /// <param name="redirectUri">URI przekierowania po zakończeniu uwierzytelniania.</param>
+            /// <param name="userId">Identyfikator użytkownika (opcjonalny).</param>
             public ChallengeResult(string provider, string redirectUri, string userId)
             {
                 LoginProvider = provider;
                 RedirectUri = redirectUri;
                 UserId = userId;
             }
-
+            /// <summary>
+            /// Pobiera lub ustawia nazwę dostawcy logowania.
+            /// </summary>
             public string LoginProvider { get; set; }
+            /// <summary>
+            /// Pobiera lub ustawia URI przekierowania po zakończeniu uwierzytelniania.
+            /// </summary>
             public string RedirectUri { get; set; }
+            /// <summary>
+            /// Pobiera lub ustawia identyfikator użytkownika.
+            /// </summary>
             public string UserId { get; set; }
-
+            /// <summary>
+            /// Wykonuje wynik, wywołując wyzwanie uwierzytelniania.
+            /// </summary>
+            /// <param name="context">Kontekst kontrolera.</param>
             public override void ExecuteResult(ControllerContext context)
             {
                 var properties = new AuthenticationProperties { RedirectUri = RedirectUri };
