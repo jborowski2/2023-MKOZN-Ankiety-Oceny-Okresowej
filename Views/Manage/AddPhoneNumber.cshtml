@@ -19,7 +19,7 @@
         </div>
         <div class="row">
             <div class="offset-md-2 col-md-10">
-                <input type="submit" class="btn btn-outline-dark" value="Prześlij" id="addPhoneNumberBtn" />
+                <input type="submit" class="btn btn-outline-dark" value="Prześlij" />
             </div>
         </div>
     }
@@ -27,19 +27,4 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script>
-        document.getElementById("addPhoneNumberBtn").addEventListener("click", function () {
-            Toastify({
-                text: "Numer telefonu został dodany!",
-                duration: 1000,
-                gravity: "bottom",
-                backgroundColor: "#4CAF50",
-                className: "info",
-                style: {
-                    textAlign: "center"
-                }
-            }).showToast();
-        });
-    </script>
 }

@@ -16,6 +16,7 @@
         <dt>
             @Html.DisplayNameFor(model => model.Dzial.Nazwa)
         </dt>
+
         <dd>
             @Html.DisplayFor(model => model.Dzial.Nazwa)
         </dd>
@@ -23,6 +24,7 @@
         <dt>
             @Html.DisplayNameFor(model => model.Pracownik.Imie)
         </dt>
+
         <dd>
             @Html.DisplayFor(model => model.Pracownik.Imie)
         </dd>
@@ -30,6 +32,7 @@
         <dt>
             @Html.DisplayNameFor(model => model.Data)
         </dt>
+
         <dd>
             @Html.DisplayFor(model => model.Data)
         </dd>
@@ -37,6 +40,7 @@
         <dt>
             @Html.DisplayNameFor(model => model.Szczegoly)
         </dt>
+
         <dd>
             @Html.DisplayFor(model => model.Szczegoly)
         </dd>
@@ -44,36 +48,19 @@
         <dt>
             @Html.DisplayNameFor(model => model.Nazwa)
         </dt>
+
         <dd>
             @Html.DisplayFor(model => model.Nazwa)
         </dd>
+
     </dl>
 
-    @using (Html.BeginForm())
-    {
+    @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-danger" id="deleteOsiagniecieBtn" /> |
+            <input type="submit" value="Delete" class="btn btn-default" /> |
             @Html.ActionLink("Back to List", "Index")
         </div>
     }
 </div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script>
-        document.getElementById("deleteOsiagniecieBtn").addEventListener("click", function () {
-            Toastify({
-                text: "Osiągnięcie zostało usunięte!",
-                duration: 1000,
-                backgroundColor: "#f44336",
-                className: "info",
-                style: {
-                    textAlign: "center"
-                }
-            }).showToast();
-        });
-    </script>
-}

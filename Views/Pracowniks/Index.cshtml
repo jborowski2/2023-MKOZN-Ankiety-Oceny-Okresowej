@@ -42,7 +42,13 @@
             @Html.DisplayNameFor(model => model.NumerTelefonu)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.ApplicationUser.Roles)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Przelozony)
         </th>
         <th></th>
     </tr>
@@ -70,11 +76,24 @@
                 @Html.DisplayFor(modelItem => item.NumerTelefonu)
             </td>
             <td>
-                @(ViewBag.ShowUserRoles(item.ApplicationUserID))
-
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
             <td>
+                @(ViewBag.ShowUserRoles(item.ApplicationUserID))
+            </td>
+            <td>
+                @if (item.Przelozony != null)
+                {
+                    @Html.DisplayFor(modelItem =>item.Przelozony.ImieNazwisko)
+                }
+                else
+                {
+                    <span>Brak przełożonego</span>
+                }
+            </td>
+            <td>
+
                 @Html.ActionLink("Edytuj", "Edit", new { id = item.PracownikID }) |
-                @Html.ActionLink("Szczegóły", "Details", new { id = item.PracownikID }) |
                 @Html.ActionLink("Usuń", "Delete", new { id = item.PracownikID })
             </td>
         </tr>

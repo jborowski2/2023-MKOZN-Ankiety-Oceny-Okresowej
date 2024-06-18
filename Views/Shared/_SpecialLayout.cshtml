@@ -1,4 +1,4 @@
-@{
+ï»¿@{
     Layout = null;
     bool isPracownik = User.IsInRole("Pracownik");
 }
@@ -6,14 +6,22 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
 </head>
 
 <style>
+    .container {
+        max-width: 90%;
+    }
+
     .white, .font, .font_type {
         color: #fff;
-        font-size: calc(10px + (13 - 10) * ((100vw - 1200px) / (2560 - 1200)));
+        font-size: calc(7px + 0.5vw);
+        white-space: nowrap;
     }
 
     .font_type {
@@ -38,7 +46,7 @@
     }
 
     .dark-theme {
-        background-color: #696969;
+        background-color: #000;
         color: #fff;
     }
 
@@ -46,23 +54,27 @@
         background-color: #012404;
         color: #fff;
     }
+
+    .container {
+        width: 100%;
+    }
 </style>
 
 <body>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm" style="background-color: #012404;">
         <div class="container">
             <b>
-                @Html.ActionLink("Politechnika Bia³ostocka - System oceny pracowników", "Index", "Home", new { area = "" }, new { @class = "navbar-brand font" })
+                @Html.ActionLink("Politechnika BiaÅ‚ostocka - System oceny pracownikÃ³w", "Index", "Home", new { area = "" }, new { @class = "navbar-brand font" })
             </b>
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Prze??cz nawigacj?" aria-controls="navbarSupportedContent"
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="PrzeÅ‚Ä…cz nawigacjÄ™" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <button type="button" class="btn btn-light" id="theme-toggle" onclick="toggleTheme()">Prze³¹cz motyw</button>
-            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+            <button type="button" class="btn btn-light" id="theme-toggle" onclick="toggleTheme()" style="white-space: nowrap;">PrzeÅ‚Ä…cz motyw</button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between" id="navbarSupportedContent">
                 <ul class="navbar-nav flex-grow-1">
                     <li class="nav-item">
-                        @Html.ActionLink("Strona g³ówna", "Index", "Home", new { area = "" }, new { @class = "nav-link white" })
+                        @Html.ActionLink("Strona gÅ‚Ã³wna", "Index", "Home", new { area = "" }, new { @class = "nav-link white" })
                     </li>
                     <li class="nav-item">
                         @Html.ActionLink("Informacje", "About", "Home", new { area = "" }, new { @class = "nav-link white" })
@@ -75,17 +87,16 @@
                     </li>
                     @if (!isPracownik)
                     {
-                        <li class="nav-item">
-                            @Html.ActionLink("Schematy Ankiet", "Index", "Schemats", new { area = "" }, new { @class = "nav-link white" })
-                        </li>
-                        <li class="nav-item">
-                            @Html.ActionLink("Pracownicy", "Index", "Pracowniks", new { area = "" }, new { @class = "nav-link white" })
-                        </li>
-                        <li class="nav-item">
-                            @Html.ActionLink("Osi¹gniêcia", "Index", "Osiagniecies", new { area = "" }, new { @class = "nav-link white" })
-                        </li>
-                        <li class="nav-item">
-                            @Html.ActionLink("Komisje", "Index", "Komisjas", new { area = "" }, new { @class = "nav-link white" })
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                RozwiÅ„
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="@Url.Action("Index", "Schemats")">Schematy Ankiet</a>
+                                <a class="dropdown-item" href="@Url.Action("Index", "Pracowniks")">Pracownicy</a>
+                                <a class="dropdown-item" href="@Url.Action("Index", "Osiagniecies")">OsiÄ…gniÄ™cia</a>
+                                <a class="dropdown-item" href="@Url.Action("Index", "Komisjas")">Komisje</a>
+                            </div>
                         </li>
                     }
                 </ul>
@@ -93,6 +104,8 @@
             </div>
         </div>
     </nav>
+
+
     <div class="container body-content">
         @RenderBody()
     </div>
@@ -156,6 +169,27 @@
                         table.style.borderColor = "";
                     });
                 }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const dropdownToggle = document.querySelector('.dropdown-toggle');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+
+            dropdownToggle.addEventListener('click', function (event) {
+                event.preventDefault();
+                event.stopPropagation();
+
+                if (dropdownMenu.style.display === 'block') {
+                    dropdownMenu.style.display = 'none';
+                } else {
+                    dropdownMenu.style.display = 'block';
+                }
+            });
+
+            document.addEventListener('click', function () {
+                dropdownMenu.style.display = 'none';
             });
         });
     </script>

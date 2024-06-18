@@ -103,33 +103,4 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script>
-        $(document).ready(function() {
-            var registrationStatus = '@TempData["RegistrationStatus"]';
-            if (registrationStatus) {
-                if (registrationStatus === "Success") {
-                    Toastify({
-                        text: "Rejestracja zakończona pomyślnie.",
-                        duration: 1000,
-                        gravity: "bottom",
-                        backgroundColor: "#4CAF50",
-                        style: {
-                            textAlign: "center"
-                        }
-                    }).showToast();
-                } else if (registrationStatus === "Error") {
-                    Toastify({
-                        text: "Błąd rejestracji. Sprawdź swoje dane i spróbuj ponownie.",
-                        duration: 1000,
-                        gravity: "bottom",
-                        backgroundColor: "#FF0000",
-                        style: {
-                            textAlign: "center"
-                        }
-                    }).showToast();
-                }
-            }
-        });
-    </script>
 }

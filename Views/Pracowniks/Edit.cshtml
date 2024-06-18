@@ -4,6 +4,7 @@
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_SpecialLayout.cshtml";
     ViewBag.UseSpecialNavbar = true;
+
 }
 
 <h2>Edit</h2>
@@ -11,9 +12,6 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-}
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <div class="form-horizontal">
     <h4>Pracownik</h4>
     <hr />
@@ -21,7 +19,6 @@
     @Html.HiddenFor(model => model.PracownikID)
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.ApplicationUserID)
-
     <div class="form-group">
         @Html.LabelFor(model => model.Imie, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -38,6 +35,8 @@
         </div>
     </div>
 
+
+
     <div class="form-group">
         @Html.LabelFor(model => model.Tytul, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -45,7 +44,27 @@
             @Html.ValidationMessageFor(model => model.Tytul, "", new { @class = "text-danger" })
         </div>
     </div>
-
+    <div class="form-group">
+        @Html.LabelFor(model => model.Grupa, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EnumDropDownListFor(model => model.Grupa, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Grupa, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Stanowisko, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EnumDropDownListFor(model => model.Stanowisko, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Stanowisko, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EnumDropDownListFor(model => model.Status, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+        </div>
+    </div>
     <div class="form-group">
         @Html.LabelFor(model => model.NumerTelefonu, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -58,99 +77,73 @@
         @Html.LabelFor(model => model.ApplicationUser.Roles, "Rola", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.DropDownListFor(model => model.ApplicationUser.Roles, ViewBag.Roles as SelectList, "Wybierz rolę", new { @class = "form-control", id = "roleDropdown" })
-        </div>
-    </div>
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Zapisz" class="btn btn-default" />
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PrzelozonyID, "Przełożony", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.PrzelozonyID, ViewBag.SupervisorID as SelectList, "Wybierz przełożonego", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.PrzelozonyID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Zapisz" class="btn btn-default" />
+            </div>
         </div>
     </div>
 </div>
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#roleDropdown').change(function () {
-                var userId = '@Model.ApplicationUserID';
-                var roleName = $(this).find("option:selected").text();
-
-                $.ajax({
-                    url: '@Url.Action("ClearUserRoles", "Role")',
-                    type: 'POST',
-                    data: { userId: userId },
-                    success: function(result) {
-                        if (result === "OK") {
-                            $.ajax({
-                                url: '@Url.Action("AddToRole", "Role")',
-                                type: 'POST',
-                                data: { userId: userId, roleName: roleName },
-                                success: function(result) {
-                                    if (result === "OK") {
-                                        Toastify({
-                                            text: "Użytkownik został dodany do roli.",
-                                            duration: 1000,
-                                            gravity: "bottom",
-                                            backgroundColor: "#4CAF50",
-                                            style: {
-                                                textAlign: "center"
-                                            }
-                                        }).showToast();
-                                    } else {
-                                        Toastify({
-                                            text: "Wystąpił błąd podczas dodawania użytkownika do roli.",
-                                            duration: 1000,
-                                            gravity: "bottom",
-                                            backgroundColor: "#FF0000",
-                                            style: {
-                                                textAlign: "center"
-                                            }
-                                        }).showToast();
-                                    }
-                                },
-                                error: function() {
-                                    Toastify({
-                                        text: "Wystąpił błąd podczas wywoływania metody dodawania użytkownika do roli.",
-                                        duration: 1000,
-                                        gravity: "bottom",
-                                        backgroundColor: "#FF0000",
-                                        style: {
-                                            textAlign: "center"
-                                        }
-                                    }).showToast();
-                                }
-                            });
-                        } else {
-                            Toastify({
-                                text: "Wystąpił błąd podczas usuwania ról użytkownika.",
-                                duration: 1000,
-                                gravity: "bottom",
-                                backgroundColor: "#FF0000",
-                                style: {
-                                    textAlign: "center"
-                                }
-                            }).showToast();
-                        }
-                    },
-                    error: function() {
-                        Toastify({
-                            text: "Wystąpił błąd podczas wywoływania metody usuwania ról użytkownika.",
-                            duration: 1000,
-                            gravity: "bottom",
-                            backgroundColor: "#FF0000",
-                            style: {
-                                textAlign: "center"
-                            }
-                        }).showToast();
-                    }
-                });
-            });
-        });
-    </script>
 }
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
+        <script>
+$(document).ready(function () {
+    $('#roleDropdown').change(function () {
+        var userId = '@Model.ApplicationUserID';
+        var roleName = $(this).find("option:selected").text();
+
+        $.ajax({
+            url: '@Url.Action("ClearUserRoles", "Role")',
+            type: 'POST',
+            data: { userId: userId },
+            success: function(result) {
+                if (result === "OK") {
+                    $.ajax({
+                        url: '@Url.Action("AddToRole", "Role")',
+                        type: 'POST',
+                        data: { userId: userId, roleName: roleName },
+                        success: function(result) {
+                            if (result === "OK") {
+                                alert("Użytkownik został dodany do roli.");
+                            } else {
+                                alert("Wystąpił błąd podczas dodawania użytkownika do roli.");
+                            }
+                        },
+                        error: function() {
+                            alert("Wystąpił błąd podczas wywoływania metody dodawania użytkownika do roli.");
+                        }
+                    });
+                } else {
+                    alert("Wystąpił błąd podczas usuwania ról użytkownika.");
+                }
+            },
+            error: function() {
+                alert("Wystąpił błąd podczas wywoływania metody usuwania ról użytkownika.");
+            }
+        });
+    });
+});
+        </script>
+
+
+
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>

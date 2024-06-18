@@ -6,10 +6,11 @@
 
 <h2>Create</h2>
 
-@using (Html.BeginForm())
+
+@using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-
+    
     <div class="form-horizontal">
         <h4>PoleAnkiety</h4>
         <hr />
@@ -40,7 +41,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" id="createPoleAnkietyBtn" />
+                <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>
@@ -52,18 +53,4 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script>
-        document.getElementById("createPoleAnkietyBtn").addEventListener("click", function () {
-            Toastify({
-                text: "Pole ankiety zostało utworzone!",
-                duration: 1000,
-                backgroundColor: "#4caf50",
-                className: "info",
-                style: {
-                    textAlign: "center"
-                }
-            }).showToast();
-        });
-    </script>
 }

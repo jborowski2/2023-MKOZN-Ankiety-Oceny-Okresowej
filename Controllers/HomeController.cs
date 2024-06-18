@@ -21,20 +21,35 @@ namespace OOP.Controllers
             var userId = User.Identity.GetUserId();
             var pracownik = await db.Pracownicy.Where(p=>p.ApplicationUserID == userId).FirstAsync();
             var osiagniecia = db.Osiagniecia.Include(o => o.Dzial).Where(o => o.PracownikID == pracownik.PracownikID);
+          
+            string employeeName = GetEmployeeNameByUserId(userId);
+            ViewBag.EmployeeName = employeeName;
             return View(await osiagniecia.ToListAsync());
         }
 
+   
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
+            var userId = User.Identity.GetUserId();
 
+            string employeeName = GetEmployeeNameByUserId(userId);
+            ViewBag.EmployeeName = employeeName;
             return View();
+        }
+
+        private string GetEmployeeNameByUserId(string userId)
+        {
+            var employee = db.Pracownicy.FirstOrDefault(e => e.ApplicationUserID== userId);
+            return employee != null ? employee.Imie : "Nieznany użytkownik";
         }
 
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
-
+            var userId = User.Identity.GetUserId();
+            string employeeName = GetEmployeeNameByUserId(userId);
+            ViewBag.EmployeeName = employeeName;
             return View();
         }
     }

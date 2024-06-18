@@ -46,7 +46,6 @@ namespace OOP.Models
         public DbSet<Pracownik> Pracownicy { get; set; }
         public DbSet<StronaAnkiety> StronyAnkiet { get; set; }
         public DbSet<Attachment> Attachments { get; set; }
-        public DbSet<Comment> Comments { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -74,12 +73,10 @@ namespace OOP.Models
             modelBuilder.Entity<PoleAnkiety>()
                 .HasOptional(p => p.Attachment)
                 .WithOptionalPrincipal();
-
-            modelBuilder.Entity<Comment>()
-                .HasRequired(p=>p.PoleAnkiety)
-                .WithOptional(p=>p.Comment);
-
-          
+            modelBuilder.Entity<Pracownik>()
+           .HasOptional(p => p.Przelozony)
+           .WithMany(p => p.Subordinates)
+           .HasForeignKey(p => p.PrzelozonyID);
         }
 
     }

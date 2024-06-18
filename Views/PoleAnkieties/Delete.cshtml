@@ -37,32 +37,12 @@
 
     </dl>
 
-    @using (Html.BeginForm())
-    {
+    @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" id="deletePoleAnkietyBtn" /> |
+            <input type="submit" value="Delete" class="btn btn-default" /> |
             @Html.ActionLink("Powrót", "Index")
         </div>
     }
 </div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script>
-        document.getElementById("deletePoleAnkietyBtn").addEventListener("click", function () {
-            Toastify({
-                text: "Pole ankiety zostało usunięte!",
-                duration: 1000,
-                gravity: "bottom",
-                backgroundColor: "#f44336",
-                className: "info",
-                style: {
-                    textAlign: "center"
-                }
-            }).showToast();
-        });
-    </script>
-}

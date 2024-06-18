@@ -30,12 +30,19 @@ namespace OOP.Models
 
         }
 
+        public enum PracownikStatus
+        {
+            Aktywny = 0,
+            Nieaktywny = 1,
+            Zarchiwizowany = 2
+        }
+
         public int PracownikID { get; set; }
         public string Imie { get; set; }
         public string Nazwisko { get; set; }
         public string Tytul { get; set; }
         public int NumerTelefonu { get; set; }
-     
+        public PracownikStatus Status { get; set; }
         public PracownikGrupa Grupa { get; set; }
         public PracownikStanowisko Stanowisko { get; set; }
        // public PracownikGrupa group;
@@ -44,12 +51,12 @@ namespace OOP.Models
         public virtual ICollection<Osiagniecie> Osiagniecie { get; set; }
         public int? KomisjaID { get; set; }
         public virtual Komisja Komisja { get; set; }
-        public int PrzelozonyID { get; set; }
+        public int? PrzelozonyID { get; set; }
         public virtual Pracownik Przelozony { get; set; }
-
+        public virtual ICollection<Pracownik> Subordinates { get; set; }
         public string ApplicationUserID { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
-
+        public string ImieNazwisko => $"{Imie} {Nazwisko}";
     }
 
     public class PracownikViewModel

@@ -7,7 +7,7 @@
         <style>
             .text-white {
                 color: #fff !important;
-                font-size: calc(10px + (13 - 10) * ((100vw - 1200px) / (2560 - 1200)));
+                font-size: calc(7px + 0.5vw);
             }
 
             .padding {
@@ -16,7 +16,9 @@
         </style>
         <ul class="navbar-nav navbar-right">
             <li>
-                @Html.ActionLink("Witaj," + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link text-white padding" })
+                <a href="@Url.Action("Index", "Manage")" title="Manage" class="nav-link text-white padding">Witaj, @ViewBag.EmployeeName!</a>
+
+
             </li>
             <li><a class="nav-link text-white padding" href="javascript:document.getElementById('logoutForm').submit()">Wyloguj</a></li>
         </ul>

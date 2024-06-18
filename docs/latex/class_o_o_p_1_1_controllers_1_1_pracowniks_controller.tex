@@ -1,0 +1,117 @@
+\doxysection{Dokumentacja klasy OOP.\+Controllers.\+Pracowniks\+Controller}
+\hypertarget{class_o_o_p_1_1_controllers_1_1_pracowniks_controller}{}\label{class_o_o_p_1_1_controllers_1_1_pracowniks_controller}\index{OOP.Controllers.PracowniksController@{OOP.Controllers.PracowniksController}}
+Diagram dziedziczenia dla OOP.\+Controllers.\+Pracowniks\+Controller\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_o_o_p_1_1_controllers_1_1_pracowniks_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_ac4c9ed4c86d0cdefeb5c4d0490fbff08}{Index}} (String search\+String)
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_a40186f1a6a7eab6f019f10b93ab68e96}{Details}} (int? id)
+\item 
+Action\+Result \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_a898e50500c6c5cf7e103f3b15898a7d2}{Create}} ()
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_a7ceda8a8d751c74379ee42cd7c63dbc9}{Create}} (\mbox{[}Bind(Include="{}Pracownik\+ID,Imie,Nazwisko,Stopien,Tytul,Numer\+Telefonu,Przelozony\+ID,Application\+User\+ID"{})\mbox{]} \mbox{\hyperlink{class_o_o_p_1_1_models_1_1_pracownik}{Pracownik}} pracownik)
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_a57b1194cf65fab70bb600bf9d2d4f3b7}{Edit}} (int? id)
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_ab90c690920be9a1620dca79c0e7dda75}{Edit}} (\mbox{[}Bind(Include="{}Pracownik\+ID,Imie,Nazwisko,Stopien,Tytul,Numer\+Telefonu,Przelozony\+ID,Application\+User\+ID"{})\mbox{]} \mbox{\hyperlink{class_o_o_p_1_1_models_1_1_pracownik}{Pracownik}} pracownik)
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_a6a5ab962e60e8e40b3dc6a53dfccb749}{Delete}} (int? id)
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_a85ef24fb3aa0afe07512d9dc56dd3295}{Delete\+Confirmed}} (int id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody chronione}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_a1d72c3fb1fbbc041603102d2f7338c05}{Dispose}} (bool disposing)
+\begin{DoxyCompactList}\small\item\em Zwolnienie zasobów. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_application_db_context}{Application\+Db\+Context}} \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_af8d34151bb99f95a1f7c5095001e9848}{db}} = new \mbox{\hyperlink{class_o_o_p_1_1_models_1_1_application_db_context}{Application\+Db\+Context}}()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_a898e50500c6c5cf7e103f3b15898a7d2}\index{OOP.Controllers.PracowniksController@{OOP.Controllers.PracowniksController}!Create@{Create}}
+\index{Create@{Create}!OOP.Controllers.PracowniksController@{OOP.Controllers.PracowniksController}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_a898e50500c6c5cf7e103f3b15898a7d2} 
+Action\+Result OOP.\+Controllers.\+Pracowniks\+Controller.\+Create (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_a7ceda8a8d751c74379ee42cd7c63dbc9}\index{OOP.Controllers.PracowniksController@{OOP.Controllers.PracowniksController}!Create@{Create}}
+\index{Create@{Create}!OOP.Controllers.PracowniksController@{OOP.Controllers.PracowniksController}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_a7ceda8a8d751c74379ee42cd7c63dbc9} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Pracowniks\+Controller.\+Create (\begin{DoxyParamCaption}\item[{\mbox{[}\+Bind(\+Include = "{}\+Pracownik\+ID,\+Imie,\+Nazwisko,\+Stopien,\+Tytul,\+Numer\+Telefonu,\+Przelozony\+ID,\+Application\+User\+ID"{})\mbox{]} \mbox{\hyperlink{class_o_o_p_1_1_models_1_1_pracownik}{Pracownik}}}]{pracownik}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_a6a5ab962e60e8e40b3dc6a53dfccb749}\index{OOP.Controllers.PracowniksController@{OOP.Controllers.PracowniksController}!Delete@{Delete}}
+\index{Delete@{Delete}!OOP.Controllers.PracowniksController@{OOP.Controllers.PracowniksController}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_a6a5ab962e60e8e40b3dc6a53dfccb749} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Pracowniks\+Controller.\+Delete (\begin{DoxyParamCaption}\item[{int?}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_a85ef24fb3aa0afe07512d9dc56dd3295}\index{OOP.Controllers.PracowniksController@{OOP.Controllers.PracowniksController}!DeleteConfirmed@{DeleteConfirmed}}
+\index{DeleteConfirmed@{DeleteConfirmed}!OOP.Controllers.PracowniksController@{OOP.Controllers.PracowniksController}}
+\doxysubsubsection{\texorpdfstring{DeleteConfirmed()}{DeleteConfirmed()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_a85ef24fb3aa0afe07512d9dc56dd3295} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Pracowniks\+Controller.\+Delete\+Confirmed (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_a40186f1a6a7eab6f019f10b93ab68e96}\index{OOP.Controllers.PracowniksController@{OOP.Controllers.PracowniksController}!Details@{Details}}
+\index{Details@{Details}!OOP.Controllers.PracowniksController@{OOP.Controllers.PracowniksController}}
+\doxysubsubsection{\texorpdfstring{Details()}{Details()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_a40186f1a6a7eab6f019f10b93ab68e96} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Pracowniks\+Controller.\+Details (\begin{DoxyParamCaption}\item[{int?}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_a1d72c3fb1fbbc041603102d2f7338c05}\index{OOP.Controllers.PracowniksController@{OOP.Controllers.PracowniksController}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!OOP.Controllers.PracowniksController@{OOP.Controllers.PracowniksController}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_a1d72c3fb1fbbc041603102d2f7338c05} 
+override void OOP.\+Controllers.\+Pracowniks\+Controller.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Zwolnienie zasobów. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em disposing} & Wartość true, jeśli zarządzane zasoby powinny być zwolnione; w przeciwnym razie false.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_ab90c690920be9a1620dca79c0e7dda75}\index{OOP.Controllers.PracowniksController@{OOP.Controllers.PracowniksController}!Edit@{Edit}}
+\index{Edit@{Edit}!OOP.Controllers.PracowniksController@{OOP.Controllers.PracowniksController}}
+\doxysubsubsection{\texorpdfstring{Edit()}{Edit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_ab90c690920be9a1620dca79c0e7dda75} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Pracowniks\+Controller.\+Edit (\begin{DoxyParamCaption}\item[{\mbox{[}\+Bind(\+Include = "{}\+Pracownik\+ID,\+Imie,\+Nazwisko,\+Stopien,\+Tytul,\+Numer\+Telefonu,\+Przelozony\+ID,\+Application\+User\+ID"{})\mbox{]} \mbox{\hyperlink{class_o_o_p_1_1_models_1_1_pracownik}{Pracownik}}}]{pracownik}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_a57b1194cf65fab70bb600bf9d2d4f3b7}\index{OOP.Controllers.PracowniksController@{OOP.Controllers.PracowniksController}!Edit@{Edit}}
+\index{Edit@{Edit}!OOP.Controllers.PracowniksController@{OOP.Controllers.PracowniksController}}
+\doxysubsubsection{\texorpdfstring{Edit()}{Edit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_a57b1194cf65fab70bb600bf9d2d4f3b7} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Pracowniks\+Controller.\+Edit (\begin{DoxyParamCaption}\item[{int?}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_ac4c9ed4c86d0cdefeb5c4d0490fbff08}\index{OOP.Controllers.PracowniksController@{OOP.Controllers.PracowniksController}!Index@{Index}}
+\index{Index@{Index}!OOP.Controllers.PracowniksController@{OOP.Controllers.PracowniksController}}
+\doxysubsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_ac4c9ed4c86d0cdefeb5c4d0490fbff08} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Pracowniks\+Controller.\+Index (\begin{DoxyParamCaption}\item[{String}]{search\+String}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Dokumentacja atrybutów składowych}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_af8d34151bb99f95a1f7c5095001e9848}\index{OOP.Controllers.PracowniksController@{OOP.Controllers.PracowniksController}!db@{db}}
+\index{db@{db}!OOP.Controllers.PracowniksController@{OOP.Controllers.PracowniksController}}
+\doxysubsubsection{\texorpdfstring{db}{db}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_pracowniks_controller_af8d34151bb99f95a1f7c5095001e9848} 
+\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_application_db_context}{Application\+Db\+Context}} OOP.\+Controllers.\+Pracowniks\+Controller.\+db = new \mbox{\hyperlink{class_o_o_p_1_1_models_1_1_application_db_context}{Application\+Db\+Context}}()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+\item 
+Controllers/\mbox{\hyperlink{_pracowniks_controller_8cs}{Pracowniks\+Controller.\+cs}}\end{DoxyCompactItemize}

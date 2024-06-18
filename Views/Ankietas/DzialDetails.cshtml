@@ -72,11 +72,11 @@
                                                 @Html.HiddenFor(m => m.PolaAnkiety[j].StronaAnkietyID)
                                                 @Html.HiddenFor(m => m.PolaAnkiety[j].PoleAnkietyID)
                                                 @Html.TextBoxFor(m => m.PolaAnkiety[j].LiczbaPunktow, new { @class = "form-control" })
-
+                                                
                                             </td>
                                             <td class="d-table-cell">
                                                 @Html.HiddenFor(m => m.PolaAnkiety[j].Comment.CommentText);
-                                                @Html.TextBoxFor(m => m.PolaAnkiety[j].Comment.CommentText);
+                                               @Html.TextBoxFor(m => m.PolaAnkiety[j].Comment.CommentText);
                                             </td>
                                         </tr>
                                     }
@@ -110,10 +110,6 @@
                                                 @Html.HiddenFor(m => m.PolaAnkiety[k].PoleAnkietyID)
                                                 @Html.TextBoxFor(m => m.PolaAnkiety[k].LiczbaPunktow, new { @class = "form-control" })
                                             </td>
-                                            <td class="d-table-cell">
-                                                @Html.HiddenFor(m => m.PolaAnkiety[k].Comment.CommentText)
-                                                @Html.TextBoxFor(m => m.PolaAnkiety[k].Comment.CommentText, new { @class = "form-control" })
-                                            </td>
                                         </tr>
                                     }
                                 }
@@ -140,45 +136,9 @@
         <input type="submit" value="Submit" class="btn btn-primary" />
     }
 
+
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.AnkietaID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
-
-@section Scripts {
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var submitBtn = document.querySelector('input[type="submit"]');
-            if (submitBtn) {
-                submitBtn.addEventListener('click', function () {
-                    Toastify({
-                        text: "Zapisano zmiany!",
-                        duration: 1000,
-                        backgroundColor: "#4CAF50",
-                        className: "info",
-                        style: {
-                            textAlign: "center"
-                        }
-                    }).showToast();
-                });
-            }
-
-            var backToListBtn = document.getElementById('backToList');
-            if (backToListBtn) {
-                backToListBtn.addEventListener('click', function () {
-                    Toastify({
-                        text: "Powrócono do listy!",
-                        duration: 1000,
-                        backgroundColor: "#808080",
-                        className: "info",
-                        style: {
-                            textAlign: "center"
-                        }
-                    }).showToast();
-                });
-            }
-        });
-    </script>
-}

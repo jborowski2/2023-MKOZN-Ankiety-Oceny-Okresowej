@@ -12,6 +12,8 @@ using System.Runtime.InteropServices;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.IO;
+using System.Security.Policy;
+
 
 namespace OOP.Controllers
 {
@@ -20,12 +22,15 @@ namespace OOP.Controllers
     {
 
         private ApplicationDbContext db = new ApplicationDbContext();
+       
 
         public async Task<ActionResult> Index(string searchString)
         {
             var user = User.Identity;
             var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
             var userId = user.GetUserId();
+            string employeeName = GetEmployeeNameByUserId(userId);
+            ViewBag.EmployeeName = employeeName;
             var roles = userManager.GetRoles(userId);
             if (roles.Any())
             {
@@ -62,6 +67,12 @@ namespace OOP.Controllers
             }
             else { return View(); }
 
+        }
+
+        private string GetEmployeeNameByUserId(string userId)
+        {
+            var employee = db.Pracownicy.FirstOrDefault(e => e.ApplicationUserID == userId);
+            return employee != null ? employee.Imie : "Nieznany użytkownik";
         }
 
         public async Task<ActionResult> DzialAction(int DzialID)
@@ -109,6 +120,8 @@ namespace OOP.Controllers
             return View(stronaAnkiety);
         }
 
+     
+
 
         // GET: Ankietas/Details/5
         public async Task<ActionResult> Details(int? id)
@@ -124,7 +137,13 @@ namespace OOP.Controllers
             {
                 return HttpNotFound();
             }
+            if (ankieta != null && ankieta.AnkietaState == AnkietaState.DO_WYPELNIENIA)
+            {
+                ankieta.AnkietaState = AnkietaState.WYPELNIANA;
+                await db.SaveChangesAsync(); // Save the change to the database
+            }
             ViewBag.Message = CalculateTotalPoints(ankieta);
+          
             return View(ankieta);
         }
 
@@ -221,7 +240,9 @@ namespace OOP.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.PracownikID = new SelectList(db.Pracownicy, "PracownikID", "Imie", ankieta.PracownikID);
+        
+
+            ViewBag.PracownikID = new SelectList(db.Pracownicy, "PracownikID", "ImieNazwisko", ankieta.PracownikID);
             return View(ankieta);
         }
 
@@ -230,7 +251,7 @@ namespace OOP.Controllers
         // Aby uzyskać więcej szczegółów, zobacz https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "AnkietaID,Data,PracownikID")] Ankieta ankieta)
+        public async Task<ActionResult> Edit([Bind(Include = "AnkietaID,Data,PracownikID,AnkietaState")] Ankieta ankieta)
         {
             if (ModelState.IsValid)
             {
@@ -326,23 +347,12 @@ namespace OOP.Controllers
                                 {
                                     pole.Attachment = null;
                                 }
-                            if(false)    if (!string.IsNullOrEmpty(pole.Comment.CommentText))
-                                {
-                              
-                                    Comment comment = new Comment();
-                                    comment.CommentText = pole.Comment.CommentText;
-                                    comment.PoleAnkiety = pole;
-                                    comment.PoleAnkietyID = pole.PoleAnkietyID;
-                                    context.Comments.Add(comment);
-                                    pole.CommentID = comment.CommentID;
-                                    pole.Comment = comment;
-
-
-                                }
+                        
 
                                 var entity = context.Entry(pole);
                                 entity.State = EntityState.Unchanged;
                                 entity.Property(p => p.LiczbaPunktow).IsModified = true;
+                                entity.Property(p => p.PracownikComment).IsModified = true;
                             }
                         }
                     }

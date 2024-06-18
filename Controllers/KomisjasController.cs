@@ -8,6 +8,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using OOP.Models;
+using Microsoft.AspNet.Identity;
 
 namespace OOP.Controllers
 {
@@ -18,6 +19,9 @@ namespace OOP.Controllers
         // GET: Komisjas
         public async Task<ActionResult> Index()
         {
+            var userId = User.Identity.GetUserId();
+            string employeeName = GetEmployeeNameByUserId(userId);
+            ViewBag.EmployeeName = employeeName;
             return View(await db.Komisje.ToListAsync());
         }
 
@@ -41,6 +45,12 @@ namespace OOP.Controllers
         {
             ViewBag.Pracownicy = new SelectList(db.Pracownicy, "PracownikID", "Nazwisko");
             return View(new KomisjaViewModel());
+        }
+
+        private string GetEmployeeNameByUserId(string userId)
+        {
+            var employee = db.Pracownicy.FirstOrDefault(e => e.ApplicationUserID == userId);
+            return employee != null ? employee.Imie : "Nieznany użytkownik";
         }
 
         // POST: Komisjas/Create

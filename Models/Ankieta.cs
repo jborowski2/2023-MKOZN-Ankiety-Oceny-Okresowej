@@ -3,18 +3,29 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Reflection;
+using System.ComponentModel;
 
 namespace OOP.Models
 {
     public enum AnkietaState
     {
+        [Description("Do wypełnienia")]
         DO_WYPELNIENIA,
-        WYPELNIENIA,
+        [Description("Wypełnienia")]
+        WYPELNIANA,
+        [Description("Do poprawy")]
         DO_POPRAWY,
-        SPRAWDZONA_PRZEZ_PRZELOŻONEGO,
+        [Description("Sprawdzona przez przełożonego")]
+        SPRAWDZONA_PRZEZ_PRZELOŻONEGO,
+        [Description("Sprawdzona przez dział")]
         SPRAWDZONA_PRZEZ_DZIAL,
+        [Description("W komisji")]
         W_KOMISJI,
-        U_DZIEKANA
+        [Description("U dziekana")]
+        U_DZIEKANA,
+        [Description("Zatwierdzona")]
+        ZATWIERDZONA
     }
     public class Ankieta
     {
@@ -50,6 +61,8 @@ namespace OOP.Models
             }
             return sum;
         }
+
+   
 
     }
 }

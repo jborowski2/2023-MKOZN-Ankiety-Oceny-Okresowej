@@ -12,46 +12,46 @@
             <section id="loginForm">
                 @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
                 {
-                    @Html.AntiForgeryToken()
-                    <h1>Zaloguj się</h1>
-                    <hr />
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    <div class="row" style="margin-bottom:15px">
-                        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 col-form-label" })
-                        <div class="col-md-10">
-                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                @Html.AntiForgeryToken()
+                <h1>Zaloguj się</h1>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="row" style="margin-bottom:15px">
+                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 col-form-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="row">
+                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 col-form-label" })
+                    <div class="col-md-10">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="offset-md-2 col-md-10" style="margin-bottom:15px">
+                        <div class="checkbox">
+                            @Html.CheckBoxFor(m => m.RememberMe)
+                            @Html.LabelFor(m => m.RememberMe)
                         </div>
                     </div>
-                    <div class="row">
-                        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 col-form-label" })
-                        <div class="col-md-10">
-                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="offset-md-2 col-md-10">
+                        <input type="submit" value="Zaloguj" class="btn btn-primary" />
                     </div>
-                    <div class="row">
-                        <div class="offset-md-2 col-md-10" style="margin-bottom:15px">
-                            <div class="checkbox">
-                                @Html.CheckBoxFor(m => m.RememberMe)
-                                @Html.LabelFor(m => m.RememberMe)
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="offset-md-2 col-md-10">
-                            <input type="submit" value="Zaloguj" class="btn btn-primary" />
-                        </div>
-                    </div>
-                    <div style="margin-top:15px">
-                        <p>
-                            @Html.ActionLink("Zarejestruj się jako nowy użytkownik", "Register")
-                        </p>
-                    </div>
-                    @* Włącz ten element po włączeniu potwierdzenia konta dla funkcji resetowania hasła
-                        <p>
-                            @Html.ActionLink("Nie pamiętasz hasła?", "ForgotPassword")
-                        </p>*@
+                </div>
+                <div style="margin-top:15px">
+                    <p>
+                        @Html.ActionLink("Zarejestruj się jako nowy użytkownik", "Register")
+                    </p>
+                </div>
+                @* Włącz ten element po włączeniu potwierdzenia konta dla funkcji resetowania hasła
+                    <p>
+                        @Html.ActionLink("Nie pamiętasz hasła?", "ForgotPassword")
+                    </p>*@
                 }
             </section>
         </div>
@@ -65,33 +65,4 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script>
-        $(document).ready(function() {
-            var loginStatus = '@TempData["LoginStatus"]';
-            if (loginStatus) {
-                if (loginStatus === "Success") {
-                    Toastify({
-                        text: "Zalogowano pomyślnie.",
-                        duration: 1000,
-                        gravity: "bottom",
-                        backgroundColor: "#4CAF50",
-                        style: {
-                            textAlign: "center"
-                        }
-                    }).showToast();
-                } else if (loginStatus === "Error") {
-                    Toastify({
-                        text: "Błąd logowania. Sprawdź swoje dane i spróbuj ponownie.",
-                        duration: 1000,
-                        gravity: "bottom",
-                        backgroundColor: "#FF0000",
-                        style: {
-                            textAlign: "center"
-                        }
-                    }).showToast();
-                }
-            }
-        });
-    </script>
 }

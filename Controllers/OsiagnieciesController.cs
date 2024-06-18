@@ -8,6 +8,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using OOP.Models;
+using Microsoft.AspNet.Identity;
 
 namespace OOP.Controllers
 {
@@ -19,7 +20,10 @@ namespace OOP.Controllers
         // GET: Osiagniecies
         public async Task<ActionResult> Index()
         {
+            var userId = User.Identity.GetUserId();
             var osiagniecia = db.Osiagniecia.Include(o => o.Dzial).Include(o => o.Pracownik);
+            string employeeName = GetEmployeeNameByUserId(userId);
+            ViewBag.EmployeeName = employeeName;
             return View(await osiagniecia.ToListAsync());
         }
 
@@ -36,6 +40,12 @@ namespace OOP.Controllers
                 return HttpNotFound();
             }
             return View(osiagniecie);
+        }
+
+        private string GetEmployeeNameByUserId(string userId)
+        {
+            var employee = db.Pracownicy.FirstOrDefault(e => e.ApplicationUserID == userId);
+            return employee != null ? employee.Imie : "Nieznany użytkownik";
         }
 
         // GET: Osiagniecies/Create

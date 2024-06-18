@@ -1,0 +1,99 @@
+\doxysection{Dokumentacja klasy OOP.\+Models.\+Identity\+Manager}
+\hypertarget{class_o_o_p_1_1_models_1_1_identity_manager}{}\label{class_o_o_p_1_1_models_1_1_identity_manager}\index{OOP.Models.IdentityManager@{OOP.Models.IdentityManager}}
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_application_user}{Application\+User}} \mbox{\hyperlink{class_o_o_p_1_1_models_1_1_identity_manager_a6025fa81027e55511fe46ff5475cbd86}{Get\+User\+By\+ID}} (string user\+ID)
+\item 
+\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_application_user}{Application\+User}} \mbox{\hyperlink{class_o_o_p_1_1_models_1_1_identity_manager_a5aced00819ea90319648647210b940e1}{Get\+User\+By\+Name}} (string email)
+\item 
+bool \mbox{\hyperlink{class_o_o_p_1_1_models_1_1_identity_manager_ae5e466e9b3334142a8c952fbaa4ddc81}{Role\+Exists}} (string name)
+\item 
+bool \mbox{\hyperlink{class_o_o_p_1_1_models_1_1_identity_manager_a4524d11b6205ae1d764994a2296defcd}{Create\+Role}} (string name)
+\item 
+bool \mbox{\hyperlink{class_o_o_p_1_1_models_1_1_identity_manager_aa2d0766c557e495c33f0012a4f2f600c}{Create\+User}} (\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_application_user}{Application\+User}} user, string password)
+\item 
+bool \mbox{\hyperlink{class_o_o_p_1_1_models_1_1_identity_manager_a410896157641bada72fdce630dcf9f2b}{Add\+User\+To\+Role}} (string user\+Id, string role\+Name)
+\item 
+bool \mbox{\hyperlink{class_o_o_p_1_1_models_1_1_identity_manager_a4dc0262b92e2e20d6cbdf4ec11d9ca7d}{Add\+User\+To\+Role\+By\+Username}} (string username, string role\+Name)
+\item 
+void \mbox{\hyperlink{class_o_o_p_1_1_models_1_1_identity_manager_a88afa7b0c1ceec05f84f76b99e0aebc5}{Clear\+User\+Roles}} (string user\+Id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Właściwości}
+\begin{DoxyCompactItemize}
+\item 
+Role\+Manager$<$ Identity\+Role $>$ \mbox{\hyperlink{class_o_o_p_1_1_models_1_1_identity_manager_a9bf1db510e69e023e6825560c47691f5}{Local\+Role\+Manager}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+User\+Manager$<$ \mbox{\hyperlink{class_o_o_p_1_1_models_1_1_application_user}{Application\+User}} $>$ \mbox{\hyperlink{class_o_o_p_1_1_models_1_1_identity_manager_a6b26cf5ed898ef8f46fd921dad3ebeaa}{Local\+User\+Manager}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{class_o_o_p_1_1_models_1_1_identity_manager_a410896157641bada72fdce630dcf9f2b}\index{OOP.Models.IdentityManager@{OOP.Models.IdentityManager}!AddUserToRole@{AddUserToRole}}
+\index{AddUserToRole@{AddUserToRole}!OOP.Models.IdentityManager@{OOP.Models.IdentityManager}}
+\doxysubsubsection{\texorpdfstring{AddUserToRole()}{AddUserToRole()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_models_1_1_identity_manager_a410896157641bada72fdce630dcf9f2b} 
+bool OOP.\+Models.\+Identity\+Manager.\+Add\+User\+To\+Role (\begin{DoxyParamCaption}\item[{string}]{user\+Id}{, }\item[{string}]{role\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_models_1_1_identity_manager_a4dc0262b92e2e20d6cbdf4ec11d9ca7d}\index{OOP.Models.IdentityManager@{OOP.Models.IdentityManager}!AddUserToRoleByUsername@{AddUserToRoleByUsername}}
+\index{AddUserToRoleByUsername@{AddUserToRoleByUsername}!OOP.Models.IdentityManager@{OOP.Models.IdentityManager}}
+\doxysubsubsection{\texorpdfstring{AddUserToRoleByUsername()}{AddUserToRoleByUsername()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_models_1_1_identity_manager_a4dc0262b92e2e20d6cbdf4ec11d9ca7d} 
+bool OOP.\+Models.\+Identity\+Manager.\+Add\+User\+To\+Role\+By\+Username (\begin{DoxyParamCaption}\item[{string}]{username}{, }\item[{string}]{role\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_models_1_1_identity_manager_a88afa7b0c1ceec05f84f76b99e0aebc5}\index{OOP.Models.IdentityManager@{OOP.Models.IdentityManager}!ClearUserRoles@{ClearUserRoles}}
+\index{ClearUserRoles@{ClearUserRoles}!OOP.Models.IdentityManager@{OOP.Models.IdentityManager}}
+\doxysubsubsection{\texorpdfstring{ClearUserRoles()}{ClearUserRoles()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_models_1_1_identity_manager_a88afa7b0c1ceec05f84f76b99e0aebc5} 
+void OOP.\+Models.\+Identity\+Manager.\+Clear\+User\+Roles (\begin{DoxyParamCaption}\item[{string}]{user\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_models_1_1_identity_manager_a4524d11b6205ae1d764994a2296defcd}\index{OOP.Models.IdentityManager@{OOP.Models.IdentityManager}!CreateRole@{CreateRole}}
+\index{CreateRole@{CreateRole}!OOP.Models.IdentityManager@{OOP.Models.IdentityManager}}
+\doxysubsubsection{\texorpdfstring{CreateRole()}{CreateRole()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_models_1_1_identity_manager_a4524d11b6205ae1d764994a2296defcd} 
+bool OOP.\+Models.\+Identity\+Manager.\+Create\+Role (\begin{DoxyParamCaption}\item[{string}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_models_1_1_identity_manager_aa2d0766c557e495c33f0012a4f2f600c}\index{OOP.Models.IdentityManager@{OOP.Models.IdentityManager}!CreateUser@{CreateUser}}
+\index{CreateUser@{CreateUser}!OOP.Models.IdentityManager@{OOP.Models.IdentityManager}}
+\doxysubsubsection{\texorpdfstring{CreateUser()}{CreateUser()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_models_1_1_identity_manager_aa2d0766c557e495c33f0012a4f2f600c} 
+bool OOP.\+Models.\+Identity\+Manager.\+Create\+User (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_application_user}{Application\+User}}}]{user}{, }\item[{string}]{password}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_models_1_1_identity_manager_a6025fa81027e55511fe46ff5475cbd86}\index{OOP.Models.IdentityManager@{OOP.Models.IdentityManager}!GetUserByID@{GetUserByID}}
+\index{GetUserByID@{GetUserByID}!OOP.Models.IdentityManager@{OOP.Models.IdentityManager}}
+\doxysubsubsection{\texorpdfstring{GetUserByID()}{GetUserByID()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_models_1_1_identity_manager_a6025fa81027e55511fe46ff5475cbd86} 
+\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_application_user}{Application\+User}} OOP.\+Models.\+Identity\+Manager.\+Get\+User\+By\+ID (\begin{DoxyParamCaption}\item[{string}]{user\+ID}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_models_1_1_identity_manager_a5aced00819ea90319648647210b940e1}\index{OOP.Models.IdentityManager@{OOP.Models.IdentityManager}!GetUserByName@{GetUserByName}}
+\index{GetUserByName@{GetUserByName}!OOP.Models.IdentityManager@{OOP.Models.IdentityManager}}
+\doxysubsubsection{\texorpdfstring{GetUserByName()}{GetUserByName()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_models_1_1_identity_manager_a5aced00819ea90319648647210b940e1} 
+\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_application_user}{Application\+User}} OOP.\+Models.\+Identity\+Manager.\+Get\+User\+By\+Name (\begin{DoxyParamCaption}\item[{string}]{email}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_o_o_p_1_1_models_1_1_identity_manager_ae5e466e9b3334142a8c952fbaa4ddc81}\index{OOP.Models.IdentityManager@{OOP.Models.IdentityManager}!RoleExists@{RoleExists}}
+\index{RoleExists@{RoleExists}!OOP.Models.IdentityManager@{OOP.Models.IdentityManager}}
+\doxysubsubsection{\texorpdfstring{RoleExists()}{RoleExists()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_models_1_1_identity_manager_ae5e466e9b3334142a8c952fbaa4ddc81} 
+bool OOP.\+Models.\+Identity\+Manager.\+Role\+Exists (\begin{DoxyParamCaption}\item[{string}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Dokumentacja właściwości}
+\Hypertarget{class_o_o_p_1_1_models_1_1_identity_manager_a9bf1db510e69e023e6825560c47691f5}\index{OOP.Models.IdentityManager@{OOP.Models.IdentityManager}!LocalRoleManager@{LocalRoleManager}}
+\index{LocalRoleManager@{LocalRoleManager}!OOP.Models.IdentityManager@{OOP.Models.IdentityManager}}
+\doxysubsubsection{\texorpdfstring{LocalRoleManager}{LocalRoleManager}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_models_1_1_identity_manager_a9bf1db510e69e023e6825560c47691f5} 
+Role\+Manager$<$Identity\+Role$>$ OOP.\+Models.\+Identity\+Manager.\+Local\+Role\+Manager\hspace{0.3cm}{\ttfamily [get]}}
+
+\Hypertarget{class_o_o_p_1_1_models_1_1_identity_manager_a6b26cf5ed898ef8f46fd921dad3ebeaa}\index{OOP.Models.IdentityManager@{OOP.Models.IdentityManager}!LocalUserManager@{LocalUserManager}}
+\index{LocalUserManager@{LocalUserManager}!OOP.Models.IdentityManager@{OOP.Models.IdentityManager}}
+\doxysubsubsection{\texorpdfstring{LocalUserManager}{LocalUserManager}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_models_1_1_identity_manager_a6b26cf5ed898ef8f46fd921dad3ebeaa} 
+User\+Manager$<$\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_application_user}{Application\+User}}$>$ OOP.\+Models.\+Identity\+Manager.\+Local\+User\+Manager\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+\item 
+Models/\mbox{\hyperlink{_identity_models_8cs}{Identity\+Models.\+cs}}\end{DoxyCompactItemize}

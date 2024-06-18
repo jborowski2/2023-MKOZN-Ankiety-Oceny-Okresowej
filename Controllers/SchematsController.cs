@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using OOP.Models;
 
 namespace OOP.Controllers
@@ -18,6 +19,9 @@ namespace OOP.Controllers
         // GET: Schemats
         public ActionResult Index()
         {
+            var userId = User.Identity.GetUserId();
+            string employeeName = GetEmployeeNameByUserId(userId);
+            ViewBag.EmployeeName = employeeName;
             var schematy = db.Schematy.Include(s => s.Dzial);
             return View(schematy.ToList());
         }
@@ -42,6 +46,12 @@ namespace OOP.Controllers
         {
             ViewBag.DzialID = new SelectList(db.Dzials, "DzialID", "Nazwa");
             return View();
+        }
+
+        private string GetEmployeeNameByUserId(string userId)
+        {
+            var employee = db.Pracownicy.FirstOrDefault(e => e.ApplicationUserID == userId);
+            return employee != null ? employee.Imie : "Nieznany użytkownik";
         }
 
         // POST: Schemats/Create

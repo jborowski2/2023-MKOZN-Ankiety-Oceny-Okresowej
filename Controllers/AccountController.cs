@@ -105,7 +105,9 @@ namespace OOP.Controllers
             {
                 return View(model);
             }
-
+            string userId = User.Identity.GetUserId();
+            string employeeName = GetEmployeeNameByUserId(userId);
+            ViewBag.EmployeeName = employeeName;
             // Nie powoduje to liczenia niepowodzeń logowania w celu zablokowania konta
             // Aby włączyć wyzwalanie blokady konta po określonej liczbie niepomyślnych prób wprowadzenia hasła, zmień ustawienie na shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
@@ -199,10 +201,11 @@ namespace OOP.Controllers
                     var pracownik = new Pracownik
                     {
                         ApplicationUserID = user.Id,
+
                         Imie = model.FirstName,
                         Nazwisko = model.LastName,
                         Tytul = model.Title,
-                        Grupa =  (Pracownik.PracownikGrupa)model.Grupa,
+                        Grupa = (Pracownik.PracownikGrupa)model.Grupa,
                         Stanowisko = (Pracownik.PracownikStanowisko)model.Stanowisko,
                         PrzelozonyID = 0,
                         NumerTelefonu = model.PhoneNumber
@@ -374,6 +377,12 @@ namespace OOP.Controllers
                 return View("Error");
             }
             return RedirectToAction("VerifyCode", new { Provider = model.SelectedProvider, ReturnUrl = model.ReturnUrl, RememberMe = model.RememberMe });
+        }
+
+        public string GetEmployeeNameByUserId(string userId)
+        {
+            var employee = db.Pracownicy.FirstOrDefault(e => e.ApplicationUserID == userId);
+            return employee != null ? employee.Imie : "Nieznany użytkownik";
         }
 
         //

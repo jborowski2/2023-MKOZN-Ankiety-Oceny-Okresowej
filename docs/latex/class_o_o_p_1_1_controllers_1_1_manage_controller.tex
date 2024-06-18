@@ -1,0 +1,547 @@
+\doxysection{Dokumentacja klasy OOP.\+Controllers.\+Manage\+Controller}
+\hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller}{}\label{class_o_o_p_1_1_controllers_1_1_manage_controller}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+
+
+Kontroler zarządzający operacjami związanymi z kontem użytkownika.  
+
+
+Diagram dziedziczenia dla OOP.\+Controllers.\+Manage\+Controller\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_o_o_p_1_1_controllers_1_1_manage_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Typy publiczne}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c}{Manage\+Message\+Id}} \{ \newline
+\mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4caf08d36b2147213fadb3b223d149ac802}{Add\+Phone\+Success}}
+, \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4ca0053618c57496fec45c67daf91919394}{Change\+Password\+Success}}
+, \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4caf17987d9118fd576fed3cbec8d11bd8b}{Set\+Two\+Factor\+Success}}
+, \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4caf17ca72fcf8adaa46d5e87b12ec3a27d}{Set\+Password\+Success}}
+, \newline
+\mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4ca46e53931d0e837638a46368b2b04ba6a}{Remove\+Login\+Success}}
+, \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4ca70460d8db9c29752c1f591eb67a60fdc}{Remove\+Phone\+Success}}
+, \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4ca902b0d55fddef6f8d651fe1035b7d4bd}{Error}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enums zarządzania wiadomościami. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a83d1df21338ada5dc5b9b6dd0c84e0d2}{Manage\+Controller}} ()
+\begin{DoxyCompactList}\small\item\em Inicjalizuje nową instancję klasy \doxylink{class_o_o_p_1_1_controllers_1_1_manage_controller}{Manage\+Controller}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a6d3c1eecd18015b8b6dee0545248162b}{Manage\+Controller}} (\mbox{\hyperlink{class_o_o_p_1_1_application_user_manager}{Application\+User\+Manager}} user\+Manager, \mbox{\hyperlink{class_o_o_p_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} sign\+In\+Manager)
+\begin{DoxyCompactList}\small\item\em Inicjalizuje nową instancję klasy \doxylink{class_o_o_p_1_1_controllers_1_1_manage_controller}{Manage\+Controller} z określonymi menedżerami użytkowników i logowania. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a2025b037402f3446a514d9d4fed4e1a2}{Index}} (\mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c}{Manage\+Message\+Id}}? message)
+\begin{DoxyCompactList}\small\item\em Wyświetla stronę główną zarządzania kontem. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a2c088806157b99cd5433a5a40aae331b}{Remove\+Login}} (string login\+Provider, string provider\+Key)
+\begin{DoxyCompactList}\small\item\em Usuwa logowanie zewnętrzne. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a25a17a83e35ed1f7c51b4a6ab53c6b82}{Add\+Phone\+Number}} ()
+\begin{DoxyCompactList}\small\item\em Wyświetla formularz dodawania numeru telefonu. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a30e3ea28aa732290ac78462090d05c32}{Add\+Phone\+Number}} (\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_add_phone_number_view_model}{Add\+Phone\+Number\+View\+Model}} model)
+\begin{DoxyCompactList}\small\item\em Dodaje numer telefonu do konta użytkownika. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a187bc2fd006088871b84afe66b2edad1}{Enable\+Two\+Factor\+Authentication}} ()
+\begin{DoxyCompactList}\small\item\em Włącza uwierzytelnianie dwuskładnikowe. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a7f863660327d2cc1f76b5cc9d21dba65}{Disable\+Two\+Factor\+Authentication}} ()
+\begin{DoxyCompactList}\small\item\em Wyłącza uwierzytelnianie dwuskładnikowe. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a76a46a0965e15e7aa694831711a8a01a}{Verify\+Phone\+Number}} (string phone\+Number)
+\begin{DoxyCompactList}\small\item\em Wyświetla formularz weryfikacji numeru telefonu. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_acc77ad5282b4691dd95df04dd2fdb18d}{Verify\+Phone\+Number}} (\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_verify_phone_number_view_model}{Verify\+Phone\+Number\+View\+Model}} model)
+\begin{DoxyCompactList}\small\item\em Weryfikuje numer telefonu użytkownika. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_ae3ad80c5c7fe36d172b319f55121258c}{Remove\+Phone\+Number}} ()
+\begin{DoxyCompactList}\small\item\em Usuwa numer telefonu z konta użytkownika. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a0055bed7b4bf9af556f9efa0247aab5f}{Change\+Password}} ()
+\begin{DoxyCompactList}\small\item\em Wyświetla formularz zmiany hasła. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_ad47cf9a0792595e2f61c2a3d0041d6b8}{Change\+Password}} (\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_change_password_view_model}{Change\+Password\+View\+Model}} model)
+\begin{DoxyCompactList}\small\item\em Zmienia hasło użytkownika. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_afeb000028fe432ebcddbc2b3f592e539}{Set\+Password}} ()
+\begin{DoxyCompactList}\small\item\em Wyświetla formularz ustawienia hasła. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_af03e8dbba6a550a8cbc8159f8d5fd4c2}{Set\+Password}} (\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_set_password_view_model}{Set\+Password\+View\+Model}} model)
+\begin{DoxyCompactList}\small\item\em Ustawia hasło użytkownika. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_ad193e64a9446f4a0d2d26b8c0dd51d69}{Manage\+Logins}} (\mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c}{Manage\+Message\+Id}}? message)
+\begin{DoxyCompactList}\small\item\em Zarządza logowaniami zewnętrznymi użytkownika. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a7063076bbdc7f6f1da4f9c87e9d09b61}{Link\+Login}} (string provider)
+\begin{DoxyCompactList}\small\item\em Inicjuje połączenie z logowaniem zewnętrznym. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a331416edc4f8dec20892932e9a9a1c48}{Link\+Login\+Callback}} ()
+\begin{DoxyCompactList}\small\item\em Callback po połączeniu z logowaniem zewnętrznym. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody chronione}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a3398af5fd1d12b4a75a7fc253635e583}{Dispose}} (bool disposing)
+\begin{DoxyCompactList}\small\item\em Zwolnienie zasobów. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Właściwości}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_o_o_p_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_abeb70c30b2c9406875129c9ba4f68662}{Sign\+In\+Manager}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Pobiera menedżera logowania. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_o_o_p_1_1_application_user_manager}{Application\+User\+Manager}} \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_ae61f08cdb84d0e5c3c056cd4bf64aca6}{User\+Manager}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Pobiera menedżera użytkowników. \end{DoxyCompactList}\item 
+IAuthentication\+Manager \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_aca2ce2a88453df0b334f0c99e3b35d99}{Authentication\+Manager}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Pobiera menedżera uwierzytelniania. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody prywatne}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_ad126168abf04864ac6c4714df991ba5d}{Add\+Errors}} (Identity\+Result result)
+\begin{DoxyCompactList}\small\item\em Dodaje błędy do Model\+State. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a34e6ff16d873ed34235a18f143439c81}{Has\+Password}} ()
+\begin{DoxyCompactList}\small\item\em Sprawdza, czy użytkownik ma ustawione hasło. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a5e2c2770c48e0c1c24c37d38deebf8c0}{Has\+Phone\+Number}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_o_o_p_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a8e1a0c2b9ce8efd389ef49fd379eb7c7}{\+\_\+sign\+In\+Manager}}
+\item 
+\mbox{\hyperlink{class_o_o_p_1_1_application_user_manager}{Application\+User\+Manager}} \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a0fb62c0b3bc7dbafc725b6c395972446}{\+\_\+user\+Manager}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Statyczne atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+const string \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_ac068c1b1b15847f557c0cade225363a4}{Xsrf\+Key}} = "{}Xsrf\+Id"{}
+\begin{DoxyCompactList}\small\item\em Identyfikator dla zapytań XSRF. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Kontroler zarządzający operacjami związanymi z kontem użytkownika. 
+
+\doxysubsection{Dokumentacja składowych wyliczanych}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!ManageMessageId@{ManageMessageId}}
+\index{ManageMessageId@{ManageMessageId}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{ManageMessageId}{ManageMessageId}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c} 
+enum \mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c}{OOP.\+Controllers.\+Manage\+Controller.\+Manage\+Message\+Id}}}
+
+
+
+Enums zarządzania wiadomościami. 
+
+\begin{DoxyEnumFields}{Wartości wyliczeń}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AddPhoneSuccess@{AddPhoneSuccess}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!AddPhoneSuccess@{AddPhoneSuccess}}}\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4caf08d36b2147213fadb3b223d149ac802}\label{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c} 
+Add\+Phone\+Success&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ChangePasswordSuccess@{ChangePasswordSuccess}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!ChangePasswordSuccess@{ChangePasswordSuccess}}}\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4ca0053618c57496fec45c67daf91919394}\label{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c} 
+Change\+Password\+Success&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SetTwoFactorSuccess@{SetTwoFactorSuccess}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!SetTwoFactorSuccess@{SetTwoFactorSuccess}}}\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4caf17987d9118fd576fed3cbec8d11bd8b}\label{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c} 
+Set\+Two\+Factor\+Success&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SetPasswordSuccess@{SetPasswordSuccess}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!SetPasswordSuccess@{SetPasswordSuccess}}}\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4caf17ca72fcf8adaa46d5e87b12ec3a27d}\label{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c} 
+Set\+Password\+Success&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RemoveLoginSuccess@{RemoveLoginSuccess}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!RemoveLoginSuccess@{RemoveLoginSuccess}}}\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4ca46e53931d0e837638a46368b2b04ba6a}\label{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c} 
+Remove\+Login\+Success&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RemovePhoneSuccess@{RemovePhoneSuccess}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!RemovePhoneSuccess@{RemovePhoneSuccess}}}\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4ca70460d8db9c29752c1f591eb67a60fdc}\label{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c} 
+Remove\+Phone\+Success&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Error@{Error}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!Error@{Error}}}\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4ca902b0d55fddef6f8d651fe1035b7d4bd}\label{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c} 
+Error&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a83d1df21338ada5dc5b9b6dd0c84e0d2}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!ManageController@{ManageController}}
+\index{ManageController@{ManageController}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{ManageController()}{ManageController()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a83d1df21338ada5dc5b9b6dd0c84e0d2} 
+OOP.\+Controllers.\+Manage\+Controller.\+Manage\+Controller (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inicjalizuje nową instancję klasy \doxylink{class_o_o_p_1_1_controllers_1_1_manage_controller}{Manage\+Controller}. 
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a6d3c1eecd18015b8b6dee0545248162b}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!ManageController@{ManageController}}
+\index{ManageController@{ManageController}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{ManageController()}{ManageController()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a6d3c1eecd18015b8b6dee0545248162b} 
+OOP.\+Controllers.\+Manage\+Controller.\+Manage\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_o_o_p_1_1_application_user_manager}{Application\+User\+Manager}}}]{user\+Manager}{, }\item[{\mbox{\hyperlink{class_o_o_p_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}}}]{sign\+In\+Manager}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inicjalizuje nową instancję klasy \doxylink{class_o_o_p_1_1_controllers_1_1_manage_controller}{Manage\+Controller} z określonymi menedżerami użytkowników i logowania. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em user\+Manager} & Menedżer użytkowników.\\
+\hline
+{\em sign\+In\+Manager} & Menedżer logowania.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_ad126168abf04864ac6c4714df991ba5d}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!AddErrors@{AddErrors}}
+\index{AddErrors@{AddErrors}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{AddErrors()}{AddErrors()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_ad126168abf04864ac6c4714df991ba5d} 
+void OOP.\+Controllers.\+Manage\+Controller.\+Add\+Errors (\begin{DoxyParamCaption}\item[{Identity\+Result}]{result}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Dodaje błędy do Model\+State. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em result} & Wynik operacji tożsamości.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a25a17a83e35ed1f7c51b4a6ab53c6b82}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!AddPhoneNumber@{AddPhoneNumber}}
+\index{AddPhoneNumber@{AddPhoneNumber}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{AddPhoneNumber()}{AddPhoneNumber()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a25a17a83e35ed1f7c51b4a6ab53c6b82} 
+Action\+Result OOP.\+Controllers.\+Manage\+Controller.\+Add\+Phone\+Number (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Wyświetla formularz dodawania numeru telefonu. 
+
+\begin{DoxyReturn}{Zwraca}
+Widok formularza dodawania numeru telefonu.
+\end{DoxyReturn}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a30e3ea28aa732290ac78462090d05c32}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!AddPhoneNumber@{AddPhoneNumber}}
+\index{AddPhoneNumber@{AddPhoneNumber}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{AddPhoneNumber()}{AddPhoneNumber()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a30e3ea28aa732290ac78462090d05c32} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Manage\+Controller.\+Add\+Phone\+Number (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_add_phone_number_view_model}{Add\+Phone\+Number\+View\+Model}}}]{model}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Dodaje numer telefonu do konta użytkownika. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em model} & Model dodawania numeru telefonu.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Przekierowanie do weryfikacji numeru telefonu.
+\end{DoxyReturn}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a0055bed7b4bf9af556f9efa0247aab5f}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!ChangePassword@{ChangePassword}}
+\index{ChangePassword@{ChangePassword}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{ChangePassword()}{ChangePassword()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a0055bed7b4bf9af556f9efa0247aab5f} 
+Action\+Result OOP.\+Controllers.\+Manage\+Controller.\+Change\+Password (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Wyświetla formularz zmiany hasła. 
+
+\begin{DoxyReturn}{Zwraca}
+Widok formularza zmiany hasła.
+\end{DoxyReturn}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_ad47cf9a0792595e2f61c2a3d0041d6b8}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!ChangePassword@{ChangePassword}}
+\index{ChangePassword@{ChangePassword}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{ChangePassword()}{ChangePassword()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_ad47cf9a0792595e2f61c2a3d0041d6b8} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Manage\+Controller.\+Change\+Password (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_change_password_view_model}{Change\+Password\+View\+Model}}}]{model}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Zmienia hasło użytkownika. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em model} & Model zmiany hasła.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Przekierowanie do strony głównej zarządzania kontem.
+\end{DoxyReturn}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a7f863660327d2cc1f76b5cc9d21dba65}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!DisableTwoFactorAuthentication@{DisableTwoFactorAuthentication}}
+\index{DisableTwoFactorAuthentication@{DisableTwoFactorAuthentication}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{DisableTwoFactorAuthentication()}{DisableTwoFactorAuthentication()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a7f863660327d2cc1f76b5cc9d21dba65} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Manage\+Controller.\+Disable\+Two\+Factor\+Authentication (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Wyłącza uwierzytelnianie dwuskładnikowe. 
+
+\begin{DoxyReturn}{Zwraca}
+Przekierowanie do strony głównej zarządzania kontem.
+\end{DoxyReturn}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a3398af5fd1d12b4a75a7fc253635e583}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a3398af5fd1d12b4a75a7fc253635e583} 
+override void OOP.\+Controllers.\+Manage\+Controller.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Zwolnienie zasobów. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em disposing} & Wartość true, jeśli zarządzane zasoby powinny być zwolnione; w przeciwnym razie false.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a187bc2fd006088871b84afe66b2edad1}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!EnableTwoFactorAuthentication@{EnableTwoFactorAuthentication}}
+\index{EnableTwoFactorAuthentication@{EnableTwoFactorAuthentication}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{EnableTwoFactorAuthentication()}{EnableTwoFactorAuthentication()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a187bc2fd006088871b84afe66b2edad1} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Manage\+Controller.\+Enable\+Two\+Factor\+Authentication (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Włącza uwierzytelnianie dwuskładnikowe. 
+
+\begin{DoxyReturn}{Zwraca}
+Przekierowanie do strony głównej zarządzania kontem.
+\end{DoxyReturn}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a34e6ff16d873ed34235a18f143439c81}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!HasPassword@{HasPassword}}
+\index{HasPassword@{HasPassword}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{HasPassword()}{HasPassword()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a34e6ff16d873ed34235a18f143439c81} 
+bool OOP.\+Controllers.\+Manage\+Controller.\+Has\+Password (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Sprawdza, czy użytkownik ma ustawione hasło. 
+
+\begin{DoxyReturn}{Zwraca}
+Prawda, jeśli użytkownik ma ustawione hasło, w przeciwnym razie fałsz.
+\end{DoxyReturn}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a5e2c2770c48e0c1c24c37d38deebf8c0}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!HasPhoneNumber@{HasPhoneNumber}}
+\index{HasPhoneNumber@{HasPhoneNumber}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{HasPhoneNumber()}{HasPhoneNumber()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a5e2c2770c48e0c1c24c37d38deebf8c0} 
+bool OOP.\+Controllers.\+Manage\+Controller.\+Has\+Phone\+Number (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a2025b037402f3446a514d9d4fed4e1a2}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!Index@{Index}}
+\index{Index@{Index}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a2025b037402f3446a514d9d4fed4e1a2} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Manage\+Controller.\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c}{Manage\+Message\+Id}}?}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Wyświetla stronę główną zarządzania kontem. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em message} & Opcjonalna wiadomość statusu.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Widok strony głównej zarządzania kontem.
+\end{DoxyReturn}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a7063076bbdc7f6f1da4f9c87e9d09b61}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!LinkLogin@{LinkLogin}}
+\index{LinkLogin@{LinkLogin}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{LinkLogin()}{LinkLogin()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a7063076bbdc7f6f1da4f9c87e9d09b61} 
+Action\+Result OOP.\+Controllers.\+Manage\+Controller.\+Link\+Login (\begin{DoxyParamCaption}\item[{string}]{provider}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inicjuje połączenie z logowaniem zewnętrznym. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em provider} & Dostawca logowania zewnętrznego.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Przekierowanie do dostawcy logowania zewnętrznego.
+\end{DoxyReturn}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a331416edc4f8dec20892932e9a9a1c48}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!LinkLoginCallback@{LinkLoginCallback}}
+\index{LinkLoginCallback@{LinkLoginCallback}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{LinkLoginCallback()}{LinkLoginCallback()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a331416edc4f8dec20892932e9a9a1c48} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Manage\+Controller.\+Link\+Login\+Callback (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Callback po połączeniu z logowaniem zewnętrznym. 
+
+\begin{DoxyReturn}{Zwraca}
+Przekierowanie do zarządzania logowaniami.
+\end{DoxyReturn}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_ad193e64a9446f4a0d2d26b8c0dd51d69}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!ManageLogins@{ManageLogins}}
+\index{ManageLogins@{ManageLogins}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{ManageLogins()}{ManageLogins()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_ad193e64a9446f4a0d2d26b8c0dd51d69} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Manage\+Controller.\+Manage\+Logins (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_o_o_p_1_1_controllers_1_1_manage_controller_a1c7202df9e87c2bfc24af69d412d2b4c}{Manage\+Message\+Id}}?}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Zarządza logowaniami zewnętrznymi użytkownika. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em message} & Opcjonalna wiadomość statusu.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Widok zarządzania logowaniami.
+\end{DoxyReturn}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a2c088806157b99cd5433a5a40aae331b}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!RemoveLogin@{RemoveLogin}}
+\index{RemoveLogin@{RemoveLogin}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{RemoveLogin()}{RemoveLogin()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a2c088806157b99cd5433a5a40aae331b} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Manage\+Controller.\+Remove\+Login (\begin{DoxyParamCaption}\item[{string}]{login\+Provider}{, }\item[{string}]{provider\+Key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Usuwa logowanie zewnętrzne. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em login\+Provider} & Dostawca logowania.\\
+\hline
+{\em provider\+Key} & Klucz dostawcy.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Przekierowanie do strony zarządzania logowaniami.
+\end{DoxyReturn}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_ae3ad80c5c7fe36d172b319f55121258c}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!RemovePhoneNumber@{RemovePhoneNumber}}
+\index{RemovePhoneNumber@{RemovePhoneNumber}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{RemovePhoneNumber()}{RemovePhoneNumber()}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_ae3ad80c5c7fe36d172b319f55121258c} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Manage\+Controller.\+Remove\+Phone\+Number (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Usuwa numer telefonu z konta użytkownika. 
+
+\begin{DoxyReturn}{Zwraca}
+Przekierowanie do strony głównej zarządzania kontem.
+\end{DoxyReturn}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_afeb000028fe432ebcddbc2b3f592e539}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!SetPassword@{SetPassword}}
+\index{SetPassword@{SetPassword}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{SetPassword()}{SetPassword()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_afeb000028fe432ebcddbc2b3f592e539} 
+Action\+Result OOP.\+Controllers.\+Manage\+Controller.\+Set\+Password (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Wyświetla formularz ustawienia hasła. 
+
+\begin{DoxyReturn}{Zwraca}
+Widok formularza ustawienia hasła.
+\end{DoxyReturn}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_af03e8dbba6a550a8cbc8159f8d5fd4c2}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!SetPassword@{SetPassword}}
+\index{SetPassword@{SetPassword}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{SetPassword()}{SetPassword()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_af03e8dbba6a550a8cbc8159f8d5fd4c2} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Manage\+Controller.\+Set\+Password (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_set_password_view_model}{Set\+Password\+View\+Model}}}]{model}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Ustawia hasło użytkownika. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em model} & Model ustawienia hasła.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Przekierowanie do strony głównej zarządzania kontem.
+\end{DoxyReturn}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a76a46a0965e15e7aa694831711a8a01a}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!VerifyPhoneNumber@{VerifyPhoneNumber}}
+\index{VerifyPhoneNumber@{VerifyPhoneNumber}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{VerifyPhoneNumber()}{VerifyPhoneNumber()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a76a46a0965e15e7aa694831711a8a01a} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Manage\+Controller.\+Verify\+Phone\+Number (\begin{DoxyParamCaption}\item[{string}]{phone\+Number}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Wyświetla formularz weryfikacji numeru telefonu. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em phone\+Number} & Numer telefonu do weryfikacji.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Widok formularza weryfikacji numeru telefonu.
+\end{DoxyReturn}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_acc77ad5282b4691dd95df04dd2fdb18d}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!VerifyPhoneNumber@{VerifyPhoneNumber}}
+\index{VerifyPhoneNumber@{VerifyPhoneNumber}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{VerifyPhoneNumber()}{VerifyPhoneNumber()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_acc77ad5282b4691dd95df04dd2fdb18d} 
+async Task$<$ Action\+Result $>$ OOP.\+Controllers.\+Manage\+Controller.\+Verify\+Phone\+Number (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_o_o_p_1_1_models_1_1_verify_phone_number_view_model}{Verify\+Phone\+Number\+View\+Model}}}]{model}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Weryfikuje numer telefonu użytkownika. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em model} & Model weryfikacji numeru telefonu.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Przekierowanie do strony głównej zarządzania kontem.
+\end{DoxyReturn}
+
+
+\doxysubsection{Dokumentacja atrybutów składowych}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a8e1a0c2b9ce8efd389ef49fd379eb7c7}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!\_signInManager@{\_signInManager}}
+\index{\_signInManager@{\_signInManager}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{\_signInManager}{\_signInManager}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a8e1a0c2b9ce8efd389ef49fd379eb7c7} 
+\mbox{\hyperlink{class_o_o_p_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} OOP.\+Controllers.\+Manage\+Controller.\+\_\+sign\+In\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_a0fb62c0b3bc7dbafc725b6c395972446}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!\_userManager@{\_userManager}}
+\index{\_userManager@{\_userManager}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{\_userManager}{\_userManager}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_a0fb62c0b3bc7dbafc725b6c395972446} 
+\mbox{\hyperlink{class_o_o_p_1_1_application_user_manager}{Application\+User\+Manager}} OOP.\+Controllers.\+Manage\+Controller.\+\_\+user\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_ac068c1b1b15847f557c0cade225363a4}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!XsrfKey@{XsrfKey}}
+\index{XsrfKey@{XsrfKey}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{XsrfKey}{XsrfKey}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_ac068c1b1b15847f557c0cade225363a4} 
+const string OOP.\+Controllers.\+Manage\+Controller.\+Xsrf\+Key = "{}Xsrf\+Id"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Identyfikator dla zapytań XSRF. 
+
+
+
+\doxysubsection{Dokumentacja właściwości}
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_aca2ce2a88453df0b334f0c99e3b35d99}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!AuthenticationManager@{AuthenticationManager}}
+\index{AuthenticationManager@{AuthenticationManager}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{AuthenticationManager}{AuthenticationManager}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_aca2ce2a88453df0b334f0c99e3b35d99} 
+IAuthentication\+Manager OOP.\+Controllers.\+Manage\+Controller.\+Authentication\+Manager\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private]}}
+
+
+
+Pobiera menedżera uwierzytelniania. 
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_abeb70c30b2c9406875129c9ba4f68662}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!SignInManager@{SignInManager}}
+\index{SignInManager@{SignInManager}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{SignInManager}{SignInManager}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_abeb70c30b2c9406875129c9ba4f68662} 
+\mbox{\hyperlink{class_o_o_p_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} OOP.\+Controllers.\+Manage\+Controller.\+Sign\+In\+Manager\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private set]}}
+
+
+
+Pobiera menedżera logowania. 
+
+\Hypertarget{class_o_o_p_1_1_controllers_1_1_manage_controller_ae61f08cdb84d0e5c3c056cd4bf64aca6}\index{OOP.Controllers.ManageController@{OOP.Controllers.ManageController}!UserManager@{UserManager}}
+\index{UserManager@{UserManager}!OOP.Controllers.ManageController@{OOP.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{UserManager}{UserManager}}
+{\footnotesize\ttfamily \label{class_o_o_p_1_1_controllers_1_1_manage_controller_ae61f08cdb84d0e5c3c056cd4bf64aca6} 
+\mbox{\hyperlink{class_o_o_p_1_1_application_user_manager}{Application\+User\+Manager}} OOP.\+Controllers.\+Manage\+Controller.\+User\+Manager\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private set]}}
+
+
+
+Pobiera menedżera użytkowników. 
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+\item 
+Controllers/\mbox{\hyperlink{_manage_controller_8cs}{Manage\+Controller.\+cs}}\end{DoxyCompactItemize}

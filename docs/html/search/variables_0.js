@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['_5f_5fo_0',['__o',['../class_a_s_p_1_1___page___index__cshtml.html#a64ce0c2a05b366c8bdeb38529f414f09',1,'ASP._Page_Index_cshtml.__o'],['../class_a_s_p_1_1___page___create__cshtml.html#a22f2c329b904d6b5f9299a5f8d16415c',1,'ASP._Page_Create_cshtml.__o'],['../class_a_s_p_1_1___page___delete__cshtml.html#ab03d7085ae8a1ce1a7dc25ec33cc0909',1,'ASP._Page_Delete_cshtml.__o'],['../class_a_s_p_1_1___page___details__cshtml.html#a3052b9c94765f68e1e4f1bbc9be3d866',1,'ASP._Page_Details_cshtml.__o'],['../class_a_s_p_1_1___page___edit__cshtml.html#a7ae4faa93c2b35d13ae861860b43a56d',1,'ASP._Page_Edit_cshtml.__o']]],
+  ['_5fsigninmanager_1',['_signInManager',['../class_o_o_p_1_1_controllers_1_1_account_controller.html#ab4eac45f1e1429a3472c34dfcf299ba1',1,'OOP.Controllers.AccountController._signInManager'],['../class_o_o_p_1_1_controllers_1_1_manage_controller.html#a8e1a0c2b9ce8efd389ef49fd379eb7c7',1,'OOP.Controllers.ManageController._signInManager']]],
+  ['_5fusermanager_2',['_userManager',['../class_o_o_p_1_1_controllers_1_1_account_controller.html#a162abbf825f147dca8238881672e2221',1,'OOP.Controllers.AccountController._userManager'],['../class_o_o_p_1_1_controllers_1_1_manage_controller.html#a0fb62c0b3bc7dbafc725b6c395972446',1,'OOP.Controllers.ManageController._userManager']]]
+];

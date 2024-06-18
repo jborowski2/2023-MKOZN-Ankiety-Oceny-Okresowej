@@ -20,19 +20,20 @@ namespace OOP.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Pracowniks
-        public async Task<ActionResult> Index(String searchString)
+        public async Task<ActionResult> Index(string searchString)
         {
-            
+            var userId = User.Identity.GetUserId();
+            var pracownicy = db.Pracownicy.Include(p => p.Przelozony);
+            string employeeName = GetEmployeeNameByUserId(userId);
+            ViewBag.EmployeeName = employeeName;
             if (!string.IsNullOrEmpty(searchString))
             {
-
-                var pracownicy = db.Pracownicy.Where(a => (a.Imie + " " + a.Nazwisko).Contains(searchString));
-                return View(await  pracownicy.ToListAsync());
+                pracownicy = pracownicy.Where(a => (a.Imie + " " + a.Nazwisko).Contains(searchString));
             }
 
             ViewBag.ShowUserRoles = new Func<string, string>(ShowUserRoles);
-            
-            return View(await db.Pracownicy.ToListAsync());
+
+            return View(await pracownicy.ToListAsync());
         }
 
         public string ShowUserRoles(string userId)
@@ -48,16 +49,24 @@ namespace OOP.Controllers
         // GET: Pracowniks/Details/5
         public async Task<ActionResult> Details(int? id)
         {
+          
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Pracownik pracownik = await db.Pracownicy.FindAsync(id);
+            
             if (pracownik == null)
             {
                 return HttpNotFound();
             }
             return View(pracownik);
+        }
+
+        private string GetEmployeeNameByUserId(string userId)
+        {
+            var employee = db.Pracownicy.FirstOrDefault(e => e.ApplicationUserID == userId);
+            return employee != null ? employee.Imie : "Nieznany użytkownik";
         }
 
         // GET: Pracowniks/Create
@@ -97,6 +106,7 @@ namespace OOP.Controllers
             }
             var roles = db.Roles.ToList();
             ViewBag.Roles = new SelectList(roles, "Id", "Name");
+            ViewBag.SupervisorID = new SelectList(db.Pracownicy, "PracownikID", "ImieNazwisko", pracownik.PrzelozonyID);
 
             return View(pracownik);
         }
@@ -106,15 +116,18 @@ namespace OOP.Controllers
         // Aby uzyskać więcej szczegółów, zobacz https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "PracownikID,Imie,Nazwisko,Stanowisko,Tytul,NumerTelefonu,PrzelozonyID,ApplicationUserID")] Pracownik pracownik)
+        public async Task<ActionResult> Edit([Bind(Include = "PracownikID,Imie,Nazwisko,Stanowisko,Tytul,NumerTelefonu,PrzelozonyID,Stanowisko,Status,Grupa,ApplicationUserID")] Pracownik pracownik)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(pracownik).State = EntityState.Modified;
-                await db.SaveChangesAsync();
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.SupervisorID = new SelectList(db.Pracownicy, "PracownikID", "Imie","Nazwisko", pracownik.PrzelozonyID);
+            ViewBag.Roles = new SelectList(db.Roles, "Id", "Name");
             return View(pracownik);
+
         }
 
         // GET: Pracowniks/Delete/5
