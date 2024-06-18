@@ -1,0 +1,33 @@
+@{
+    ViewBag.Title = "Report";
+    Layout = "~/Views/Shared/_SpecialLayout.cshtml";
+    ViewBag.UseSpecialNavbar = true;
+}
+<body>
+<div class="container">
+    <h2>Wysy³anie raportu</h2>
+    <form method="post">
+        <div class="form-group">
+            <label for="Title">Tytu³</label>
+            <input type="text" id="Title" name="Title" class="form-control" asp-for="Report.Title" required />
+            <span asp-validation-for="Report.Title" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="Description">Opis</label>
+            <textarea id="Description" name="Description" class="form-control" asp-for="Report.Description" required></textarea>
+            <span asp-validation-for="Report.Description" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="Type">Typ zg³oszenia</label>
+            <select id="Type" name="Type" class="form-control" asp-for="Report.Type" required>
+                <option value="">Wybierz typ</option>
+                <option value="Problem">Problem</option>
+                <option value="Sugestia">Sugestia</option>
+                <option value="Inne">Inne</option>
+            </select>
+            <span asp-validation-for="Report.Type" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Wyœlij</button>
+    </form>
+</div>
+</body>

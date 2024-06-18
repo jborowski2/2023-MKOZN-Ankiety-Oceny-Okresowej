@@ -85,6 +85,9 @@
                     <li class="nav-item">
                         @Html.ActionLink("Ankiety", "Index", "Ankietas", new { area = "" }, new { @class = "nav-link white" })
                     </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Zgłoszenia", "Report", "Home", new { area = "" }, new { @class = "nav-link white" })
+                    </li>
                     @if (!isPracownik)
                     {
                         <li class="nav-item dropdown">
