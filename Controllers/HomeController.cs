@@ -52,5 +52,15 @@ namespace OOP.Controllers
             ViewBag.EmployeeName = employeeName;
             return View();
         }
+
+        public ActionResult Report()
+        {
+            ViewBag.Message = "Your application description page.";
+            var userId = User.Identity.GetUserId();
+
+            string employeeName = GetEmployeeNameByUserId(userId);
+            ViewBag.EmployeeName = employeeName;
+            return View();
+        }
     }
 }
